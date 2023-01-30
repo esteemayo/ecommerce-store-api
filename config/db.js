@@ -21,6 +21,8 @@ const connectDB = async () => {
   }
 };
 
+mongoose.set('strictQuery', false);
+
 mongoose.connection.on('disconnected', () => {
   console.log('MongoDB Disconnected'.strikethrough);
 });
