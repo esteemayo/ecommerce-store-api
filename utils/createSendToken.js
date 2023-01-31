@@ -1,3 +1,4 @@
+/* eslint-disable */
 const createSendToken = (user, statusCode, req, res) => {
   const { password, role, ...rest } = user._doc;
 
