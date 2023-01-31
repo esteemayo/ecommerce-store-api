@@ -9,6 +9,7 @@ import createSendToken from '../utils/createSendToken.js';
 import createSendGoogleToken from '../utils/createSendGoogleToken.js';
 import NotFoundError from '../errors/notFound.js';
 import AppError from '../errors/AppError.js';
+import sendEmail from './../utils/email.js';
 
 const register = asyncHandler(async (req, res, next) => {
   const user = await User.create({ ...req.body });
