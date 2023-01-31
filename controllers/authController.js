@@ -92,13 +92,25 @@ const forgotPassword = asyncHandler(async (req, res, next) => {
   `;
 
   try {
+    await sendEmail({
+      email: user.email,
+      subject: 'Your password reset token (valid for 10 minutes)',
+      message,
+      html,
+    });
 
+    res.status(StatusCodes.OK).json({
+      status: 'success',
+      message: 'Token sent to your email address',
+    });
   } catch (err) {
     user.resetPasswordToken = undefined;
     user.resetPasswordExpires = undefined;
-    await user.save();
+    await user.save({ validateBeforeSave: false });
 
-    return next(AppError)
+    return next(
+      new AppError('There was an error sending the email. try again later')
+    );
   }
 });
 
