@@ -36,8 +36,8 @@ const userSchema = new mongoose.Schema({
     minlength: 8,
     maxlength: 1024,
     validate: {
-      validator: function (el) {
-        return el === this.password;
+      validator: function (val) {
+        return val === this.password;
       },
       message: 'Passwords do not match',
     },
