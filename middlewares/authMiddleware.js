@@ -5,6 +5,7 @@ import asyncHandler from 'express-async-handler';
 
 import User from '../models/User.js';
 import UnauthenticatedError from '../errors/unauthenticated.js';
+import ForbiddenError from '../errors/forbidden.js';
 
 const protect = asyncHandler(async (req, res, next) => {
   let token;
@@ -47,8 +48,20 @@ const protect = asyncHandler(async (req, res, next) => {
   next();
 });
 
+const restrictTo =
+  (...roles) =>
+    (req, res, next) => {
+      if (!roles.includes(req.user.role)) {
+        return next(
+          new ForbiddenError('You do not have permission to perform this action')
+        );
+      }
+      next();
+    };
+
 const authMiddleware = {
   protect,
+  restrictTo,
 };
 
 export default authMiddleware;
