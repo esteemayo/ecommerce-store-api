@@ -1,6 +1,7 @@
 /* eslint-disable */
 import express from 'express';
 import morgan from 'morgan';
+import cookieParser from 'cookie-parser';
 import 'colors';
 
 import authRoute from './routes/auth.js';
@@ -16,6 +17,8 @@ if (app.get('env') === 'development') {
 
 app.use(express.json({ limit: '10kb' }));
 app.use(express.urlencoded({ extended: true, limit: '10kb' }));
+
+app.use(cookieParser());
 
 app.use('/api/v1/auth', authRoute);
 app.use('/api/v1/users', userRoute);
