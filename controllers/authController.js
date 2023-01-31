@@ -5,15 +5,13 @@ import asyncHandler from 'express-async-handler';
 import User from '../models/User.js';
 import UnauthenticatedError from '../errors/unauthenticated.js';
 import BadRequestError from '../errors/badRequest.js';
+import createSendToken from '../utils/createSendToken.js';
 
 const register = asyncHandler(async (req, res, next) => {
   const user = await User.create({ ...req.body });
 
   if (user) {
-    return res.status(StatusCodes.CREATED).json({
-      status: 'success',
-      ...user._doc,
-    });
+    createSendToken(user, StatusCodes.CREATED, req, res);
   }
 });
 
@@ -30,10 +28,7 @@ const login = asyncHandler(async (req, res, next) => {
     return next(new UnauthenticatedError('Incorrect email or password'));
   }
 
-  return res.status(StatusCodes.OK).json({
-    status: 'success',
-    ...user._doc,
-  });
+  createSendToken(user, StatusCodes.OK, req, res);
 });
 
 const forgotPassword = asyncHandler(async (req, res, next) => { });
