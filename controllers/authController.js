@@ -1,4 +1,5 @@
 /* eslint-disable */
+import crypto from 'crypto';
 import { StatusCodes } from 'http-status-codes';
 import asyncHandler from 'express-async-handler';
 
@@ -114,7 +115,31 @@ const forgotPassword = asyncHandler(async (req, res, next) => {
   }
 });
 
-const resetPassword = asyncHandler(async (req, res, next) => { });
+const resetPassword = asyncHandler(async (req, res, next) => {
+  const { password, confirmPassword } = req.body;
+
+  const hashedToken = crypto
+    .createHash('sha256')
+    .update(req.params.token)
+    .digest('hex');
+
+  const user = await User.findOne({
+    resetPasswordToken: hashedToken,
+    resetPasswordExpires: { $gt: Date.now() },
+  });
+
+  if (!user) {
+    return next(new BadRequestError('Token is invalid or has expired'));
+  }
+
+  user.password = password;
+  user.confirmPassword = confirmPassword;
+  user.resetPasswordToken = undefined;
+  user.resetPasswordExpires = undefined;
+  await user.save();
+
+  createSendToken(user, StatusCodes.OK, req, res);
+});
 
 const updatePasword = asyncHandler(async (req, res, next) => { });
 
