@@ -1,5 +1,18 @@
 import { StatusCodes } from 'http-status-codes';
 
+const sendErrorDev = (err, res) =>
+  res.status(res.statusCode).json({
+    status: err.status,
+    message: err.message,
+    stack: err.stack,
+  });
+
+const sendErrorProd = (err, res) =>
+  res.status(res.statusCode).json({
+    status: err.status,
+    message: err.message,
+  });
+
 const globalErrorHandler = (err, req, res, next) => {
   const customError = {
     stack: err.stack,
@@ -9,16 +22,9 @@ const globalErrorHandler = (err, req, res, next) => {
   };
 
   if (process.env.NODE_ENV === 'development') {
-    res.status(res.statusCode).json({
-      status: customError.status,
-      message: customError.message,
-      stack: customError.stack,
-    });
+    sendErrorDev(customError, res);
   } else if (process.env.NODE_ENV === 'production') {
-    res.status(res.statusCode).json({
-      status: customError.status,
-      message: customError.message,
-    });
+    sendErrorProd(customError, res);
   }
 };
 
