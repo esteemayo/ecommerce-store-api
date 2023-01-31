@@ -89,6 +89,18 @@ userSchema.methods.generateAuthToken = function () {
   return token;
 };
 
+userSchema.methods.changedPasswordAfter = function (JWTTimestamp) {
+  if (this.passwordChangedAt) {
+    const changedTimestamp = parseInt(
+      this.passwordChangedAt.getTime() / 1000,
+      10
+    );
+
+    return JWTTimestamp < changedTimestamp;
+  }
+  return false;
+};
+
 const User = mongoose.models.User || mongoose.model('User', userSchema);
 
 export default User;
