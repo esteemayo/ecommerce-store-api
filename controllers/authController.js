@@ -141,7 +141,20 @@ const resetPassword = asyncHandler(async (req, res, next) => {
   createSendToken(user, StatusCodes.OK, req, res);
 });
 
-const updatePasword = asyncHandler(async (req, res, next) => { });
+const updatePasword = asyncHandler(async (req, res, next) => {
+  const { password, confirmPassword, currentPassword } = req.body;
+
+  const user = await User.findById(req.user.id).select('+password');
+  if (!(await user.comparePassword(currentPassword))) {
+    return next(new UnauthenticatedError('Your current password is wrong'));
+  }
+
+  user.password = password;
+  user.confirmPassword = confirmPassword;
+  await user.save();
+
+  createSendToken(user, StatusCodes.OK, req, res);
+});
 
 const authController = {
   register,
