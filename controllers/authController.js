@@ -24,7 +24,7 @@ const login = asyncHandler(async (req, res, next) => {
     return next(new BadRequestError('Please provide username and password'));
   }
 
-  const user = await User.findOne({ username });
+  const user = await User.findOne({ username }).select('+password');
 
   if (!user || !(await user.comparePassword(password))) {
     return next(new UnauthenticatedError('Incorrect email or password'));
