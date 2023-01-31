@@ -13,4 +13,6 @@ router.post('/google-login', authController.googleLogin);
 
 router.post('/forgot-password', authController.forgotPassword);
 
+router.post('/reset-password/:token', authController.resetPassword);
+
 export default router;
