@@ -10,7 +10,7 @@ const register = asyncHandler(async (req, res, next) => {
   if (user) {
     return res.status(StatusCodes.CREATED).json({
       status: 'success',
-      ...user,
+      user,
     });
   }
 });
