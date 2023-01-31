@@ -6,7 +6,7 @@ import User from '../models/User.js';
 import UnauthenticatedError from '../errors/unauthenticated.js';
 import BadRequestError from '../errors/badRequest.js';
 import createSendToken from '../utils/createSendToken.js';
-import createSendGoogleToken from '../utils/createSendGoogleToken';
+import createSendGoogleToken from '../utils/createSendGoogleToken.js';
 
 const register = asyncHandler(async (req, res, next) => {
   const user = await User.create({ ...req.body });
