@@ -41,6 +41,10 @@ const productSchema = new Schema({
     type: [String],
     default: [],
   },
+  category: {
+    type: String,
+    required: [true, 'A product must belong to a category'],
+  }
 }, {
   timestamps: true,
 });
