@@ -6,8 +6,8 @@ class ForbiddenError extends AppError {
   constructor(message) {
     super(message);
 
+    this.status = 'fail';
     this.statusCode = StatusCodes.FORBIDDEN;
-    this.status = 'error';
   }
 }
 
