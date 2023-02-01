@@ -5,6 +5,12 @@ const handleCastErrorDB = (customError, err) => {
   customError.statusCode = StatusCodes.BAD_REQUEST;
 };
 
+const handleDuplicateErrorFieldsDB = (customError, err) => {
+  const value = err.message.match(/(["'])(?:(?=(\\?))\2.)*?\1/)[0];
+  customError.message = `Duplicate field value: ${value}, Please use another value`;
+  customError.statusCode = StatusCodes.BAD_REQUEST;
+};
+
 const sendErrorDev = (err, res) =>
   res.status(res.statusCode).json({
     status: err.status,
@@ -27,6 +33,7 @@ const globalErrorHandler = (err, req, res, next) => {
   };
 
   if (err.name === 'CastError') handleCastErrorDB(customError, err);
+  if (err.code && err.code === 11000) handleDuplicateErrorFieldsDB(customError, err);
 
   if (process.env.NODE_ENV === 'development') {
     sendErrorDev(customError, res);
