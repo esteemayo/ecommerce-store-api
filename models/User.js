@@ -129,6 +129,33 @@ userSchema.methods.createPasswordResetToken = function () {
   return resetToken;
 };
 
+userSchema.statics.getUserStats = async function () {
+  const date = new Date();
+  const lastMonth = new Date(date.setMonth(date.getMonth() - 1));
+  const prevMonth = new Date(date.setMonth(lastMonth.getMonth() - 1));
+
+  const stats = await this.aggregate([
+    {
+      $match: {
+        createdAt: { $gte: prevMonth },
+      },
+    },
+    {
+      $project: {
+        month: { $month: '$createdAt' },
+      },
+    },
+    {
+      $group: {
+        _id: '$month',
+        total: { $sum: 1 },
+      },
+    },
+  ]);
+
+  return stats;
+};
+
 const User = models.User || model('User', userSchema);
 
 export default User;
