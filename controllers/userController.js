@@ -33,7 +33,26 @@ const getUser = asyncHandler(async (req, res, next) => {
   res.status(StatusCodes.OK).json(user);
 });
 
-const updateUser = asyncHandler(async (req, res, next) => { });
+const updateUser = asyncHandler(async (req, res, next) => {
+  const { id: userId } = req.params;
+
+  const updatedUser = await User.findByIdAndUpdate(
+    userId,
+    { $set: { ...req.body } },
+    {
+      new: true,
+      runValidators: true,
+    },
+  );
+
+  if (updatedUser) {
+    return next(
+      new NotFoundError(`There is no user found with the given ID ↔ ${userId}`)
+    );
+  }
+
+  res.status(StatusCodes.OK).json(updatedUser);
+});
 
 const updateMe = asyncHandler(async (req, res, next) => { });
 
