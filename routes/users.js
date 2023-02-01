@@ -8,6 +8,12 @@ const router = express.Router();
 
 router.use(authMiddleware.protect);
 
+router.get(
+  '/stats',
+  authMiddleware.restrictTo('admin'),
+  userController.getUserStats,
+);
+
 router
   .route('/')
   .get(userController.getUsers)
