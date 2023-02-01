@@ -44,7 +44,16 @@ const productSchema = new Schema({
   category: {
     type: String,
     required: [true, 'A product must belong to a category'],
-  }
+  },
+  tags: {
+    type: Array,
+    validate: {
+      validator: function (val) {
+        return val && val.length > 0;
+      },
+      message: 'A product must have at least one tag',
+    },
+  },
 }, {
   timestamps: true,
 });
