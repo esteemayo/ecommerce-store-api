@@ -11,6 +11,13 @@ const handleDuplicateErrorFieldsDB = (customError, err) => {
   customError.statusCode = StatusCodes.BAD_REQUEST;
 };
 
+const handleValidationErrorDB = (customError, err) => {
+  customError.message = Object.values(err.errors)
+    .map((item) => item.message)
+    .join(', ');
+  customError.statusCode = StatusCodes.BAD_REQUEST;
+};
+
 const sendErrorDev = (err, res) =>
   res.status(res.statusCode).json({
     status: err.status,
@@ -34,6 +41,7 @@ const globalErrorHandler = (err, req, res, next) => {
 
   if (err.name === 'CastError') handleCastErrorDB(customError, err);
   if (err.code && err.code === 11000) handleDuplicateErrorFieldsDB(customError, err);
+  if (err.name === 'ValidationError') handleValidationErrorDB(customError, err);
 
   if (process.env.NODE_ENV === 'development') {
     sendErrorDev(customError, res);
