@@ -49,7 +49,7 @@ productSchema.pre('save', async function (next) {
   if (!this.isModified('name')) return next();
   this.slug = slugify(this.name, { lower: true });
 
-  const slugRegEx = new RegExp(`^${this.slug}((-[0-9]*$)?)$`, 'i');
+  const slugRegEx = new RegExp(`^(${this.slug})((-[0-9]*$)?)$`, 'i');
   const productWithSlug = await this.constructor.find({ slug: slugRegEx });
 
   if (productWithSlug.length) {
