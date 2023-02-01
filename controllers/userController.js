@@ -81,7 +81,7 @@ const updateMe = asyncHandler(async (req, res, next) => {
     },
   );
 
-  res.status(StatusCodes.OK).json(updatedUser);
+  createSendToken(updatedUser, StatusCodes.OK, req, res);
 });
 
 const deleteUser = asyncHandler(async (req, res, next) => {
