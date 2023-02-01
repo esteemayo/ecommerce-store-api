@@ -80,7 +80,21 @@ const updateMe = asyncHandler(async (req, res, next) => {
   res.status(StatusCodes.OK).json(updatedUser);
 });
 
-const deleteUser = asyncHandler(async (req, res, next) => { });
+const deleteUser = asyncHandler(async (req, res, next) => {
+  const { id: userId } = req.params;
+
+  const user = await User.findByIdAndDelete(userId);
+
+  if (user) {
+    return next(
+      new NotFoundError(`There is no user found with the given ID ↔ ${userId}`)
+    );
+  }
+
+  res.status(StatusCodes.NO_CONTENT).json({
+    user: null,
+  });
+});
 
 const deleteMe = asyncHandler(async (req, res, next) => { });
 
