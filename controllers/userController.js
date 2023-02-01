@@ -104,7 +104,14 @@ const deleteMe = asyncHandler(async (req, res, next) => {
   });
 });
 
-const createUser = (req, res, next) => { };
+const createUser = (req, res, next) => {
+  res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({
+    status: 'fail',
+    message: `This route is not defined! Please use ${req.protocol}://${req.get(
+      'host'
+    )}/api/v1/users/register`,
+  });
+};
 
 const getMe = (req, res, next) => { };
 
