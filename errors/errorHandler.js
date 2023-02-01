@@ -18,6 +18,11 @@ const handleValidationErrorDB = (customError, err) => {
   customError.statusCode = StatusCodes.BAD_REQUEST;
 };
 
+const handleJWTError = (customError) => {
+  customError.message = 'Invalid token. Please log in again';
+  customError.statusCode = StatusCodes.UNAUTHORIZED;
+};
+
 const sendErrorDev = (err, res) =>
   res.status(res.statusCode).json({
     status: err.status,
@@ -42,6 +47,7 @@ const globalErrorHandler = (err, req, res, next) => {
   if (err.name === 'CastError') handleCastErrorDB(customError, err);
   if (err.code && err.code === 11000) handleDuplicateErrorFieldsDB(customError, err);
   if (err.name === 'ValidationError') handleValidationErrorDB(customError, err);
+  if (err.name === 'JsonWebTokenError') handleJWTError(customError);
 
   if (process.env.NODE_ENV === 'development') {
     sendErrorDev(customError, res);
