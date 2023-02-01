@@ -18,28 +18,7 @@ const getUsers = asyncHandler(async (req, res, next) => {
 });
 
 const getUserStats = asyncHandler(async (req, res, next) => {
-  const date = new Date();
-  const lastMonth = new Date(date.setMonth(date.getMonth() - 1));
-  const prevMonth = new Date(date.setMonth(lastMonth.getMonth() - 1));
-
-  const stats = await User.aggregate([
-    {
-      $match: {
-        createdAt: { $gte: prevMonth },
-      },
-    },
-    {
-      $project: {
-        month: { $month: '$createdAt' },
-      },
-    },
-    {
-      $group: {
-        _id: '$month',
-        total: { $sum: 1 },
-      },
-    },
-  ]);
+  const stats = await User.getUserStats();
 
   res.status(StatusCodes.OK).json(stats);
 });
