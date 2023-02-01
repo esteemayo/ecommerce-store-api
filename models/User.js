@@ -78,6 +78,12 @@ userSchema.pre('save', async function (next) {
   this.confirmPassword = undefined;
 });
 
+userSchema.pre('save', function (next) {
+  if (!this.isModified('password') || this.isNew) return next();
+  this.passwordChangedAt = Date.now() - 1000;
+  next();
+});
+
 userSchema.methods.comparePassword = async function (candidatePasssword) {
   return await bcrypt.compare(candidatePasssword, this.password);
 };
