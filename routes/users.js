@@ -8,8 +8,6 @@ const router = express.Router();
 
 router.use(authMiddleware.protect);
 
-router.patch('/update-me', userController.updateMe);
-
 router.get(
   '/me',
   userController.getMe,
@@ -21,6 +19,8 @@ router.get(
   authMiddleware.restrictTo('admin'),
   userController.getUserStats,
 );
+
+router.patch('/update-me', userController.updateMe);
 
 router
   .route('/')
