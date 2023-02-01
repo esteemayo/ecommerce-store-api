@@ -6,6 +6,8 @@ import userController from '../controllers/userController.js';
 
 const router = express.Router();
 
+router.use(authMiddleware.protect);
+
 router
   .route('/')
   .get(userController.getUsers)
@@ -13,7 +15,7 @@ router
 
 router
   .route('/:id')
-  .get(userController.getUser)
+  .get(authMiddleware.verifyUser, userController.getUser)
   .patch(userController.updateUser)
   .delete(userController.deleteUser);
 
