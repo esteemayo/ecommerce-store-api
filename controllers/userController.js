@@ -6,6 +6,7 @@ import asyncHandler from 'express-async-handler';
 import User from '../models/User.js';
 import NotFoundError from '../errors/notFound.js';
 import AppError from '../errors/AppError.js';
+import BadRequestError from '../errors/badRequest.js';
 
 const getUsers = asyncHandler(async (req, res, next) => {
   const query = req.query.new;
@@ -54,7 +55,30 @@ const updateUser = asyncHandler(async (req, res, next) => {
   res.status(StatusCodes.OK).json(updatedUser);
 });
 
-const updateMe = asyncHandler(async (req, res, next) => { });
+const updateMe = asyncHandler(async (req, res, next) => {
+  const { password, confirmPassword } = req.body;
+
+  if (password || confirmPassword) {
+    return next(
+      new BadRequestError(
+        `This route is not for password updates. Please use update ${req.protocol
+        }://${req.get('host')}/api/v1/auth/update-my-password`
+      )
+    );
+  }
+
+  const filterBody = _.pick(req.body, ['name', 'email', 'username', 'image']);
+  const updatedUser = await User.findByIdAndUpdate(
+    req.user.id,
+    { $set: { ...filterBody } },
+    {
+      new: true,
+      runValidators: true,
+    },
+  );
+
+  res.status(StatusCodes.OK).json(updatedUser);
+});
 
 const deleteUser = asyncHandler(async (req, res, next) => { });
 
