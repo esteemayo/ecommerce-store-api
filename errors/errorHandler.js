@@ -23,6 +23,11 @@ const handleJWTError = (customError) => {
   customError.statusCode = StatusCodes.UNAUTHORIZED;
 };
 
+const handleJWTExpiredError = (customError) => {
+  customError.message = 'Your token has expired! Please log in again';
+  customError.statusCode = StatusCodes.UNAUTHORIZED;
+};
+
 const sendErrorDev = (err, res) =>
   res.status(res.statusCode).json({
     status: err.status,
@@ -48,6 +53,7 @@ const globalErrorHandler = (err, req, res, next) => {
   if (err.code && err.code === 11000) handleDuplicateErrorFieldsDB(customError, err);
   if (err.name === 'ValidationError') handleValidationErrorDB(customError, err);
   if (err.name === 'JsonWebTokenError') handleJWTError(customError);
+  if (err.name === 'TokenExpiredError') handleJWTExpiredError(customError);
 
   if (process.env.NODE_ENV === 'development') {
     sendErrorDev(customError, res);
