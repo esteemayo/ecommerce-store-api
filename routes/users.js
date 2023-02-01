@@ -8,6 +8,8 @@ const router = express.Router();
 
 router.use(authMiddleware.protect);
 
+router.patch('/update-me', userController.updateMe);
+
 router.get(
   '/me',
   userController.getMe,
