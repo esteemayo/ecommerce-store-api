@@ -6,6 +6,7 @@ import asyncHandler from 'express-async-handler';
 import User from '../models/User.js';
 import BadRequestError from '../errors/badRequest.js';
 import NotFoundError from '../errors/notFound.js';
+import createSendToken from '../utils/createSendToken.js';
 
 const getUsers = asyncHandler(async (req, res, next) => {
   const query = req.query.new;
