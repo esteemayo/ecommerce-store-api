@@ -113,7 +113,10 @@ const createUser = (req, res, next) => {
   });
 };
 
-const getMe = (req, res, next) => { };
+const getMe = (req, res, next) => {
+  req.params.id = req.user.id;
+  next();
+};
 
 const userController = {
   getUsers,
