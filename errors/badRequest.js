@@ -6,8 +6,8 @@ class BadRequestError extends AppError {
   constructor(message) {
     super(message);
 
+    this.status = 'fail';
     this.statusCode = StatusCodes.BAD_REQUEST;
-    this.status = 'error';
   }
 }
 
