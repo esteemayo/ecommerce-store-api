@@ -1,9 +1,9 @@
 import bcrypt from 'bcryptjs';
-import mongoose from 'mongoose';
 import crypto from 'crypto';
 import jwt from 'jsonwebtoken';
+import { model,models, Schema } from 'mongoose';
 
-const userSchema = new mongoose.Schema({
+const userSchema = new Schema({
   name: {
     type: String,
     required: [true, 'Please enter your name'],
@@ -127,6 +127,6 @@ userSchema.methods.createPasswordResetToken = function () {
   return resetToken;
 };
 
-const User = mongoose.models.User || mongoose.model('User', userSchema);
+const User = models.User || model('User', userSchema);
 
 export default User;
