@@ -124,6 +124,7 @@ const deleteProduct = asyncHandler(async (req, res, next) => {
 
 const productController = {
   getProducts,
+  getRalatedProducts,
   getProductById,
   getProductBySlug,
   createProduct,
