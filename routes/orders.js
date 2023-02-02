@@ -9,6 +9,7 @@ const router = express.Router();
 router
   .route('/')
   .get(orderController.getOrders)
+  .post(orderController.createOrder);
 
 router
   .route('/:id')
