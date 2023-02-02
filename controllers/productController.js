@@ -41,7 +41,7 @@ const getProducts = asyncHandler(async (req, res, next) => {
   res.status(StatusCodes.OK).json(products);
 });
 
-const getRalatedProducts = asyncHandler(async (req, res, next) => {
+const getProductByTags = asyncHandler(async (req, res, next) => {
   const tags = req.query.tags.split(',');
 
   const products = await Product.find({ tags: { $in: [tags] } });
@@ -124,7 +124,7 @@ const deleteProduct = asyncHandler(async (req, res, next) => {
 
 const productController = {
   getProducts,
-  getRalatedProducts,
+  getProductByTags,
   getProductById,
   getProductBySlug,
   createProduct,
