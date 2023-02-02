@@ -7,6 +7,7 @@ import 'colors';
 import authRoute from './routes/auth.js';
 import NotFoundError from './errors/notFound.js';
 import userRoute from './routes/users.js';
+import orderRoute from './routes/orders.js';
 import globalErrorHandler from './errors/errorHandler.js';
 import categoryRoute from './routes/categories.js';
 import productRoute from './routes/products.js';
@@ -25,6 +26,7 @@ app.use(cookieParser());
 app.use('/api/v1/auth', authRoute);
 app.use('/api/v1/users', userRoute);
 app.use('/api/v1/categories', categoryRoute);
+app.use('/api/v1/orders', orderRoute);
 app.use('/api/v1/products', productRoute);
 
 app.all('*', (req, res, next) => {
