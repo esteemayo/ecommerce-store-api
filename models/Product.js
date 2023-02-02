@@ -21,6 +21,10 @@ const productSchema = new Schema({
     type: Number,
     required: [true, 'A product must have a price'],
   },
+  numberInStock: {
+    type: Number,
+    required: [true, 'A product must have numberInstock']
+  },
   inStock: {
     type: Boolean,
     default: true,
