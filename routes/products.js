@@ -20,7 +20,15 @@ router
 router
   .route('/:id')
   .get(productController.getProductById)
-  .patch(productController.updateProduct)
-  .delete(productController.deleteProduct);
+  .patch(
+    authMiddleware.protect,
+    authMiddleware.restrictTo('admin'),
+    productController.updateProduct,
+  )
+  .delete(
+    authMiddleware.protect,
+    authMiddleware.restrictTo('admin'),
+    productController.deleteProduct,
+  );
 
 export default router;
