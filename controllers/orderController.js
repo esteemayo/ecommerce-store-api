@@ -59,11 +59,28 @@ const updateOrder = asyncHandler(async (req, res, next) => {
   res.status(StatusCodes.OK).json(updatedOrder);
 });
 
+const deleteOrder = asyncHandler(async (req, res, next) => {
+  const { id: orderId } = req.params;
+
+  const order = await Order.findByIdAndDelete(orderId);
+
+  if (!order) {
+    return next(
+      new NotFoundError(`There is no order found with the given ID ↔ ${orderId}`)
+    );
+  }
+
+  res.status(StatusCodes.NO_CONTENT).json({
+    order: null,
+  });
+});
+
 const orderController = {
   getOrders,
   getOrder,
   createOrder,
   updateOrder,
+  deleteOrder
 };
 
 export default orderController;
