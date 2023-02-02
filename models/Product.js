@@ -23,7 +23,7 @@ const productSchema = new Schema({
   },
   numberInStock: {
     type: Number,
-    required: [true, 'A product must have numberInstock']
+    required: [true, 'A product must have numberInstock'],
   },
   inStock: {
     type: Boolean,
