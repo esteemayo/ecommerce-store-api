@@ -44,7 +44,7 @@ const getProducts = asyncHandler(async (req, res, next) => {
 const getProductByTags = asyncHandler(async (req, res, next) => {
   const tags = req.query.tags.split(',');
 
-  const products = await Product.find({ tags: { $in: [tags] } });
+  const products = await Product.find({ tags: { $in: tags } });
 
   res.status(StatusCodes.OK).json(products);
 });
