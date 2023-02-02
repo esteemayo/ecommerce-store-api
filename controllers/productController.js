@@ -56,6 +56,16 @@ const getProductByTags = asyncHandler(async (req, res, next) => {
   res.status(StatusCodes.OK).json(products);
 });
 
+const searchProducts = asyncHandler(async (req, res, next) => {
+  const { query } = req.query;
+
+  const products = await Product.find({
+    name: { $regex: query, $options: 'i' },
+  }).sort('-_id');
+
+  res.status(StatusCodes.OK).json(products);
+});
+
 const getProductById = asyncHandler(async (req, res, next) => {
   const { id: productId } = req.params;
 
@@ -132,6 +142,7 @@ const deleteProduct = asyncHandler(async (req, res, next) => {
 const productController = {
   getProducts,
   getProductByTags,
+  searchProducts,
   getProductById,
   getProductBySlug,
   createProduct,
