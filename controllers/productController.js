@@ -45,7 +45,19 @@ const createProduct = asyncHandler(async (req, res, next) => {
   res.status(StatusCodes.CREATED).json(product);
 });
 
-const updateProduct = asyncHandler(async (req, res, next) => { });
+const updateProduct = asyncHandler(async (req, res, next) => {
+  const { id: productId } = req.params;
+
+  const updatedProduct = await Product.findByIdAndUpdate(productId);
+
+  if (!updatedProduct) {
+    return next(
+      new NotFoundError(`There is no product found with the given ID ↔ ${productId}`)
+    );
+  }
+
+  res.status(StatusCodes.OK).json(updatedProduct);
+});
 
 const deleteProduct = asyncHandler(async (req, res, next) => { });
 
