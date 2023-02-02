@@ -41,6 +41,14 @@ const getProducts = asyncHandler(async (req, res, next) => {
   res.status(StatusCodes.OK).json(products);
 });
 
+const getRalatedProducts = asyncHandler(async (req, res, next) => {
+  const tags = req.query.tags.split(',');
+
+  const products = await Product.find({ tags: { $in: [tags] } });
+
+  res.status(StatusCodes.OK).json(products);
+});
+
 const getProductById = asyncHandler(async (req, res, next) => {
   const { id: productId } = req.params;
 
