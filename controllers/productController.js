@@ -4,6 +4,7 @@ import { StatusCodes } from 'http-status-codes';
 import asyncHandler from 'express-async-handler';
 
 import Product from '../models/Product.js';
+import NotFoundError from '../errors/notFound.js';
 
 const getProducts = asyncHandler(async (req, res, next) => {
   const products = await Product.find();
