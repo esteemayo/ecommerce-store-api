@@ -4,7 +4,11 @@ import asyncHandler from 'express-async-handler';
 
 import Category from '../models/Category.js';
 
-const getCategories = asyncHandler(async (req, res, next) => { });
+const getCategories = asyncHandler(async (req, res, next) => {
+  const categories = await Category.find();
+
+  res.status(StatusCodes.OK).json(categories);
+});
 
 const getCategory = asyncHandler(async (req, res, next) => { });
 
