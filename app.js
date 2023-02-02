@@ -8,6 +8,7 @@ import authRoute from './routes/auth.js';
 import NotFoundError from './errors/notFound.js';
 import userRoute from './routes/users.js';
 import globalErrorHandler from './errors/errorHandler.js';
+import categoryRoute from './routes/categories.js';
 
 const app = express();
 
@@ -22,6 +23,7 @@ app.use(cookieParser());
 
 app.use('/api/v1/auth', authRoute);
 app.use('/api/v1/users', userRoute);
+app.use('/api/v1/categories', categoryRoute);
 
 app.all('*', (req, res, next) => {
   next(new NotFoundError(`Can't find ${req.originalUrl} on this server`));
