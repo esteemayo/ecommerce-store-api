@@ -69,7 +69,21 @@ const updateProduct = asyncHandler(async (req, res, next) => {
   res.status(StatusCodes.OK).json(updatedProduct);
 });
 
-const deleteProduct = asyncHandler(async (req, res, next) => { });
+const deleteProduct = asyncHandler(async (req, res, next) => {
+  const { id: productId } = req.params;
+
+  const product = await Product.findByIdAndDelete(productId);
+
+  if (!product) {
+    return next(
+      new NotFoundError(`There is no product found with the given ID ↔ ${productId}`)
+    );
+  }
+
+  res.status(StatusCodes.NO_CONTENT).json({
+    product: null,
+  });
+});
 
 const productController = {
   getProducts,
