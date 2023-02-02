@@ -9,4 +9,8 @@ const router = express.Router();
 router
   .route(orderController.getOrders)
 
+router
+  .route('/:id')
+  .get(orderController.getOrder)
+
 export default router;
