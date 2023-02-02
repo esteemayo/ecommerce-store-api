@@ -15,7 +15,7 @@ router
 
 router
   .route('/:id')
-  .get(orderController.getOrder)
+  .get(authMiddleware.verifyUser, orderController.getOrder)
   .patch(authMiddleware.restrictTo('admin'), orderController.updateOrder)
   .delete(authMiddleware.restrictTo('admin'), orderController.deleteOrder);
 
