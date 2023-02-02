@@ -23,6 +23,15 @@ const productSchema = new Schema({
     type: Number,
     required: [true, 'A product must have a price'],
   },
+  priceDiscount: {
+    type: Number,
+    validate: {
+      validator: function (val) {
+        return val < this.price;
+      },
+      message: 'Discount price ({VALUE})must be less than regular price',
+    },
+  },
   numberInStock: {
     type: Number,
     required: [true, 'A product must have numberInstock'],
