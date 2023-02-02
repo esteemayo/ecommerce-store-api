@@ -15,5 +15,6 @@ router
   .route('/:id')
   .get(orderController.getOrder)
   .patch(orderController.updateOrder)
+  .delete(orderController.deleteOrder);
 
 export default router;
