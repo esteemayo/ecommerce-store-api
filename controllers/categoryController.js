@@ -25,7 +25,11 @@ const getCategory = asyncHandler(async (req, res, next) => {
   res.status(StatusCodes.OK).json(category);
 });
 
-const createCategory = asyncHandler(async (req, res, next) => { });
+const createCategory = asyncHandler(async (req, res, next) => {
+  const category = await Category.create({ ...req.body });
+
+  res.status(StatusCodes.CREATED).json(category);
+});
 
 const updateCategory = asyncHandler(async (req, res, next) => { });
 
