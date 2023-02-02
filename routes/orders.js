@@ -6,6 +6,8 @@ import orderController from '../controllers/orderController.js';
 
 const router = express.Router();
 
+router.use(authMiddleware.protect);
+
 router
   .route('/')
   .get(orderController.getOrders)
