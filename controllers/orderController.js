@@ -32,9 +32,16 @@ const getOrder = asyncHandler(async (req, res, next) => {
   res.status(StatusCodes.OK).json(order);
 });
 
+const createOrder = asyncHandler(async (req, res, next) => {
+  const order = await Order.create({ ...req.body });
+
+  res.status(StatusCodes.CREATED).json(order);
+});
+
 const orderController = {
   getOrders,
   getOrder,
+  createOrder,
 };
 
 export default orderController;
