@@ -8,6 +8,8 @@ const router = express.Router();
 
 router.get('/tags', productController.getProductByTags);
 
+router.get('/search', productController.searchProducts);
+
 router.get('/details/:slug', productController.getProductBySlug);
 
 router
