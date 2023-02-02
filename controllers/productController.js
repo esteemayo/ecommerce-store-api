@@ -24,7 +24,19 @@ const getProductById = asyncHandler(async (req, res, next) => {
   res.status(StatusCodes.OK).json(product);
 });
 
-const getProductBySlug = asyncHandler(async (req, res, next) => { });
+const getProductBySlug = asyncHandler(async (req, res, next) => {
+  const { slug } = req.params;
+
+  const product = await Product.findOne({ slug });
+
+  if (!product) {
+    return next(
+      new NotFoundError(`There is no product found with the given SLUG ↔ ${slug}`)
+    );
+  }
+
+  res.status(StatusCodes.OK).json(product);
+});
 
 const createProduct = asyncHandler(async (req, res, next) => { });
 
