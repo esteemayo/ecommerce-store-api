@@ -4,7 +4,11 @@ import asyncHandler from 'express-async-handler';
 
 import Product from '../models/Product.js';
 
-const getProducts = asyncHandler(async (req, res, next) => { });
+const getProducts = asyncHandler(async (req, res, next) => {
+  const products = await Product.find();
+
+  res.status(StatusCodes.OK).json(products);
+});
 
 const getProductById = asyncHandler(async (req, res, next) => { });
 
