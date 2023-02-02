@@ -38,7 +38,11 @@ const getProductBySlug = asyncHandler(async (req, res, next) => {
   res.status(StatusCodes.OK).json(product);
 });
 
-const createProduct = asyncHandler(async (req, res, next) => { });
+const createProduct = asyncHandler(async (req, res, next) => {
+  const product = await Product.create({ ...req.body });
+
+  res.status(StatusCodes.CREATED).json(product);
+});
 
 const updateProduct = asyncHandler(async (req, res, next) => { });
 
