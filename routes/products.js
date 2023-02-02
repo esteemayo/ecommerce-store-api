@@ -11,7 +11,11 @@ router.get('/details', productController.getProductBySlug);
 router
   .route('/')
   .get(productController.getProducts)
-  .post(productController.createProduct);
+  .post(
+    authMiddleware.protect,
+    authMiddleware.restrictTo('admin'),
+    productController.createProduct,
+  );
 
 router
   .route('/:id')
