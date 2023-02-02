@@ -18,8 +18,23 @@ const getOrders = asyncHandler(async (req, res, next) => {
   res.status(StatusCodes.OK).json(orders);
 });
 
+const getOrder = asyncHandler(async (req, res, next) => {
+  const { id: orderId } = req.params;
+
+  const order = await Order.findById(orderId);
+
+  if (!order) {
+    return next(
+      new NotFoundError(`There is no order found with the given ID ↔ ${orderId}`)
+    );
+  }
+
+  res.status(StatusCodes.OK).json(order);
+});
+
 const orderController = {
   getOrders,
+  getOrder,
 };
 
 export default orderController;
