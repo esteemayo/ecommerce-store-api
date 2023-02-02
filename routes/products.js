@@ -6,6 +6,8 @@ import productController from '../controllers/productController.js';
 
 const router = express.Router();
 
+router.get('/details', productController.getProductBySlug);
+
 router
   .route('/')
   .get(productController.getProducts)
