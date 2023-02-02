@@ -29,7 +29,7 @@ const productSchema = new Schema({
       validator: function (val) {
         return val < this.price;
       },
-      message: 'Discount price ({VALUE})must be less than regular price',
+      message: 'Discount price ({VALUE}) must be less than regular price',
     },
   },
   numberInStock: {
