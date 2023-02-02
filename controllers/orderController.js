@@ -38,10 +38,32 @@ const createOrder = asyncHandler(async (req, res, next) => {
   res.status(StatusCodes.CREATED).json(order);
 });
 
+const updateOrder = asyncHandler(async (req, res, next) => {
+  const { id: orderId } = req.params;
+
+  const updatedOrder = await Order.findByIdAndUpdate(
+    orderId,
+    { $set: { ...req.body } },
+    {
+      new: true,
+      runValidators: true,
+    },
+  );
+
+  if (!updatedOrder) {
+    return next(
+      new NotFoundError(`There is no order found with the given ID ↔ ${orderId}`)
+    );
+  }
+
+  res.status(StatusCodes.OK).json(updatedOrder);
+});
+
 const orderController = {
   getOrders,
   getOrder,
   createOrder,
+  updateOrder,
 };
 
 export default orderController;
