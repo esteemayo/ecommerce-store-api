@@ -48,7 +48,16 @@ const createProduct = asyncHandler(async (req, res, next) => {
 const updateProduct = asyncHandler(async (req, res, next) => {
   const { id: productId } = req.params;
 
-  const updatedProduct = await Product.findByIdAndUpdate(productId);
+  if (req.body.name) req.body.slug = slugify(req.body.name, { lower: true });
+
+  const updatedProduct = await Product.findByIdAndUpdate(
+    productId,
+    { $set: { ...req.body } },
+    {
+      new: true,
+      runValidators: true,
+    },
+  );
 
   if (!updatedProduct) {
     return next(
