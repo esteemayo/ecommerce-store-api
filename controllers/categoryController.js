@@ -31,7 +31,26 @@ const createCategory = asyncHandler(async (req, res, next) => {
   res.status(StatusCodes.CREATED).json(category);
 });
 
-const updateCategory = asyncHandler(async (req, res, next) => { });
+const updateCategory = asyncHandler(async (req, res, next) => {
+  const { id: categoryId } = req.params;
+
+  const updatedCategory = await Category.findByIdAndUpdate(
+    categoryId,
+    { $set: { ...req.body } },
+    {
+      new: true,
+      runValidators: true,
+    },
+  );
+
+  if (!updatedCategory) {
+    return next(
+      new NotFoundError(`There is no category found with the given ID ↔ ${categoryId}`)
+    );
+  }
+
+  res.status(StatusCodes.OK).json(updatedCategory);
+});
 
 const deleteCategory = asyncHandler(async (req, res, next) => { });
 
