@@ -4,7 +4,7 @@ import express from 'express';
 import authMiddleware from '../middlewares/authMiddleware.js';
 import reviewController from '../controllers/reviewController.js';
 
-const router = express.Router();
+const router = express.Router({ mergeParams: true });
 
 router.use(authMiddleware.protect);
 
