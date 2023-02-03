@@ -57,11 +57,27 @@ const getProductByTags = asyncHandler(async (req, res, next) => {
 });
 
 const getCountByCategory = asyncHandler(async (req, res, next) => {
-  const shirtCount = await Product.countDocuments({ category: 'shirts' });
-  const gadgetCount = await Product.countDocuments({ category: 'gadgets' });
-  const electronicCount = await Product.countDocuments({ category: 'electronics' });
-  const jeanCount = await Product.countDocuments({ category: 'jeans' });
-  const fruitCount = await Product.countDocuments({ category: 'fruits' });
+  const shirtPromise = Product.countDocuments({ category: 'shirts' });
+  const gadgetPromise = Product.countDocuments({ category: 'gadgets' });
+  const electronicPromise = Product.countDocuments({ category: 'electronics' });
+  const jeanPromise = Product.countDocuments({ category: 'jeans' });
+  const fruitPromise = Product.countDocuments({ category: 'fruits' });
+
+  const [
+    shirtCount,
+    gadgetCount,
+    electronicCount,
+    jeanCount,
+    fruitCount
+  ] = await Promise.all(
+    [
+      shirtPromise,
+      gadgetPromise,
+      electronicPromise,
+      jeanPromise,
+      fruitPromise
+    ]
+  );
 
   res.status(StatusCodes.OK).json([
     { category: 'shirts', count: shirtCount },
