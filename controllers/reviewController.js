@@ -13,7 +13,7 @@ const getReviews = asyncHandler(async (req, res, next) => {
     .limitFields()
     .paginate();
 
-  const reviews = await features.query();
+  const reviews = await features.query;
 
   res.status(StatusCodes.OK).json(reviews);
 });
