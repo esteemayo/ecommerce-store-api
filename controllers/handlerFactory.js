@@ -21,11 +21,14 @@ const getAll = (Model) =>
     res.status(StatusCodes.OK).json(docs);
   });
 
-const getOneById = (Model) =>
+const getOneById = (Model, popOptions) =>
   asyncHandler(async (req, res, next) => {
     const { id: docId } = req.params;
 
-    const doc = await Model.findById(docId);
+    let query = Model.findById(docId);
+    if (popOptions) query = query.populate(popOptions);
+
+    const doc = await query;
 
     if (!doc) {
       return next(
