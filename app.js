@@ -44,6 +44,8 @@ app.use(cookieParser());
 
 app.use(mongoSanitize());
 
+app.use(xss());
+
 app.use('/api/v1/auth', authRoute);
 app.use('/api/v1/users', userRoute);
 app.use('/api/v1/categories', categoryRoute);
