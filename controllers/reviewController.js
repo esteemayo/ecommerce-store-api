@@ -17,8 +17,21 @@ const getReviews = asyncHandler(async (req, res, next) => {
   res.status(StatusCodes.OK).json(reviews);
 });
 
+const getReview = asyncHandler(async (req, res, next) => { });
+
+const createReview = asyncHandler(async (req, res, next) => { });
+
+const updateReview = asyncHandler(async (req, res, next) => { });
+
+const deleteReview = asyncHandler(async (req, res, next) => { });
+
+
 const reviewController = {
   getReviews,
+  getReview,
+  createReview,
+  updateReview,
+  deleteReview,
 };
 
 export default reviewController;
