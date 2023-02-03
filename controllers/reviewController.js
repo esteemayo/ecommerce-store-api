@@ -73,7 +73,32 @@ const updateReview = asyncHandler(async (req, res, next) => {
   );
 });
 
-const deleteReview = asyncHandler(async (req, res, next) => { });
+const deleteReview = asyncHandler(async (req, res, next) => {
+  const { id: reviewId } = req.params;
+
+  const review = await Review.findById(reviewId);
+
+  if (!review) {
+    return next(
+      new NotFoundError(`There is no review found with the given ID ↔ ${reviewId}`)
+    );
+  }
+
+  if (
+    String(review.user._id) === req.user.id ||
+    req.user.role === 'admin'
+  ) {
+    await review.remove();
+
+    return res.status(StatusCodes.NO_CONTENT).json({
+      review: null,
+    });
+  }
+
+  return next(
+    new ForbiddenError('Access denied! You do not have permission to perform this operation')
+  );
+});
 
 
 const reviewController = {
