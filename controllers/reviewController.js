@@ -41,7 +41,37 @@ const createReview = asyncHandler(async (req, res, next) => {
   res.status(StatusCodes.CREATED).json(review);
 });
 
-const updateReview = asyncHandler(async (req, res, next) => { });
+const updateReview = asyncHandler(async (req, res, next) => {
+  const { id: reviewId } = req.params;
+
+  const review = await Review.findById(reviewId);
+
+  if (!review) {
+    return next(
+      new NotFoundError(`There is no review found with the given ID ↔ ${reviewId}`)
+    );
+  }
+
+  if (
+    String(review.user._id) === req.user.id ||
+    req.user.role === 'admin'
+  ) {
+    const updatedReview = await Review.findByIdAndUpdate(
+      reviewId,
+      { $set: { ...req.body } },
+      {
+        new: true,
+        runValidators: true,
+      },
+    );
+
+    return res.status(StatusCodes.OK).json(updatedReview);
+  }
+
+  return next(
+    new ForbiddenError('Access denied! You do not have permission to perform this operation')
+  );
+});
 
 const deleteReview = asyncHandler(async (req, res, next) => { });
 
