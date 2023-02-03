@@ -7,6 +7,7 @@ import helmet from 'helmet';
 import rateLimit from 'express-rate-limit';
 import xss from 'xss-clean';
 import mongoSanitize from 'express-mongo-sanitize';
+import hpp from 'hpp';
 import 'colors';
 
 import authRoute from './routes/auth.js';
