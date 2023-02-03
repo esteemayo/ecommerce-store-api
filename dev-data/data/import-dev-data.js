@@ -19,7 +19,9 @@ const __dirname = path.dirname(__filename);
 
 connectDB();
 
-const products = JSON.parse(fs.readFileSync(`${__dirname}/products.json`, 'utf-8'));
+const products = JSON.parse(
+  fs.readFileSync(`${__dirname}/products.json`, 'utf-8')
+);
 const users = JSON.parse(fs.readFileSync(`${__dirname}/users.json`, 'utf-8'));
 const categories = JSON.parse(
   fs.readFileSync(`${__dirname}/categories.json`, 'utf-8')
