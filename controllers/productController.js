@@ -56,6 +56,8 @@ const getProductByTags = asyncHandler(async (req, res, next) => {
   res.status(StatusCodes.OK).json(products);
 });
 
+const getCountByCategory = asyncHandler(async (req, res, next) => { });
+
 const searchProducts = asyncHandler(async (req, res, next) => {
   const { query } = req.query;
 
@@ -142,6 +144,7 @@ const deleteProduct = asyncHandler(async (req, res, next) => {
 const productController = {
   getProducts,
   getProductByTags,
+  getCountByCategory,
   searchProducts,
   getProductById,
   getProductBySlug,
