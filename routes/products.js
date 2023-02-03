@@ -11,6 +11,8 @@ router.use('/:productId/reviews', reviewRouter);
 
 router.get('/tags', productController.getProductByTags);
 
+router.get('/count-by-category', productController.getCountByCategory);
+
 router.get('/search', productController.searchProducts);
 
 router.get('/details/:slug', productController.getProductBySlug);
