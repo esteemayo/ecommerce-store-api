@@ -8,7 +8,10 @@ import ForbiddenError from '../errors/forbidden.js';
 import NotFoundError from '../errors/notFound.js';
 
 const getReviews = asyncHandler(async (req, res, next) => {
-  const features = new APIFeatures(Review.find(), req.query)
+  let filter = {};
+  if (req.params.productId) filter = { product: req.params.productId };
+
+  const features = new APIFeatures(Review.find(filter), req.query)
     .filter()
     .sort()
     .limitFields()
