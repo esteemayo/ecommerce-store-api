@@ -78,6 +78,12 @@ const productSchema = new Schema(
   }
 );
 
+productSchema.virtual('reviews', {
+  ref: 'Review',
+  foreignField: 'product',
+  localField: '_id',
+});
+
 productSchema.pre('save', async function (next) {
   if (!this.isModified('name')) return next();
   this.slug = slugify(this.name, { lower: true });
