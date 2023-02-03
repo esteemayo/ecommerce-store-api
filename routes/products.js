@@ -1,6 +1,7 @@
 /* eslint-disable */
 import express from 'express';
 
+import reviewRouter from './reviews.js';
 import authMiddleware from '../middlewares/authMiddleware.js';
 import productController from '../controllers/productController.js';
 
