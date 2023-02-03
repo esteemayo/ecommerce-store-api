@@ -21,7 +21,9 @@ connectDB();
 
 const products = JSON.parse(fs.readFileSync(`${__dirname}/products.json`, 'utf-8'));
 const users = JSON.parse(fs.readFileSync(`${__dirname}/users.json`, 'utf-8'));
-const categories = JSON.parse(fs.readFileSync(`${__dirname}/categories.json`, 'utf-8'));
+const categories = JSON.parse(
+  fs.readFileSync(`${__dirname}/categories.json`, 'utf-8')
+);
 const orders = JSON.parse(fs.readFileSync(`${__dirname}/orders.json`, 'utf-8'));
 const reviews = JSON.parse(
   fs.readFileSync(`${__dirname}/reviews.json`, 'utf-8')
