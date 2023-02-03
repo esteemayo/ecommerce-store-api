@@ -17,7 +17,19 @@ const getReviews = asyncHandler(async (req, res, next) => {
   res.status(StatusCodes.OK).json(reviews);
 });
 
-const getReview = asyncHandler(async (req, res, next) => { });
+const getReview = asyncHandler(async (req, res, next) => {
+  const { id: reviewId } = req.params;
+
+  const review = await Review.findById(reviewId);
+
+  if (!review) {
+    return next(
+      new NotFoundError(`There is no review found with the given ID ↔ ${reviewId}`)
+    );
+  }
+
+  res.status(StatusCodes.OK).json(review);
+});
 
 const createReview = asyncHandler(async (req, res, next) => { });
 
