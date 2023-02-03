@@ -16,6 +16,8 @@ import productRoute from './routes/products.js';
 
 const app = express();
 
+app.use(cors());
+
 if (app.get('env') === 'development') {
   app.use(morgan('dev'));
 }
