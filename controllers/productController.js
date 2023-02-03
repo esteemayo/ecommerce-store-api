@@ -56,7 +56,21 @@ const getProductByTags = asyncHandler(async (req, res, next) => {
   res.status(StatusCodes.OK).json(products);
 });
 
-const getCountByCategory = asyncHandler(async (req, res, next) => { });
+const getCountByCategory = asyncHandler(async (req, res, next) => {
+  const shirtCount = await Product.countDocuments({ category: 'shirts' });
+  const gadgetCount = await Product.countDocuments({ category: 'gadgets' });
+  const electronicCount = await Product.countDocuments({ category: 'electronics' });
+  const jeanCount = await Product.countDocuments({ category: 'jeans' });
+  const fruitCount = await Product.countDocuments({ category: 'fruits' });
+
+  res.status(StatusCodes.OK).json([
+    { category: 'shirts', count: shirtCount },
+    { category: 'gadgets', count: gadgetCount },
+    { category: 'electronics', count: electronicCount },
+    { category: 'jeans', count: jeanCount },
+    { category: 'fruits', count: fruitCount },
+  ]);
+});
 
 const searchProducts = asyncHandler(async (req, res, next) => {
   const { query } = req.query;
