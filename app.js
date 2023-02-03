@@ -50,6 +50,8 @@ app.use(hpp());
 
 app.use(xss());
 
+app.use(compression());
+
 app.use('/api/v1/auth', authRoute);
 app.use('/api/v1/users', userRoute);
 app.use('/api/v1/categories', categoryRoute);
