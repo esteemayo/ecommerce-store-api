@@ -11,7 +11,7 @@ router.use(authMiddleware.protect);
 router
   .route('/')
   .get(reviewController.getReviews)
-  .post(reviewController.createReview);
+  .post(authMiddleware.restrictTo('user'), reviewController.createReview);
 
 router
   .route('/:id')
