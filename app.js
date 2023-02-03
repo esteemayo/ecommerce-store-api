@@ -3,6 +3,7 @@ import express from 'express';
 import morgan from 'morgan';
 import cookieParser from 'cookie-parser';
 import cors from 'cors';
+import helmet from 'helmet';
 import 'colors';
 
 import authRoute from './routes/auth.js';
@@ -18,6 +19,8 @@ const app = express();
 
 app.use(cors());
 app.options('*', cors());
+
+app.use(helmet());
 
 if (app.get('env') === 'development') {
   app.use(morgan('dev'));
