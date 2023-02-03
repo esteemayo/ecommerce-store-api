@@ -7,6 +7,8 @@ import productController from '../controllers/productController.js';
 
 const router = express.Router();
 
+router.use('/:productId/reviews', reviewRouter);
+
 router.get('/tags', productController.getProductByTags);
 
 router.get('/search', productController.searchProducts);
