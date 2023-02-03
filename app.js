@@ -19,6 +19,7 @@ import globalErrorHandler from './errors/errorHandler.js';
 import categoryRoute from './routes/categories.js';
 import reviewRoute from './routes/reviews.js';
 import productRoute from './routes/products.js';
+import stripeRoute from './routes/stripe.js';
 
 const app = express();
 
@@ -58,6 +59,7 @@ app.use('/api/v1/categories', categoryRoute);
 app.use('/api/v1/orders', orderRoute);
 app.use('/api/v1/products', productRoute);
 app.use('/api/v1/reviews', reviewRoute);
+app.use('/api/v1/checkout', stripeRoute);
 
 app.all('*', (req, res, next) => {
   next(new NotFoundError(`Can't find ${req.originalUrl} on this server`));
