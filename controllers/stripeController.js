@@ -17,4 +17,8 @@ const payment = asyncHandler(async (req, res, next) => {
   res.status(StatusCodes.OK).json(stripeRes);
 });
 
-export default payment;
+const stripeController = {
+  payment,
+};
+
+export default stripeController;
