@@ -4,6 +4,11 @@ const { model, models, Types, Schema } = mongoose;
 
 const reviewSchema = new Schema(
   {
+    review: {
+      type: String,
+      trim: true,
+      required: [true, 'Review cannot be empty'],
+    },
     rating: {
       type: Number,
       min: [1, 'Rating must not be below 1.0'],
