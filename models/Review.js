@@ -33,6 +33,15 @@ const reviewSchema = new Schema(
 
 reviewSchema.index({ product: 1, user: 1 }, { unique: true });
 
+reviewSchema.pre(/^find/, function (next) {
+  this.populate({
+    path: 'user',
+    select: 'name image',
+  });
+
+  next();
+});
+
 const Review = models.Review || model('Review', reviewSchema);
 
 export default Review;
