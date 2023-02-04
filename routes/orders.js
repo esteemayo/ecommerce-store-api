@@ -8,6 +8,8 @@ const router = express.Router();
 
 router.use(authMiddleware.protect);
 
+router.get('/my-orders', orderController.getUserOrder);
+
 router.get(
   '/income',
   authMiddleware.restrictTo('admin'),
