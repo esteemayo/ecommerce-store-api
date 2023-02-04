@@ -8,7 +8,7 @@ import ForbiddenError from '../errors/forbidden.js';
 import NotFoundError from '../errors/notFound.js';
 
 const getCarts = asyncHandler(async (req, res, next) => {
-  const features = new APIFeatures(Cart.find(), req.query)
+  const features = new APIFeatures(Cart.find({ user: req.user.id }), req.query)
     .filter()
     .sort()
     .limitFields()
