@@ -67,7 +67,29 @@ const updateCart = asyncHandler(async (req, res, next) => {
   );
 });
 
-const deleteCart = asyncHandler(async (req, res, next) => { });
+const deleteCart = asyncHandler(async (req, res, next) => {
+  const { id: cartId } = req.params;
+
+  const cart = await Cart.findById(cartId);
+
+  if (!cart) {
+    return next(
+      new NotFoundError(`There is no cart found with the given ID ↔ ${cartId}`)
+    );
+  }
+
+  if (String(cart.user._id) === req.user.id || req.user.role === 'admin') {
+    await cart.remove();
+
+    return res.status(StatusCodes.NO_CONTENT).json({
+      cart: null,
+    });
+  }
+
+  return next(
+    new ForbiddenError('Access denied! You do not have permission to perform this operation')
+  );
+});
 
 const cartController = {
   getCarts,
