@@ -18,6 +18,12 @@ const getOrders = asyncHandler(async (req, res, next) => {
   res.status(StatusCodes.OK).json(orders);
 });
 
+const getUserOrder = asyncHandler(async (req, res, next) => {
+  const orders = await Order.find({ user: req.user.id });
+
+  res.status(StatusCodes.OK).json(orders);
+});
+
 const getMonthlyIncome = asyncHandler(async (req, res, next) => {
   const date = new Date();
   const lastMonth = new Date(date.setMonth(date.getMonth() - 1));
