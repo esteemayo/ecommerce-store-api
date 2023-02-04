@@ -8,7 +8,11 @@ const router = express.Router();
 
 router.use(authMiddleware.protect);
 
-router.get('/income', authMiddleware.restrictTo('admin'), orderController.getMonthlyIncome);
+router.get(
+  '/income',
+  authMiddleware.restrictTo('admin'),
+  orderController.getMonthlyIncome,
+);
 
 router
   .route('/')
