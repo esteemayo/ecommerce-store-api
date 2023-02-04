@@ -5,7 +5,17 @@ import Cart from '../models/Cart.js';
 import APIFeatures from '../utils/apiFeatures.js';
 import NotFoundError from '../errors/notFound.js';
 
-const getCarts = asyncHandler(async (req, res, next) => { });
+const getCarts = asyncHandler(async (req, res, next) => {
+  const features = new APIFeatures(Cart.find(), req.query)
+    .filter()
+    .sort()
+    .limitFields()
+    .paginate();
+
+  const carts = await features.query;
+
+  res.status(StatusCodes.OK).json(carts);
+});
 
 const getCart = asyncHandler(async (req, res, next) => { });
 
