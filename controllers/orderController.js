@@ -105,6 +105,7 @@ const deleteOrder = asyncHandler(async (req, res, next) => {
 
 const orderController = {
   getOrders,
+  getMonthlyIncome,
   getOrder,
   createOrder,
   updateOrder,
