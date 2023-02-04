@@ -3,6 +3,7 @@ import asyncHandler from 'express-async-handler';
 
 import Cart from '../models/Cart.js';
 import APIFeatures from '../utils/apiFeatures.js';
+import ForbiddenError from '../errors/forbidden.js';
 import NotFoundError from '../errors/notFound.js';
 
 const getCarts = asyncHandler(async (req, res, next) => {
