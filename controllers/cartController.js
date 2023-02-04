@@ -51,7 +51,7 @@ const updateCart = asyncHandler(async (req, res, next) => {
   }
 
   if (
-    String(cart.user._id) === req.user.id ||
+    String(cart.user) === req.user.id ||
     req.user.role === 'admin'
   ) {
     const updatedCart = await Cart.findByIdAndUpdate(
@@ -83,7 +83,7 @@ const deleteCart = asyncHandler(async (req, res, next) => {
   }
 
   if (
-    String(cart.user._id) === req.user.id ||
+    String(cart.user) === req.user.id ||
     req.user.role === 'admin'
   ) {
     await cart.remove();
