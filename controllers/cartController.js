@@ -17,7 +17,19 @@ const getCarts = asyncHandler(async (req, res, next) => {
   res.status(StatusCodes.OK).json(carts);
 });
 
-const getCart = asyncHandler(async (req, res, next) => { });
+const getCart = asyncHandler(async (req, res, next) => {
+  const { id: cartId } = req.params;
+
+  const cart = await Cart.findById(cartId);
+
+  if (!cart) {
+    return next(
+      new NotFoundError(`There is no cart found with the given ID ↔ ${cartId}`)
+    );
+  }
+
+  res.status(StatusCodes.OK).json(cart);
+});
 
 const createCart = asyncHandler(async (req, res, next) => { });
 
