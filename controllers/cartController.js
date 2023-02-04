@@ -78,7 +78,10 @@ const deleteCart = asyncHandler(async (req, res, next) => {
     );
   }
 
-  if (String(cart.user._id) === req.user.id || req.user.role === 'admin') {
+  if (
+    String(cart.user._id) === req.user.id ||
+    req.user.role === 'admin'
+  ) {
     await cart.remove();
 
     return res.status(StatusCodes.NO_CONTENT).json({
