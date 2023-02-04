@@ -31,7 +31,11 @@ const getCart = asyncHandler(async (req, res, next) => {
   res.status(StatusCodes.OK).json(cart);
 });
 
-const createCart = asyncHandler(async (req, res, next) => { });
+const createCart = asyncHandler(async (req, res, next) => {
+  const cart = await Cart.create({ ...req.body });
+
+  res.status(StatusCodes.CREATED).json(cart);
+});
 
 const updateCart = asyncHandler(async (req, res, next) => { });
 
