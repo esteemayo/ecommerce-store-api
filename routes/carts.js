@@ -6,6 +6,8 @@ import cartController from '../controllers/cartController.js';
 
 const router = express.Router();
 
+router.use(authMiddleware.protect);
+
 router
   .route('/')
   .get(cartController.getCarts)
