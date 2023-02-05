@@ -1,9 +1,7 @@
 import bcrypt from 'bcryptjs';
-import mongoose from 'mongoose';
 import crypto from 'crypto';
 import jwt from 'jsonwebtoken';
-
-const { model, models, Schema } = mongoose;
+import mongoose, { Schema } from 'mongoose';
 
 const userSchema = new Schema(
   {
@@ -159,6 +157,6 @@ userSchema.statics.getUserStats = async function () {
   return stats;
 };
 
-const User = models.User || model('User', userSchema);
+const User = mongoose.models.User || mongoose.model('User', userSchema);
 
 export default User;
