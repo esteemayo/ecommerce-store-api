@@ -66,9 +66,11 @@ const getOrder = asyncHandler(async (req, res, next) => {
     );
   }
 
-  if (String(order.user) === req.user.id || req.user.role === 'admin') {
-    res.status(StatusCodes.OK).json(order);
-    return;
+  if (
+    String(order.user) === req.user.id ||
+    req.user.role === 'admin'
+  ) {
+    return res.status(StatusCodes.OK).json(order);
   }
 
   return next(
