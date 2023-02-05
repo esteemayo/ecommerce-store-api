@@ -1,6 +1,6 @@
-import mongoose from 'mongoose';
+import mongoose, { Schema, Types } from 'mongoose';
 
-const { model, models, Schema } = mongoose;
+const { model, models } = mongoose;
 
 const orderSchema = new Schema(
   {
@@ -26,6 +26,11 @@ const orderSchema = new Schema(
       type: Number,
       required: true,
     },
+    user: {
+      type: Types.ObjectId,
+      ref: 'User',
+      required: [true, 'An order must belong to a user'],
+    }
   },
   {
     timestamps: true,
