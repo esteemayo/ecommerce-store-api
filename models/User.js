@@ -152,6 +152,11 @@ userSchema.statics.getUserStats = async function () {
         total: { $sum: 1 },
       },
     },
+    {
+      $sort: {
+        _id: 1,
+      },
+    },
   ]);
 
   return stats;
