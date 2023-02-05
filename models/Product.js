@@ -68,6 +68,10 @@ const productSchema = new Schema(
         message: 'A product must have at least one tag',
       },
     },
+    ratingsQuantity: {
+      type: Number,
+      default: 0,
+    },
   },
   {
     timestamps: true,
