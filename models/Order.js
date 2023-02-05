@@ -1,7 +1,5 @@
 import mongoose, { Schema, Types } from 'mongoose';
 
-const { model, models } = mongoose;
-
 const orderSchema = new Schema(
   {
     customer: {
@@ -37,6 +35,6 @@ const orderSchema = new Schema(
   }
 );
 
-const Order = models.Order || model('Order', orderSchema);
+const Order = mongoose.models.Order || mongoose.model('Order', orderSchema);
 
 export default Order;
