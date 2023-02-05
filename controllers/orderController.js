@@ -50,6 +50,11 @@ const getMonthlyIncome = asyncHandler(async (req, res, next) => {
         total: { $sum: '$sales' },
       },
     },
+    {
+      $sort: {
+        _id: 1,
+      }
+    }
   ]);
 
   res.status(StatusCodes.OK).json(income);
