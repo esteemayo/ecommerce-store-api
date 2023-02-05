@@ -1,6 +1,4 @@
-import mongoose from 'mongoose';
-
-const { model, models, Types, Schema } = mongoose;
+import mongoose, { Schema, Types } from 'mongoose';
 
 const cartSchema = new Schema(
   {
@@ -23,6 +21,6 @@ const cartSchema = new Schema(
   }
 );
 
-const Cart = models.Cart || model('Cart', cartSchema);
+const Cart = mongoose.models.Cart || mongoose.model('Cart', cartSchema);
 
 export default Cart;
