@@ -1,6 +1,4 @@
-import mongoose from 'mongoose';
-
-const { model, models, Types, Schema } = mongoose;
+import mongoose, { Schema, Types } from 'mongoose';
 
 const reviewSchema = new Schema(
   {
@@ -42,6 +40,7 @@ reviewSchema.pre(/^find/, function (next) {
   next();
 });
 
-const Review = models.Review || model('Review', reviewSchema);
+const Review = mongoose.models.Review ||
+  mongoose.model('Review', reviewSchema);
 
 export default Review;
