@@ -1,3 +1,4 @@
+/* eslint-disable  */
 import mongoose, { Schema, Types } from 'mongoose';
 import Product from './Product.js';
 
