@@ -69,6 +69,8 @@ const getOrder = asyncHandler(async (req, res, next) => {
 });
 
 const createOrder = asyncHandler(async (req, res, next) => {
+  if (!req.body.user) req.body.user = req.user.id;
+
   const order = await Order.create({ ...req.body });
 
   res.status(StatusCodes.CREATED).json(order);
