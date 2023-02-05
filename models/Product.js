@@ -76,6 +76,9 @@ const productSchema = new Schema(
   }
 );
 
+productSchema.index({ name: 1 });
+productSchema.index({ slug: -1 });
+
 productSchema.virtual('reviews', {
   ref: 'Review',
   foreignField: 'product',
