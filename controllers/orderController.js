@@ -66,7 +66,14 @@ const getOrder = asyncHandler(async (req, res, next) => {
     );
   }
 
-  res.status(StatusCodes.OK).json(order);
+  if (String(order.user) === req.user.id || req.user.role === 'admin') {
+    res.status(StatusCodes.OK).json(order);
+    return;
+  }
+
+  return next(
+    new ForbiddenError('Access denied! You do not have permission to perform this operation')
+  );
 });
 
 const createOrder = asyncHandler(async (req, res, next) => {
