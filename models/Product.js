@@ -1,7 +1,5 @@
 import slugify from 'slugify';
-import mongoose from 'mongoose';
-
-const { model, models, Schema } = mongoose;
+import mongoose, { Schema } from 'mongoose';
 
 const productSchema = new Schema(
   {
@@ -96,6 +94,7 @@ productSchema.pre('save', async function (next) {
   }
 });
 
-const Product = models.Product || model('Product', productSchema);
+const Product = mongoose.models.Product ||
+  mongoose.model('Product', productSchema);
 
 export default Product;
