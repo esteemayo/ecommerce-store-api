@@ -117,7 +117,7 @@ productSchema.statics.getProductStats = async function () {
     },
     {
       $group: {
-        _id: '$price',
+        _id: '$category',
         numProducts: { $sum: 1 },
         numRating: { $sum: '$ratingsQuantity' },
         avgRating: { $avg: '$ratingsAverage' },
