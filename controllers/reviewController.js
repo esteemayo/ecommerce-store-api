@@ -22,6 +22,12 @@ const getReviews = asyncHandler(async (req, res, next) => {
   res.status(StatusCodes.OK).json(reviews);
 });
 
+const getTopReviews = asyncHandler(async (req, res, next) => {
+  const reviews = await Review.getTopReviews();
+
+  res.status(StatusCodes.OK).json(reviews);
+});
+
 const getReview = asyncHandler(async (req, res, next) => {
   const { id: reviewId } = req.params;
 
