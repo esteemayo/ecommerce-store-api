@@ -85,6 +85,21 @@ reviewSchema.post(/^findOneAnd/, async function (doc, next) {
   next();
 });
 
+reviewSchema.statics.getTopReviews = async function () {
+  const reviews = await this.aggregate([
+    {
+      $match: {
+        rating: { $gt: 4.5 },
+      },
+    },
+    {
+      $sample: { size: 5 },
+    },
+  ]);
+
+  return reviews;
+};
+
 const Review = mongoose.models.Review ||
   mongoose.model('Review', reviewSchema);
 
