@@ -88,9 +88,7 @@ const deleteCart = asyncHandler(async (req, res, next) => {
   ) {
     await cart.remove();
 
-    return res.status(StatusCodes.NO_CONTENT).json({
-      cart: null,
-    });
+    return res.status(StatusCodes.NO_CONTENT).json(null);
   }
 
   return next(
