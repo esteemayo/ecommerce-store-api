@@ -62,8 +62,6 @@ reviewSchema.statics.calcAverageRatings = async function (productId) {
     },
   ]);
 
-  console.log(stats);
-
   if (stats.length > 0) {
     await Product.findByIdAndUpdate(productId, {
       ratingsQuantity: stats[0].nRating,
