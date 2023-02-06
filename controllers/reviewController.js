@@ -100,9 +100,7 @@ const deleteReview = asyncHandler(async (req, res, next) => {
   ) {
     await review.remove();
 
-    return res.status(StatusCodes.NO_CONTENT).json({
-      review: null,
-    });
+    return res.status(StatusCodes.NO_CONTENT).json(null);
   }
 
   return next(
