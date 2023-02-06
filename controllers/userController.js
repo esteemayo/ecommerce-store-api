@@ -95,9 +95,7 @@ const deleteUser = asyncHandler(async (req, res, next) => {
     );
   }
 
-  res.status(StatusCodes.NO_CONTENT).json({
-    user: null,
-  });
+  res.status(StatusCodes.NO_CONTENT).json(null);
 });
 
 const deleteMe = asyncHandler(async (req, res, next) => {
