@@ -63,9 +63,7 @@ const deleteCategory = asyncHandler(async (req, res, next) => {
     );
   }
 
-  res.status(StatusCodes.NO_CONTENT).json({
-    category: null,
-  });
+  res.status(StatusCodes.NO_CONTENT).json(null);
 });
 
 const categoryController = {
