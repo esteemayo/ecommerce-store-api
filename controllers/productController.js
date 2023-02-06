@@ -43,24 +43,7 @@ const getProducts = asyncHandler(async (req, res, next) => {
 });
 
 const getProductStats = asyncHandler(async (req, res, next) => {
-  const stats = await Product.aggregate([
-    {
-      $match: {
-        ratingsAverage: { $gte: 4.5 },
-      },
-    },
-    {
-      $group: {
-        _id: '$price',
-        numProducts: { $sum: 1 },
-        numRating: { $sum: '$ratingsQuantity' },
-        avgRating: { $avg: '$ratingsAverage' },
-        avgPrice: { $avg: '$price' },
-        minPrice: { $min: '$price' },
-        maxPrice: { $max: '$price' },
-      },
-    },
-  ]);
+  const stats = await Product.getProductStats();
 
   res.status(StatusCodes.OK).json(stats);
 });
