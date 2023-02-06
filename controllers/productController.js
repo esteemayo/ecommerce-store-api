@@ -59,13 +59,7 @@ const getProductStats = asyncHandler(async (req, res, next) => {
 const getProductByTags = asyncHandler(async (req, res, next) => {
   const tags = req.query.tags.split(',');
 
-  const features = new APIFeatures(Product.find({ tags: { $in: tags } }), req.query)
-    .filter()
-    .sort()
-    .limitFields()
-    .paginate();
-
-  const products = await features.query;
+  const products = await Product.find({ tags: { $in: tags } });
 
   res.status(StatusCodes.OK).json(products);
 });
