@@ -9,7 +9,12 @@ const router = express.Router();
 
 router.use('/:productId/reviews', reviewRouter);
 
-router.get('/stats', productController.getProductStats);
+router.get(
+  '/stats',
+  authMiddleware.protect,
+  authMiddleware.restrictTo('admin'),
+  productController.getProductStats,
+);
 
 router.get('/tags', productController.getProductByTags);
 
