@@ -45,10 +45,6 @@ reviewSchema.pre(/^find/, function (next) {
 });
 
 reviewSchema.statics.calcAverageRatings = async function (productId) {
-  console.log('====================================');
-  console.log(productId);
-  console.log('====================================');
-
   const stats = await this.aggregate([
     {
       $match: { product: productId },
