@@ -6,6 +6,8 @@ import reviewController from '../controllers/reviewController.js';
 
 const router = express.Router({ mergeParams: true });
 
+router.get('/top', reviewController.getTopReviews);
+
 router.use(authMiddleware.protect);
 
 router
