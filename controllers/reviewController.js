@@ -113,6 +113,7 @@ const deleteReview = asyncHandler(async (req, res, next) => {
 
 const reviewController = {
   getReviews,
+  getTopReviews,
   getReview,
   createReview,
   updateReview,
