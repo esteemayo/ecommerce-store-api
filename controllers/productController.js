@@ -172,9 +172,7 @@ const deleteProduct = asyncHandler(async (req, res, next) => {
     );
   }
 
-  res.status(StatusCodes.NO_CONTENT).json({
-    product: null,
-  });
+  res.status(StatusCodes.NO_CONTENT).json(null);
 });
 
 const productController = {
