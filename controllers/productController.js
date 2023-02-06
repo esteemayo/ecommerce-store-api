@@ -38,6 +38,8 @@ const getProducts = asyncHandler(async (req, res, next) => {
   const counts = await Product.countDocuments();
   query = query.skip(skip).limit(limit);
 
+  const numberOfPages = Math.ceil(total / limit);
+
   const products = await query;
 
   res.status(StatusCodes.OK).json(products);
