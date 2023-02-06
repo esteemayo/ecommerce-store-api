@@ -123,9 +123,7 @@ const deleteOrder = asyncHandler(async (req, res, next) => {
     );
   }
 
-  res.status(StatusCodes.NO_CONTENT).json({
-    order: null,
-  });
+  res.status(StatusCodes.NO_CONTENT).json(null);
 });
 
 const orderController = {
