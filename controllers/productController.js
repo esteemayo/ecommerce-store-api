@@ -42,7 +42,12 @@ const getProducts = asyncHandler(async (req, res, next) => {
 
   const products = await query;
 
-  res.status(StatusCodes.OK).json(products);
+  res.status(StatusCodes.OK).json({
+    products,
+    page,
+    counts,
+    numberOfPages
+  });
 });
 
 const getProductStats = asyncHandler(async (req, res, next) => {
