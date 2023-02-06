@@ -108,6 +108,29 @@ productSchema.pre('save', async function (next) {
   }
 });
 
+productSchema.statics.getProductStats = async function () {
+  const stats = await this.aggregate([
+    {
+      $match: {
+        ratingsAverage: { $gte: 4.5 },
+      },
+    },
+    {
+      $group: {
+        _id: '$price',
+        numProducts: { $sum: 1 },
+        numRating: { $sum: '$ratingsQuantity' },
+        avgRating: { $avg: '$ratingsAverage' },
+        avgPrice: { $avg: '$price' },
+        minPrice: { $min: '$price' },
+        maxPrice: { $max: '$price' },
+      },
+    },
+  ]);
+
+  return stats;
+};
+
 const Product = mongoose.models.Product ||
   mongoose.model('Product', productSchema);
 
