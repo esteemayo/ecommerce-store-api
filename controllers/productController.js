@@ -59,7 +59,9 @@ const getProductStats = asyncHandler(async (req, res, next) => {
 const getProductByTags = asyncHandler(async (req, res, next) => {
   const tags = req.query.tags.split(',');
 
-  const products = await Product.find({ tags: { $in: tags } });
+  const products = await Product
+    .find({ tags: { $in: tags } })
+    .sort('-_id');
 
   res.status(StatusCodes.OK).json(products);
 });
