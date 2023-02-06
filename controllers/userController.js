@@ -101,9 +101,7 @@ const deleteUser = asyncHandler(async (req, res, next) => {
 const deleteMe = asyncHandler(async (req, res, next) => {
   await User.findByIdAndUpdate(req.user.id, { active: false });
 
-  res.status(StatusCodes.NO_CONTENT).json({
-    user: null,
-  });
+  res.status(StatusCodes.NO_CONTENT).json(null);
 });
 
 const createUser = (req, res, next) => {
