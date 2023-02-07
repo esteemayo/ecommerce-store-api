@@ -23,6 +23,8 @@ import productRoute from './routes/products.js';
 import cartRoute from './routes/carts.js';
 import stripeRoute from './routes/stripe.js';
 
+dotenv.config({ path: './config.env' });
+
 const app = express();
 
 app.use(cors());
