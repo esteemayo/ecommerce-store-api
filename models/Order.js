@@ -28,7 +28,7 @@ const orderSchema = new Schema(
       type: Types.ObjectId,
       ref: 'User',
       required: [true, 'An order must belong to a user'],
-    }
+    },
   },
   {
     timestamps: true,
