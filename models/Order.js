@@ -62,7 +62,7 @@ orderSchema.statics.getMonthlyIncome = async function () {
       $sort: {
         _id: 1,
       }
-    }
+    },
   ]);
 
   return income;
