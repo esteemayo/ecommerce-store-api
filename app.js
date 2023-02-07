@@ -32,6 +32,10 @@ app.options('*', cors());
 
 app.use(helmet());
 
+if (!process.env.JWT_SECRET) {
+  process.exit(1);
+}
+
 if (app.get('env') === 'development') {
   app.use(morgan('dev'));
 }
