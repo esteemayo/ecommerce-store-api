@@ -35,6 +35,39 @@ const orderSchema = new Schema(
   }
 );
 
+orderSchema.statics.getMonthlyIncome = async function () {
+  const date = new Date();
+  const lastMonth = new Date(date.setMonth(date.getMonth() - 1));
+  const prevMonth = new Date(date.setMonth(lastMonth.getTime() - 1));
+
+  const income = await this.aggregate([
+    {
+      $match: {
+        createdAt: { $gte: prevMonth },
+      },
+    },
+    {
+      $project: {
+        month: { $month: '$createdAt' },
+        sales: '$total',
+      },
+    },
+    {
+      $group: {
+        _id: '$month',
+        total: { $sum: '$sales' },
+      },
+    },
+    {
+      $sort: {
+        _id: 1,
+      }
+    }
+  ]);
+
+  return income;
+};
+
 const Order = mongoose.models.Order || mongoose.model('Order', orderSchema);
 
 export default Order;
