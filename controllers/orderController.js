@@ -28,34 +28,7 @@ const getUserOrder = asyncHandler(async (req, res, next) => {
 });
 
 const getMonthlyIncome = asyncHandler(async (req, res, next) => {
-  const date = new Date();
-  const lastMonth = new Date(date.setMonth(date.getMonth() - 1));
-  const prevMonth = new Date(date.setMonth(lastMonth.getTime() - 1));
-
-  const income = await Order.aggregate([
-    {
-      $match: {
-        createdAt: { $gte: prevMonth },
-      },
-    },
-    {
-      $project: {
-        month: { $month: '$createdAt' },
-        sales: '$total',
-      },
-    },
-    {
-      $group: {
-        _id: '$month',
-        total: { $sum: '$sales' },
-      },
-    },
-    {
-      $sort: {
-        _id: 1,
-      }
-    }
-  ]);
+  const income = await Order.getMonthlyIncome();
 
   res.status(StatusCodes.OK).json(income);
 });
