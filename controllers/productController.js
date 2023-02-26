@@ -7,14 +7,48 @@ import Product from '../models/Product.js';
 import NotFoundError from '../errors/notFound.js';
 
 const getProducts = asyncHandler(async (req, res, next) => {
-  const queryObj = { ...req.query };
-  const excludedFields = ['page', 'limit', 'sort', 'fields'];
-  excludedFields.forEach((item) => delete queryObj[item]);
+  const queryObj = {};
+  // const queryObj = { ...req.query };
+  // const excludedFields = ['page', 'limit', 'sort', 'fields', 'numericFilter'];
+  // excludedFields.forEach((item) => delete queryObj[item]);
 
-  let queryStr = JSON.stringify(queryObj);
-  queryStr = queryStr.replace(/\b(gte|gt|lte|lt)\b/g, (match) => `$${match}`);
+  // let queryStr = JSON.stringify(queryObj);
+  // queryStr = queryStr.replace(/\b(gte|gt|lte|lt)\b/g, (match) => `$${match}`);
 
-  let query = Product.find(JSON.parse(queryStr));
+  // let query = Product.find(JSON.parse(queryStr));
+  // let query = Product.find(queryObj);
+
+  if (req.query.name) {
+    queryObj.name = { $regex: req.query.name, $options: 'i' };
+  }
+
+  if (req.query.featured) {
+    queryObj.featured = req.query.featured === 'true' ? true : false;
+  }
+
+  if (req.query.numericFilter) {
+    const operatorMap = {
+      '>': '$gt',
+      '>=': '$gte',
+      '=': '$eq',
+      '<': '$lt',
+      '<=': '$lte',
+    };
+
+    const regEx = /\b(>|>=|=|<|<=)\b/g;
+    let filters = req.query.numericFilter.replace(regEx, (match) => `-${operatorMap[match]}-`);
+
+    const options = ['price', 'priceDiscount', 'numberInStock', 'ratingsQuantity', 'ratingsAverage'];
+
+    filters = filters.split(',').forEach((item) => {
+      const [field, operator, value] = item.split('-');
+      if (options.includes(field)) {
+        queryObj[field] = { [operator]: Number(value) };
+      }
+    });
+  }
+
+  let query = Product.find(queryObj);
 
   if (req.query.sort) {
     const sortBy = req.query.sort.split(',').join(' ');
