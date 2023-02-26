@@ -45,6 +45,7 @@ const getProducts = asyncHandler(async (req, res, next) => {
 
     filters = filters.split(',').forEach((item) => {
       const [field, operator, value] = item.split('-');
+
       if (options.includes(field)) {
         queryObj[field] = { [operator]: Number(value) };
       }
