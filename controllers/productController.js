@@ -36,7 +36,10 @@ const getProducts = asyncHandler(async (req, res, next) => {
     };
 
     const regEx = /\b(>|>=|=|<|<=)\b/g;
-    let filters = req.query.numericFilter.replace(regEx, (match) => `-${operatorMap[match]}-`);
+    let filters = req.query.numericFilter.replace(
+      regEx,
+      (match) => `-${operatorMap[match]}-`
+    );
 
     const options = ['price', 'priceDiscount', 'numberInStock', 'ratingsQuantity', 'ratingsAverage'];
 
