@@ -62,4 +62,4 @@ const errorHandlerMiddleware = (err, req, res, next) => {
   }
 };
 
-export default globalErrorHandler;
+export default errorHandlerMiddleware;
