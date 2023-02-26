@@ -133,8 +133,7 @@ userSchema.methods.createPasswordResetToken = function () {
 
 userSchema.statics.getUserStats = async function () {
   const date = new Date();
-  const lastMonth = new Date(date.setMonth(date.getMonth() - 1));
-  const prevMonth = new Date(date.setMonth(lastMonth.getMonth() - 1));
+  const lastYear = new Date(date.setFullYear(date.getFullYear() - 1));
 
   const stats = await this.aggregate([
     {
