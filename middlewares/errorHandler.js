@@ -41,7 +41,7 @@ const sendErrorProd = (err, res) =>
     message: err.message,
   });
 
-const globalErrorHandler = (err, req, res, next) => {
+const errorHandlerMiddleware = (err, req, res, next) => {
   const customError = {
     stack: err.stack,
     status: err.status,
