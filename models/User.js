@@ -138,7 +138,7 @@ userSchema.statics.getUserStats = async function () {
   const stats = await this.aggregate([
     {
       $match: {
-        createdAt: { $gte: prevMonth },
+        createdAt: { $gte: lastYear },
       },
     },
     {
