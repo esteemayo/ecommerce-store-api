@@ -14,8 +14,8 @@ const getProducts = asyncHandler(async (req, res, next) => {
     queryObj.name = { $regex: name, $options: 'i' };
   }
 
-  if (req.query.featured) {
-    queryObj.featured = req.query.featured === 'true' ? true : false;
+  if (featured) {
+    queryObj.featured = featured === 'true' ? true : false;
   }
 
   if (req.query.numericFilter) {
