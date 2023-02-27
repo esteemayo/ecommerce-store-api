@@ -38,7 +38,7 @@ const getProducts = asyncHandler(async (req, res, next) => {
       'priceDiscount',
       'numberInStock',
       'ratingsQuantity',
-      'ratingsAverage'
+      'ratingsAverage',
     ];
 
     filters = filters.split(',').forEach((item) => {
