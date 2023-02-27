@@ -46,8 +46,8 @@ const getProducts = asyncHandler(async (req, res, next) => {
 
   let query = Product.find(queryObj);
 
-  if (req.query.sort) {
-    const sortBy = req.query.sort.split(',').join(' ');
+  if (sort) {
+    const sortBy = sort.split(',').join(' ');
     query = query.sort(sortBy);
   } else {
     query = query.sort('-createdAt');
