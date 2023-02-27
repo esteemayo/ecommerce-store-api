@@ -53,7 +53,7 @@ const getProducts = asyncHandler(async (req, res, next) => {
     query = query.sort('-createdAt');
   }
 
-  if (req.query.fields) {
+  if (fields) {
     const fields = req.query.fields.split(',').join(' ');
     query = query.select(fields);
   } else {
