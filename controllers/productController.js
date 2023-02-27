@@ -14,6 +14,10 @@ const getProducts = asyncHandler(async (req, res, next) => {
     queryObj.name = { $regex: name, $options: 'i' };
   }
 
+  if (tags) {
+    queryObj.tags = { tags: { $in: [tags] } };
+  }
+
   if (category) {
     queryObj.category = category;
   }
