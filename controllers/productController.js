@@ -33,7 +33,13 @@ const getProducts = asyncHandler(async (req, res, next) => {
       (match) => `-${operatorMap[match]}-`
     );
 
-    const options = ['price', 'priceDiscount', 'numberInStock', 'ratingsQuantity', 'ratingsAverage'];
+    const options = [
+      'price',
+      'priceDiscount',
+      'numberInStock',
+      'ratingsQuantity',
+      'ratingsAverage'
+    ];
 
     filters = filters.split(',').forEach((item) => {
       const [field, operator, value] = item.split('-');
