@@ -28,7 +28,7 @@ const getProducts = asyncHandler(async (req, res, next) => {
     };
 
     const regEx = /\b(>|>=|=|<|<=)\b/g;
-    let filters = req.query.numericFilter.replace(
+    let filters = numericFilter.replace(
       regEx,
       (match) => `-${operatorMap[match]}-`
     );
