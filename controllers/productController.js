@@ -8,15 +8,6 @@ import NotFoundError from '../errors/notFound.js';
 
 const getProducts = asyncHandler(async (req, res, next) => {
   const queryObj = {};
-  // const queryObj = { ...req.query };
-  // const excludedFields = ['page', 'limit', 'sort', 'fields', 'numericFilter'];
-  // excludedFields.forEach((item) => delete queryObj[item]);
-
-  // let queryStr = JSON.stringify(queryObj);
-  // queryStr = queryStr.replace(/\b(gte|gt|lte|lt)\b/g, (match) => `$${match}`);
-
-  // let query = Product.find(JSON.parse(queryStr));
-  // let query = Product.find(queryObj);
 
   if (req.query.name) {
     queryObj.name = { $regex: req.query.name, $options: 'i' };
