@@ -8,6 +8,7 @@ import NotFoundError from '../errors/notFound.js';
 
 const getProducts = asyncHandler(async (req, res, next) => {
   const queryObj = {};
+  const { name, featured, sort, fields, numericFilter } = req.query;
 
   if (req.query.name) {
     queryObj.name = { $regex: req.query.name, $options: 'i' };
