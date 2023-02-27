@@ -18,7 +18,7 @@ const getProducts = asyncHandler(async (req, res, next) => {
     queryObj.featured = featured === 'true' ? true : false;
   }
 
-  if (req.query.numericFilter) {
+  if (numericFilter) {
     const operatorMap = {
       '>': '$gt',
       '>=': '$gte',
