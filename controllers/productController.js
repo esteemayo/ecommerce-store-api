@@ -54,7 +54,7 @@ const getProducts = asyncHandler(async (req, res, next) => {
   }
 
   if (fields) {
-    const fields = req.query.fields.split(',').join(' ');
+    const fields = fields.split(',').join(' ');
     query = query.select(fields);
   } else {
     query = query.select('-__v');
