@@ -2,6 +2,7 @@
 import _ from 'lodash';
 import { StatusCodes } from 'http-status-codes';
 import asyncHandler from 'express-async-handler';
+import { StatusCodes } from 'http-status-codes';
 
 import User from '../models/User.js';
 import BadRequestError from '../errors/badRequest.js';
