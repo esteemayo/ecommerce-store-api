@@ -2,6 +2,7 @@
 import slugify from 'slugify';
 import { StatusCodes } from 'http-status-codes';
 import asyncHandler from 'express-async-handler';
+import { StatusCodes } from 'http-status-codes';
 
 import Product from '../models/Product.js';
 import NotFoundError from '../errors/notFound.js';
