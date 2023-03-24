@@ -124,7 +124,7 @@ const getCountByCategory = asyncHandler(async (req, res, next) => {
       gadgetCountPromise,
       electronicCountPromise,
       jeanCountPromise,
-      fruitCountPromise
+      fruitCountPromise,
     ]
   );
 
