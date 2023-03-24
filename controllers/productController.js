@@ -117,7 +117,7 @@ const getCountByCategory = asyncHandler(async (req, res, next) => {
     gadgetCount,
     electronicCount,
     jeanCount,
-    fruitCount
+    fruitCount,
   ] = await Promise.all(
     [
       shirtCountPromise,
