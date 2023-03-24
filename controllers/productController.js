@@ -49,7 +49,7 @@ const getProducts = asyncHandler(async (req, res, next) => {
       const [field, operator, value] = item.split('-');
 
       if (options.includes(field)) {
-        queryObj[field] = { [operator]: Number(value) };
+        queryObj[field] = { [operator]: +value };
       }
     });
   }
