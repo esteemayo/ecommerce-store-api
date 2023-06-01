@@ -37,7 +37,7 @@ const userSchema = new Schema(
     },
     confirmPassword: {
       type: String,
-      required: [true, 'Please confirm your password'],
+      // required: [true, 'Please confirm your password'],
       minlength: 8,
       maxlength: 1024,
       validate: {
