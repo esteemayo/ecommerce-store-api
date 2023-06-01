@@ -6,6 +6,7 @@ import { StatusCodes } from 'http-status-codes';
 import User from '../models/User.js';
 import BadRequestError from '../errors/badRequest.js';
 import NotFoundError from '../errors/notFound.js';
+import UnauthenticatedError from '../errors/unauthenticated.js';
 import createSendToken from '../utils/createSendToken.js';
 
 const getUsers = asyncHandler(async (req, res, next) => {
