@@ -22,6 +22,8 @@ router.get(
 
 router.patch('/update-me', userController.updateMe);
 
+router.patch('/update-email', userController.updateEmail);
+
 router.delete('/delete-me', userController.deleteMe);
 
 router
