@@ -106,7 +106,7 @@ const orderController = {
   getOrder,
   createOrder,
   updateOrder,
-  deleteOrder
+  deleteOrder,
 };
 
 export default orderController;
