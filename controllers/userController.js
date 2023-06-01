@@ -94,7 +94,7 @@ const updateEmail = asyncHandler(async (req, res, next) => {
 
   const user = await User.findById(req.user.id).select('+password');
   if (!(await user.comparePassword(password))) {
-    return new UnauthenticatedError('Your password is incorrect');
+    return next(new UnauthenticatedError('Your password is incorrect'));
   }
 
   user.email = email;
