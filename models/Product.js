@@ -100,6 +100,11 @@ productSchema.virtual('reviews', {
   localField: '_id',
 });
 
+productSchema.pre('save', function (next) {
+  this.price -= this.discount;
+  next();
+});
+
 productSchema.pre('save', async function (next) {
   if (!this.isModified('name')) return next();
   this.slug = slugify(this.name, { lower: true });
