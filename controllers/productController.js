@@ -110,7 +110,7 @@ const getCountByCategory = asyncHandler(async (req, res, next) => {
   const gadgetCountPromise = Product.countDocuments({ category: 'gadgets' });
   const electronicCountPromise = Product.countDocuments({ category: 'electronics' });
   const jeanCountPromise = Product.countDocuments({ category: 'jeans' });
-  const fruitCountPromise = Product.countDocuments({ category: 'fruits' });
+  const fruitCountPromise = Product.countDocuments({ category: 'snickers' });
 
   const [
     shirtCount,
@@ -133,7 +133,7 @@ const getCountByCategory = asyncHandler(async (req, res, next) => {
     { category: 'gadgets', count: gadgetCount },
     { category: 'electronics', count: electronicCount },
     { category: 'jeans', count: jeanCount },
-    { category: 'fruits', count: fruitCount },
+    { category: 'snickers', count: fruitCount },
   ]);
 });
 
