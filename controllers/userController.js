@@ -85,6 +85,24 @@ const updateMe = asyncHandler(async (req, res, next) => {
   createSendToken(updatedUser, StatusCodes.OK, req, res);
 });
 
+const updateEmail = asyncHandler(async (req, res, next) => {
+  const { email, password } = req.body;
+
+  if (!email || !password) {
+    return new BadRequestError('Please provide email and password');
+  }
+
+  const user = await User.findById(req.user.id).select('+password');
+  if (!(await user.comparePassword(password))) {
+    return new UnauthenticatedError('Your password is incorrect');
+  }
+
+  user.email = email;
+  await user.save();
+
+  createSendToken(user, StatusCodes.OK, req, res);
+});
+
 const deleteUser = asyncHandler(async (req, res, next) => {
   const { id: userId } = req.params;
 
