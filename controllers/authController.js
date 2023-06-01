@@ -145,6 +145,7 @@ const updatePasword = asyncHandler(async (req, res, next) => {
   const { password, confirmPassword, currentPassword } = req.body;
 
   const user = await User.findById(req.user.id).select('+password');
+
   if (!(await user.comparePassword(currentPassword))) {
     return next(new UnauthenticatedError('Your current password is wrong'));
   }
