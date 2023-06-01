@@ -19,7 +19,7 @@ const getOrders = asyncHandler(async (req, res, next) => {
   res.status(StatusCodes.OK).json(orders);
 });
 
-const getUserOrder = asyncHandler(async (req, res, next) => {
+const getUserOrders = asyncHandler(async (req, res, next) => {
   const { id: userId } = req.user;
 
   const orders = await Order.find({ user: userId });
