@@ -89,7 +89,7 @@ const updateEmail = asyncHandler(async (req, res, next) => {
   const { email, password } = req.body;
 
   if (!email || !password) {
-    return new BadRequestError('Please provide email and password');
+    return next(new BadRequestError('Please provide email and password'));
   }
 
   const user = await User.findById(req.user.id).select('+password');
