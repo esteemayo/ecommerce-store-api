@@ -144,6 +144,7 @@ const userController = {
   getMe,
   createUser,
   updateUser,
+  updateEmail,
   updateMe,
   deleteUser,
   deleteMe,
