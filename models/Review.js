@@ -15,6 +15,10 @@ const reviewSchema = new Schema(
       max: [5, 'Rating must not be above 5.0'],
       required: [true, 'A review must have a rating'],
     },
+    terms: {
+      type: Boolean,
+      default: false,
+    },
     product: {
       type: Types.ObjectId,
       ref: 'Product',
