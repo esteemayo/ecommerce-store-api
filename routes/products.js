@@ -24,6 +24,11 @@ router.get('/search', productController.searchProducts);
 
 router.get('/details/:slug', productController.getProductBySlug);
 
+router.patch('/like/:id',
+  authMiddleware.protect,
+  productController.likeProduct,
+);
+
 router
   .route('/')
   .get(productController.getProducts)
