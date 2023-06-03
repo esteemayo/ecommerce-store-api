@@ -217,7 +217,7 @@ const likeProduct = asyncHandler(async (req, res, next) => {
 
   const likeIndex = product.likes.findIndex((userId) => userId === String(req.user.id));
 
-  if (likeIndex !== 1) {
+  if (likeIndex !== -1) {
     product.likes = product.likes.filter((userId) => userId !== String(req.user.id));
   } else {
     product.likes.push(req.user.id);
