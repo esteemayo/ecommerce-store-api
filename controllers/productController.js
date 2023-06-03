@@ -232,6 +232,7 @@ const productController = {
   getProductBySlug,
   createProduct,
   updateProduct,
+  likeProduct,
   deleteProduct,
 };
 
