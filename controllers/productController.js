@@ -205,7 +205,34 @@ const updateProduct = asyncHandler(async (req, res, next) => {
 });
 
 const likeProduct = asyncHandler(async (req, res, next) => {
+  const { id: productId } = req.params;
 
+  let product = await Product.findById(productId);
+
+  if (!product) {
+    return next(
+      new NotFoundError(`There is no product found with the given ID ↔ ${productId}`)
+    );
+  }
+
+  const likeIndex = product.likes.findIndex((userId) => userId === String(req.user.id));
+
+  if (likeIndex !== 1) {
+    product.likes = product.likes.filter((userId) => userId !== String(req.user.id));
+  } else {
+    product.likes.push(req.user.id);
+  }
+
+  product = await Product.findByIdAndUpdate(
+    productId,
+    { $set: { ...product } },
+    {
+      new: true,
+      runValidators: true,
+    },
+  );
+
+  res.status(StatusCodes.OK).json(product);
 });
 
 const deleteProduct = asyncHandler(async (req, res, next) => {
