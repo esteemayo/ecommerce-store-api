@@ -228,7 +228,6 @@ const likeProduct = asyncHandler(async (req, res, next) => {
     { $set: { ...product } },
     {
       new: true,
-      runValidators: true,
     },
   );
 
