@@ -97,7 +97,7 @@ reviewSchema.statics.getTopReviews = async function () {
       },
     },
     {
-      $sample: { size: 5 },
+      $sample: { size: 10 },
     },
   ]);
 
