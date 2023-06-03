@@ -226,9 +226,7 @@ const likeProduct = asyncHandler(async (req, res, next) => {
   product = await Product.findByIdAndUpdate(
     productId,
     { $set: { ...product } },
-    {
-      new: true,
-    },
+    { new: true },
   );
 
   res.status(StatusCodes.OK).json(product);
