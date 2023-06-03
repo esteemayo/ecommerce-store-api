@@ -204,6 +204,10 @@ const updateProduct = asyncHandler(async (req, res, next) => {
   res.status(StatusCodes.OK).json(updatedProduct);
 });
 
+const likeProduct = asyncHandler(async (req, res, next) => {
+
+});
+
 const deleteProduct = asyncHandler(async (req, res, next) => {
   const { id: productId } = req.params;
 
