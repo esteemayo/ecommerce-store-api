@@ -153,7 +153,10 @@ const getProductById = asyncHandler(async (req, res, next) => {
   const product = await Product
     .findById(productId)
     .populate('reviews')
-    .populate('category');
+    .populate({
+      path: 'category',
+      select: 'name',
+    });
 
   if (!product) {
     return next(
