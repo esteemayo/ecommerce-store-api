@@ -150,7 +150,10 @@ const searchProducts = asyncHandler(async (req, res, next) => {
 const getProductById = asyncHandler(async (req, res, next) => {
   const { id: productId } = req.params;
 
-  const product = await Product.findById(productId).populate('reviews').populate('category');
+  const product = await Product
+    .findById(productId)
+    .populate('reviews')
+    .populate('category');
 
   if (!product) {
     return next(
