@@ -23,6 +23,15 @@ const categorySchema = new Schema(
   }
 );
 
+categorySchema.pre(/^find/, function (next) {
+  this.populate({
+    path: 'parent',
+    select: 'name',
+  });
+
+  next();
+});
+
 const Category = mongoose.models.Category ||
   mongoose.model('Category', categorySchema);
 
