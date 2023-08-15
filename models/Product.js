@@ -1,7 +1,7 @@
 import slugify from 'slugify';
 import mongoose from 'mongoose';
 
-const { Schema } = mongoose;
+const { Schema, Types } = mongoose;
 
 const productSchema = new Schema(
   {
@@ -62,7 +62,8 @@ const productSchema = new Schema(
       default: [],
     },
     category: {
-      type: String,
+      type: Types.ObjectId,
+      ref: 'Category',
       required: [true, 'A product must belong to a category'],
     },
     tags: {
