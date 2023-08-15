@@ -7,7 +7,13 @@ import APIFeatures from '../utils/apiFeatures.js';
 import NotFoundError from '../errors/notFound.js';
 
 const getCategories = asyncHandler(async (req, res, next) => {
-  const categories = await Category.find();
+  const features = new APIFeatures(Category.find(), req.query)
+    .filter()
+    .sort()
+    .limitFields()
+    .paginate();
+
+  const categories = await features.query;
 
   res.status(StatusCodes.OK).json(categories);
 });
