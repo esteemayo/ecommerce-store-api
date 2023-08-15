@@ -3,6 +3,7 @@ import { StatusCodes } from 'http-status-codes';
 import asyncHandler from 'express-async-handler';
 
 import Category from '../models/Category.js';
+import APIFeatures from '../utils/apiFeatures.js';
 import NotFoundError from '../errors/notFound.js';
 
 const getCategories = asyncHandler(async (req, res, next) => {
