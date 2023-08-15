@@ -1,6 +1,8 @@
 /* eslint-disable  */
-import mongoose, { Schema, Types } from 'mongoose';
+import mongoose from 'mongoose';
 import Product from './Product.js';
+
+const { Schema, Types } = mongoose;
 
 const reviewSchema = new Schema(
   {
