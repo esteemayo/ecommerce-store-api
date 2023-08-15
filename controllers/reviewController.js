@@ -3,7 +3,6 @@ import { StatusCodes } from 'http-status-codes';
 import asyncHandler from 'express-async-handler';
 
 import Review from '../models/Review.js';
-import User from '../models/User.js';
 import APIFeatures from '../utils/apiFeatures.js';
 import ForbiddenError from '../errors/forbidden.js';
 import NotFoundError from '../errors/notFound.js';
