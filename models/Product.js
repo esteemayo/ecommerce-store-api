@@ -66,6 +66,9 @@ const productSchema = new Schema(
       ref: 'Category',
       required: [true, 'A product must belong to a category'],
     },
+    properties: {
+      type: Object,
+    },
     tags: {
       type: Array,
       validate: {
