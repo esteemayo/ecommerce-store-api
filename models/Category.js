@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 
-const { Schema } = mongoose;
+const { Schema, Types } = mongoose;
 
 const categorySchema = new Schema(
   {
@@ -12,6 +12,10 @@ const categorySchema = new Schema(
       required: [true, 'A category must have a name'],
       maxlength: [20, 'A category title must have less or equal than 20 characters'],
       minlength: [4, 'A category title must have more or equal than 5 characters'],
+    },
+    parent: {
+      type: Types.ObjectId,
+      ref: 'Category',
     },
   },
   {
