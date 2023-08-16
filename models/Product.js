@@ -1,7 +1,7 @@
 import slugify from 'slugify';
 import mongoose from 'mongoose';
 
-const { Schema, Types } = mongoose;
+const { Schema } = mongoose;
 
 const productSchema = new Schema(
   {
@@ -62,8 +62,7 @@ const productSchema = new Schema(
       default: [],
     },
     category: {
-      type: Types.ObjectId,
-      ref: 'Category',
+      type: String,
       required: [true, 'A product must belong to a category'],
     },
     properties: {
@@ -125,15 +124,6 @@ productSchema.pre('save', async function (next) {
   if (productWithSlug.length) {
     this.slug = `${this.slug}-${productWithSlug.length + 1}`;
   }
-});
-
-productSchema.pre(/^find/, function (next) {
-  this.populate({
-    path: 'category',
-    select: 'name',
-  });
-
-  next();
 });
 
 productSchema.statics.getProductStats = async function () {
