@@ -177,13 +177,7 @@ const getProductById = asyncHandler(async (req, res, next) => {
 const getProductBySlug = asyncHandler(async (req, res, next) => {
   const { slug } = req.params;
 
-  const product = await Product
-    .findOne({ slug })
-    .populate('reviews')
-    .populate({
-      path: 'category',
-      select: 'name',
-    });
+  const product = await Product.findOne({ slug }).populate('reviews')
 
   if (!product) {
     return next(
