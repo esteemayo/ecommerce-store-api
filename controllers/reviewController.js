@@ -25,8 +25,14 @@ const getReviews = asyncHandler(async (req, res, next) => {
 
 const getTopReviews = asyncHandler(async (req, res, next) => {
   const reviews = await Review.getTopReviews();
+  const users = await Promise.all(reviews.map((review) => {
+    return User.findById(review.user);
+  }));
 
-  res.status(StatusCodes.OK).json(reviews);
+  res.status(StatusCodes.OK).json({
+    reviews,
+    users,
+  });
 });
 
 const getReview = asyncHandler(async (req, res, next) => {
