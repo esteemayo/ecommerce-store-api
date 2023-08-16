@@ -127,6 +127,15 @@ productSchema.pre('save', async function (next) {
   }
 });
 
+productSchema.pre(/^find/, function (next) {
+  this.populate({
+    path: 'category',
+    select: 'name',
+  });
+
+  next();
+});
+
 productSchema.statics.getProductStats = async function () {
   const stats = await this.aggregate([
     {
