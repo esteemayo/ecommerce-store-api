@@ -49,6 +49,10 @@ const userSchema = new Schema(
         message: 'Passwords do not match',
       },
     },
+    country: {
+      type: String,
+      required: [true, 'Please tell us your country'],
+    },
     role: {
       type: String,
       enum: {
