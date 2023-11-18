@@ -8,16 +8,12 @@ const router = express.Router();
 
 router.use(authMiddleware.protect);
 
-router.get(
-  '/me',
-  userController.getMe,
-  userController.getUser,
-);
+router.get('/me', userController.getMe, userController.getUser);
 
 router.get(
   '/stats',
   authMiddleware.restrictTo('admin'),
-  userController.getUserStats,
+  userController.getUserStats
 );
 
 router.patch('/update-me', userController.updateMe);
