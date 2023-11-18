@@ -50,24 +50,23 @@ const updateCart = asyncHandler(async (req, res, next) => {
     );
   }
 
-  if (
-    String(cart.user) === req.user.id ||
-    req.user.role === 'admin'
-  ) {
+  if (String(cart.user) === req.user.id || req.user.role === 'admin') {
     const updatedCart = await Cart.findByIdAndUpdate(
       cartId,
       { $set: { ...req.body } },
       {
         new: true,
         runValidators: true,
-      },
+      }
     );
 
     return res.status(StatusCodes.OK).json(updatedCart);
   }
 
   return next(
-    new ForbiddenError('Access denied! You do not have permission to perform this operation')
+    new ForbiddenError(
+      'Access denied! You do not have permission to perform this operation'
+    )
   );
 });
 
@@ -82,17 +81,16 @@ const deleteCart = asyncHandler(async (req, res, next) => {
     );
   }
 
-  if (
-    String(cart.user) === req.user.id ||
-    req.user.role === 'admin'
-  ) {
+  if (String(cart.user) === req.user.id || req.user.role === 'admin') {
     await cart.remove();
 
     return res.status(StatusCodes.NO_CONTENT).json(null);
   }
 
   return next(
-    new ForbiddenError('Access denied! You do not have permission to perform this operation')
+    new ForbiddenError(
+      'Access denied! You do not have permission to perform this operation'
+    )
   );
 });
 
