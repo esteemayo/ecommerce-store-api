@@ -48,7 +48,7 @@ const updateUser = asyncHandler(async (req, res, next) => {
     {
       new: true,
       runValidators: true,
-    },
+    }
   );
 
   if (updatedUser) {
@@ -66,7 +66,8 @@ const updateMe = asyncHandler(async (req, res, next) => {
   if (password || confirmPassword) {
     return next(
       new BadRequestError(
-        `This route is not for password updates. Please use update ${req.protocol
+        `This route is not for password updates. Please use update ${
+          req.protocol
         }://${req.get('host')}/api/v1/auth/update-my-password`
       )
     );
@@ -79,7 +80,7 @@ const updateMe = asyncHandler(async (req, res, next) => {
     {
       new: true,
       runValidators: true,
-    },
+    }
   );
 
   createSendToken(updatedUser, StatusCodes.OK, req, res);
