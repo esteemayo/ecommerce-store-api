@@ -13,7 +13,7 @@ router.get(
   '/stats',
   authMiddleware.protect,
   authMiddleware.restrictTo('admin'),
-  productController.getProductStats,
+  productController.getProductStats
 );
 
 router.get('/tags', productController.getProductByTags);
@@ -24,9 +24,10 @@ router.get('/search', productController.searchProducts);
 
 router.get('/details/:slug', productController.getProductBySlug);
 
-router.patch('/like/:id',
+router.patch(
+  '/like/:id',
   authMiddleware.protect,
-  productController.likeProduct,
+  productController.likeProduct
 );
 
 router
@@ -35,7 +36,7 @@ router
   .post(
     authMiddleware.protect,
     authMiddleware.restrictTo('admin'),
-    productController.createProduct,
+    productController.createProduct
   );
 
 router
@@ -44,12 +45,12 @@ router
   .patch(
     authMiddleware.protect,
     authMiddleware.restrictTo('admin'),
-    productController.updateProduct,
+    productController.updateProduct
   )
   .delete(
     authMiddleware.protect,
     authMiddleware.restrictTo('admin'),
-    productController.deleteProduct,
+    productController.deleteProduct
   );
 
 export default router;
