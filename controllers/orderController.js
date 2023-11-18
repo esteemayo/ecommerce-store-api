@@ -40,19 +40,20 @@ const getOrder = asyncHandler(async (req, res, next) => {
 
   if (!order) {
     return next(
-      new NotFoundError(`There is no order found with the given ID ↔ ${orderId}`)
+      new NotFoundError(
+        `There is no order found with the given ID ↔ ${orderId}`
+      )
     );
   }
 
-  if (
-    String(order.user) === req.user.id ||
-    req.user.role === 'admin'
-  ) {
+  if (String(order.user) === req.user.id || req.user.role === 'admin') {
     return res.status(StatusCodes.OK).json(order);
   }
 
   return next(
-    new ForbiddenError('Access denied! You do not have permission to perform this operation')
+    new ForbiddenError(
+      'Access denied! You do not have permission to perform this operation'
+    )
   );
 });
 
@@ -73,12 +74,14 @@ const updateOrder = asyncHandler(async (req, res, next) => {
     {
       new: true,
       runValidators: true,
-    },
+    }
   );
 
   if (!updatedOrder) {
     return next(
-      new NotFoundError(`There is no order found with the given ID ↔ ${orderId}`)
+      new NotFoundError(
+        `There is no order found with the given ID ↔ ${orderId}`
+      )
     );
   }
 
@@ -92,7 +95,9 @@ const deleteOrder = asyncHandler(async (req, res, next) => {
 
   if (!order) {
     return next(
-      new NotFoundError(`There is no order found with the given ID ↔ ${orderId}`)
+      new NotFoundError(
+        `There is no order found with the given ID ↔ ${orderId}`
+      )
     );
   }
 
