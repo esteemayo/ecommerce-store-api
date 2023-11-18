@@ -50,7 +50,8 @@ const errorHandlerMiddleware = (err, req, res, next) => {
   };
 
   if (err.name === 'CastError') handleCastErrorDB(customError, err);
-  if (err.code && err.code === 11000) handleDuplicateErrorFieldsDB(customError, err);
+  if (err.code && err.code === 11000)
+    handleDuplicateErrorFieldsDB(customError, err);
   if (err.name === 'ValidationError') handleValidationErrorDB(customError, err);
   if (err.name === 'JsonWebTokenError') handleJWTError(customError);
   if (err.name === 'TokenExpiredError') handleJWTExpiredError(customError);
