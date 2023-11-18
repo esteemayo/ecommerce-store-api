@@ -32,7 +32,9 @@ const getOneById = (Model, popOptions) =>
 
     if (!doc) {
       return next(
-        new NotFoundError(`There is no document found with the given ID ↔ ${docId}`)
+        new NotFoundError(
+          `There is no document found with the given ID ↔ ${docId}`
+        )
       );
     }
 
@@ -50,7 +52,9 @@ const getOneBySlug = (Model, popOptions) =>
 
     if (!doc) {
       return next(
-        new NotFoundError(`There is no document found with the given SLUG ↔ ${slug}`)
+        new NotFoundError(
+          `There is no document found with the given SLUG ↔ ${slug}`
+        )
       );
     }
 
@@ -74,12 +78,14 @@ const updateOne = (Model) =>
       {
         new: true,
         runValidators: true,
-      },
+      }
     );
 
     if (!updateddoc) {
       return next(
-        new NotFoundError(`There is no document found with the given ID ↔ ${docId}`)
+        new NotFoundError(
+          `There is no document found with the given ID ↔ ${docId}`
+        )
       );
     }
 
@@ -94,7 +100,9 @@ const deleteOne = (Model) =>
 
     if (!doc) {
       return next(
-        new NotFoundError(`There is no document found with the given ID ↔ ${docId}`)
+        new NotFoundError(
+          `There is no document found with the given ID ↔ ${docId}`
+        )
       );
     }
 
