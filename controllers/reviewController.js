@@ -25,9 +25,11 @@ const getReviews = asyncHandler(async (req, res, next) => {
 
 const getTopReviews = asyncHandler(async (req, res, next) => {
   const reviews = await Review.getTopReviews();
-  const users = await Promise.all(reviews.map((review) => {
-    return User.findById(review.user);
-  }));
+  const users = await Promise.all(
+    reviews.map((review) => {
+      return User.findById(review.user);
+    })
+  );
 
   res.status(StatusCodes.OK).json({
     reviews,
@@ -42,7 +44,9 @@ const getReview = asyncHandler(async (req, res, next) => {
 
   if (!review) {
     return next(
-      new NotFoundError(`There is no review found with the given ID ↔ ${reviewId}`)
+      new NotFoundError(
+        `There is no review found with the given ID ↔ ${reviewId}`
+      )
     );
   }
 
@@ -65,28 +69,29 @@ const updateReview = asyncHandler(async (req, res, next) => {
 
   if (!review) {
     return next(
-      new NotFoundError(`There is no review found with the given ID ↔ ${reviewId}`)
+      new NotFoundError(
+        `There is no review found with the given ID ↔ ${reviewId}`
+      )
     );
   }
 
-  if (
-    String(review.user._id) === req.user.id ||
-    req.user.role === 'admin'
-  ) {
+  if (String(review.user._id) === req.user.id || req.user.role === 'admin') {
     const updatedReview = await Review.findByIdAndUpdate(
       reviewId,
       { $set: { ...req.body } },
       {
         new: true,
         runValidators: true,
-      },
+      }
     );
 
     return res.status(StatusCodes.OK).json(updatedReview);
   }
 
   return next(
-    new ForbiddenError('Access denied! You do not have permission to perform this operation')
+    new ForbiddenError(
+      'Access denied! You do not have permission to perform this operation'
+    )
   );
 });
 
@@ -97,24 +102,24 @@ const deleteReview = asyncHandler(async (req, res, next) => {
 
   if (!review) {
     return next(
-      new NotFoundError(`There is no review found with the given ID ↔ ${reviewId}`)
+      new NotFoundError(
+        `There is no review found with the given ID ↔ ${reviewId}`
+      )
     );
   }
 
-  if (
-    String(review.user._id) === req.user.id ||
-    req.user.role === 'admin'
-  ) {
+  if (String(review.user._id) === req.user.id || req.user.role === 'admin') {
     await review.remove();
 
     return res.status(StatusCodes.NO_CONTENT).json(null);
   }
 
   return next(
-    new ForbiddenError('Access denied! You do not have permission to perform this operation')
+    new ForbiddenError(
+      'Access denied! You do not have permission to perform this operation'
+    )
   );
 });
-
 
 const reviewController = {
   getReviews,
