@@ -13,7 +13,7 @@ router.get('/my-orders', orderController.getUserOrders);
 router.get(
   '/income',
   authMiddleware.restrictTo('admin'),
-  orderController.getMonthlyIncome,
+  orderController.getMonthlyIncome
 );
 
 router
