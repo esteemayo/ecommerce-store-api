@@ -8,14 +8,7 @@ import NotFoundError from '../errors/notFound.js';
 
 const getProducts = asyncHandler(async (req, res, next) => {
   const queryObj = {};
-  const {
-    name,
-    featured,
-    category,
-    sort,
-    fields,
-    numericFilter,
-  } = req.query;
+  const { name, featured, category, sort, fields, numericFilter } = req.query;
 
   if (name) {
     queryObj.name = { $regex: name, $options: 'i' };
@@ -105,9 +98,7 @@ const getProductStats = asyncHandler(async (req, res, next) => {
 const getProductByTags = asyncHandler(async (req, res, next) => {
   const tags = req.query.tags.split(',');
 
-  const products = await Product
-    .find({ tags: { $in: tags } })
-    .sort('-_id');
+  const products = await Product.find({ tags: { $in: tags } }).sort('-_id');
 
   res.status(StatusCodes.OK).json(products);
 });
@@ -115,25 +106,20 @@ const getProductByTags = asyncHandler(async (req, res, next) => {
 const getCountByCategory = asyncHandler(async (req, res, next) => {
   const shirtCountPromise = Product.countDocuments({ category: 'shirts' });
   const gadgetCountPromise = Product.countDocuments({ category: 'gadgets' });
-  const electronicCountPromise = Product.countDocuments({ category: 'electronics' });
+  const electronicCountPromise = Product.countDocuments({
+    category: 'electronics',
+  });
   const jeanCountPromise = Product.countDocuments({ category: 'jeans' });
   const fruitCountPromise = Product.countDocuments({ category: 'snickers' });
 
-  const [
-    shirtCount,
-    gadgetCount,
-    electronicCount,
-    jeanCount,
-    fruitCount,
-  ] = await Promise.all(
-    [
+  const [shirtCount, gadgetCount, electronicCount, jeanCount, fruitCount] =
+    await Promise.all([
       shirtCountPromise,
       gadgetCountPromise,
       electronicCountPromise,
       jeanCountPromise,
       fruitCountPromise,
-    ]
-  );
+    ]);
 
   res.status(StatusCodes.OK).json([
     { category: 'shirts', count: shirtCount },
@@ -161,7 +147,9 @@ const getProductById = asyncHandler(async (req, res, next) => {
 
   if (!product) {
     return next(
-      new NotFoundError(`There is no product found with the given ID ↔ ${productId}`)
+      new NotFoundError(
+        `There is no product found with the given ID ↔ ${productId}`
+      )
     );
   }
 
@@ -171,11 +159,13 @@ const getProductById = asyncHandler(async (req, res, next) => {
 const getProductBySlug = asyncHandler(async (req, res, next) => {
   const { slug } = req.params;
 
-  const product = await Product.findOne({ slug }).populate('reviews')
+  const product = await Product.findOne({ slug }).populate('reviews');
 
   if (!product) {
     return next(
-      new NotFoundError(`There is no product found with the given SLUG ↔ ${slug}`)
+      new NotFoundError(
+        `There is no product found with the given SLUG ↔ ${slug}`
+      )
     );
   }
 
@@ -199,12 +189,14 @@ const updateProduct = asyncHandler(async (req, res, next) => {
     {
       new: true,
       runValidators: true,
-    },
+    }
   );
 
   if (!updatedProduct) {
     return next(
-      new NotFoundError(`There is no product found with the given ID ↔ ${productId}`)
+      new NotFoundError(
+        `There is no product found with the given ID ↔ ${productId}`
+      )
     );
   }
 
@@ -218,14 +210,20 @@ const likeProduct = asyncHandler(async (req, res, next) => {
 
   if (!product) {
     return next(
-      new NotFoundError(`There is no product found with the given ID ↔ ${productId}`)
+      new NotFoundError(
+        `There is no product found with the given ID ↔ ${productId}`
+      )
     );
   }
 
-  const likeIndex = product.likes.findIndex((userId) => userId === String(req.user.id));
+  const likeIndex = product.likes.findIndex(
+    (userId) => userId === String(req.user.id)
+  );
 
   if (likeIndex !== -1) {
-    product.likes = product.likes.filter((userId) => userId !== String(req.user.id));
+    product.likes = product.likes.filter(
+      (userId) => userId !== String(req.user.id)
+    );
   } else {
     product.likes.push(req.user.id);
   }
@@ -233,7 +231,7 @@ const likeProduct = asyncHandler(async (req, res, next) => {
   product = await Product.findByIdAndUpdate(
     productId,
     { $set: { ...product } },
-    { new: true },
+    { new: true }
   );
 
   res.status(StatusCodes.OK).json(product);
@@ -246,7 +244,9 @@ const deleteProduct = asyncHandler(async (req, res, next) => {
 
   if (!product) {
     return next(
-      new NotFoundError(`There is no product found with the given ID ↔ ${productId}`)
+      new NotFoundError(
+        `There is no product found with the given ID ↔ ${productId}`
+      )
     );
   }
 
