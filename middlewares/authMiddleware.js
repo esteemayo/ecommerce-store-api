@@ -12,7 +12,7 @@ const protect = asyncHandler(async (req, res, next) => {
   const authHeader = req.headers.authorization;
 
   if (authHeader && authHeader.startsWith('Bearer')) {
-    token = authHeader.split(' ')[1];
+    token = authHeader.split(' ').pop();
   } else if (req.cookies.access_token) {
     token = req.cookies.access_token;
   }
@@ -50,23 +50,22 @@ const protect = asyncHandler(async (req, res, next) => {
 
 const restrictTo =
   (...roles) =>
-    (req, res, next) => {
-      if (!roles.includes(req.user.role)) {
-        return next(
-          new ForbiddenError('You do not have permission to perform this action')
-        );
-      }
-      next();
-    };
+  (req, res, next) => {
+    if (!roles.includes(req.user.role)) {
+      return next(
+        new ForbiddenError('You do not have permission to perform this action')
+      );
+    }
+    next();
+  };
 
 const verifyUser = (req, res, next) => {
-  if (
-    req.params.id === req.user.id ||
-    req.user.role === 'admin'
-  ) {
+  if (req.params.id === req.user.id || req.user.role === 'admin') {
     return next();
   }
-  return next(new ForbiddenError('You are not allowed to perform this operation'));
+  return next(
+    new ForbiddenError('You are not allowed to perform this operation')
+  );
 };
 
 const authMiddleware = {
