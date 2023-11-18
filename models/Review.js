@@ -106,7 +106,6 @@ reviewSchema.statics.getTopReviews = async function () {
   return reviews;
 };
 
-const Review = mongoose.models.Review ||
-  mongoose.model('Review', reviewSchema);
+const Review = mongoose.models.Review || mongoose.model('Review', reviewSchema);
 
 export default Review;
