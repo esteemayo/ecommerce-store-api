@@ -25,7 +25,9 @@ const getCategory = asyncHandler(async (req, res, next) => {
 
   if (!category) {
     return next(
-      new NotFoundError(`There is no category found with the given ID ↔ ${categoryId}`)
+      new NotFoundError(
+        `There is no category found with the given ID ↔ ${categoryId}`
+      )
     );
   }
 
@@ -47,12 +49,14 @@ const updateCategory = asyncHandler(async (req, res, next) => {
     {
       new: true,
       runValidators: true,
-    },
+    }
   );
 
   if (!updatedCategory) {
     return next(
-      new NotFoundError(`There is no category found with the given ID ↔ ${categoryId}`)
+      new NotFoundError(
+        `There is no category found with the given ID ↔ ${categoryId}`
+      )
     );
   }
 
@@ -66,7 +70,9 @@ const deleteCategory = asyncHandler(async (req, res, next) => {
 
   if (!category) {
     return next(
-      new NotFoundError(`There is no category found with the given ID ↔ ${categoryId}`)
+      new NotFoundError(
+        `There is no category found with the given ID ↔ ${categoryId}`
+      )
     );
   }
 
