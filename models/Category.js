@@ -10,17 +10,21 @@ const categorySchema = new Schema(
       trim: true,
       lowercase: true,
       required: [true, 'A category must have a name'],
-      maxlength: [20, 'A category title must have less or equal than 20 characters'],
-      minlength: [4, 'A category title must have more or equal than 5 characters'],
+      maxlength: [
+        20,
+        'A category title must have less or equal than 20 characters',
+      ],
+      minlength: [
+        4,
+        'A category title must have more or equal than 5 characters',
+      ],
     },
     parent: {
       type: Types.ObjectId,
       ref: 'Category',
     },
     properties: {
-      type: [
-        { type: Object },
-      ],
+      type: [{ type: Object }],
     },
   },
   {
@@ -37,7 +41,7 @@ categorySchema.pre(/^find/, function (next) {
   next();
 });
 
-const Category = mongoose.models.Category ||
-  mongoose.model('Category', categorySchema);
+const Category =
+  mongoose.models.Category || mongoose.model('Category', categorySchema);
 
 export default Category;
