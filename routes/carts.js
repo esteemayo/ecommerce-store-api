@@ -8,10 +8,7 @@ const router = express.Router();
 
 router.use(authMiddleware.protect);
 
-router
-  .route('/')
-  .get(cartController.getCarts)
-  .post(cartController.createCart);
+router.route('/').get(cartController.getCarts).post(cartController.createCart);
 
 router
   .route('/:id')
