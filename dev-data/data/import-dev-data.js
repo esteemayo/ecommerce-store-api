@@ -71,7 +71,7 @@ const removeData = async () => {
   }
 };
 
-if (process.argv.includes(--load)) {
+if (process.argv.includes('--load')) {
   loadData();
 } else {
   removeData();
