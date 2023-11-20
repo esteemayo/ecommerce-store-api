@@ -25,8 +25,7 @@
     "ratingsAverage": 4.5,
     "createdAt": "2023-11-18T17:53:47.762Z",
     "updatedAt": "2023-11-18T17:53:47.762Z",
-    "slug": "sweat-shirt",
-    "__v": 0
+    "slug": "sweat-shirt"
   },
   {
     "_id": "6558fa2bda9ee04cf270b9bf",
@@ -54,8 +53,7 @@
     "ratingsAverage": 4.5,
     "createdAt": "2023-11-18T17:53:47.762Z",
     "updatedAt": "2023-11-18T17:53:47.762Z",
-    "slug": "iphone-14",
-    "__v": 0
+    "slug": "iphone-14"
   },
   {
     "_id": "6558fa2bda9ee04cf270b9c0",
@@ -83,8 +81,7 @@
     "ratingsAverage": 4.5,
     "createdAt": "2023-11-18T17:53:47.762Z",
     "updatedAt": "2023-11-18T17:53:47.762Z",
-    "slug": "samsung-galaxy-note-5",
-    "__v": 0
+    "slug": "samsung-galaxy-note-5"
   },
   {
     "_id": "6558fa2bda9ee04cf270b9c1",
@@ -112,8 +109,7 @@
     "ratingsAverage": 4.5,
     "createdAt": "2023-11-18T17:53:47.762Z",
     "updatedAt": "2023-11-18T17:53:47.762Z",
-    "slug": "dennim-jean",
-    "__v": 0
+    "slug": "dennim-jean"
   },
   {
     "_id": "6558fa2bda9ee04cf270b9c2",
@@ -141,8 +137,7 @@
     "ratingsAverage": 4.5,
     "createdAt": "2023-11-18T17:53:47.762Z",
     "updatedAt": "2023-11-18T17:53:47.762Z",
-    "slug": "agbada",
-    "__v": 0
+    "slug": "agbada"
   },
   {
     "_id": "6558fa2bda9ee04cf270b9c3",
@@ -170,8 +165,7 @@
     "ratingsAverage": 4.5,
     "createdAt": "2023-11-18T17:53:47.762Z",
     "updatedAt": "2023-11-18T17:53:47.762Z",
-    "slug": "adiddas-thick-t-shirt",
-    "__v": 0
+    "slug": "adiddas-thick-t-shirt"
   },
   {
     "_id": "6558fa2bda9ee04cf270b9c4",
@@ -199,8 +193,7 @@
     "ratingsAverage": 4.5,
     "createdAt": "2023-11-18T17:53:47.763Z",
     "updatedAt": "2023-11-18T17:53:47.763Z",
-    "slug": "iphone-13",
-    "__v": 0
+    "slug": "iphone-13"
   },
   {
     "_id": "6558fa2bda9ee04cf270b9c5",
@@ -228,8 +221,7 @@
     "ratingsAverage": 4.5,
     "createdAt": "2023-11-18T17:53:47.763Z",
     "updatedAt": "2023-11-18T17:53:47.763Z",
-    "slug": "samsung-galaxy-13",
-    "__v": 0
+    "slug": "samsung-galaxy-13"
   },
   {
     "_id": "6558fa2bda9ee04cf270b9c6",
@@ -257,8 +249,7 @@
     "ratingsAverage": 4.5,
     "createdAt": "2023-11-18T17:53:47.763Z",
     "updatedAt": "2023-11-18T17:53:47.763Z",
-    "slug": "dennim-rain-jacket",
-    "__v": 0
+    "slug": "dennim-rain-jacket"
   },
   {
     "_id": "6558fa2bda9ee04cf270b9c7",
@@ -286,8 +277,7 @@
     "ratingsAverage": 4.5,
     "createdAt": "2023-11-18T17:53:47.763Z",
     "updatedAt": "2023-11-18T17:53:47.763Z",
-    "slug": "native-wears",
-    "__v": 0
+    "slug": "native-wears"
   },
   {
     "_id": "6558fa2bda9ee04cf270b9c8",
@@ -315,8 +305,7 @@
     "ratingsAverage": 4.5,
     "createdAt": "2023-11-18T17:53:47.763Z",
     "updatedAt": "2023-11-18T17:53:47.763Z",
-    "slug": "nike-t-shirt",
-    "__v": 0
+    "slug": "nike-t-shirt"
   },
   {
     "_id": "6558fa50ca060271ac3151e7",
@@ -344,8 +333,7 @@
     "ratingsAverage": 4.5,
     "createdAt": "2023-11-18T17:54:24.742Z",
     "updatedAt": "2023-11-18T17:54:24.742Z",
-    "slug": "the-stanley-rain-jacket-in-black",
-    "__v": 0
+    "slug": "the-stanley-rain-jacket-in-black"
   },
   {
     "_id": "6558fa50ca060271ac3151e8",
@@ -373,8 +361,7 @@
     "ratingsAverage": 4.5,
     "createdAt": "2023-11-18T17:54:24.743Z",
     "updatedAt": "2023-11-18T17:54:24.743Z",
-    "slug": "sweat-shirt-2",
-    "__v": 0
+    "slug": "sweat-shirt-2"
   },
   {
     "_id": "6558fa50ca060271ac3151e9",
@@ -402,8 +389,7 @@
     "ratingsAverage": 4.5,
     "createdAt": "2023-11-18T17:54:24.743Z",
     "updatedAt": "2023-11-18T17:54:24.743Z",
-    "slug": "iphone-14-2",
-    "__v": 0
+    "slug": "iphone-14-2"
   },
   {
     "_id": "6558fa50ca060271ac3151ea",
@@ -431,8 +417,7 @@
     "ratingsAverage": 4.5,
     "createdAt": "2023-11-18T17:54:24.743Z",
     "updatedAt": "2023-11-18T17:54:24.743Z",
-    "slug": "samsung-galaxy-note-5-2",
-    "__v": 0
+    "slug": "samsung-galaxy-note-5-2"
   },
   {
     "_id": "6558fa50ca060271ac3151eb",
@@ -460,8 +445,7 @@
     "ratingsAverage": 4.5,
     "createdAt": "2023-11-18T17:54:24.743Z",
     "updatedAt": "2023-11-18T17:54:24.743Z",
-    "slug": "dennim-jean-2",
-    "__v": 0
+    "slug": "dennim-jean-2"
   },
   {
     "_id": "6558fa50ca060271ac3151ec",
@@ -489,8 +473,7 @@
     "ratingsAverage": 4.5,
     "createdAt": "2023-11-18T17:54:24.743Z",
     "updatedAt": "2023-11-18T17:54:24.743Z",
-    "slug": "agbada-2",
-    "__v": 0
+    "slug": "agbada-2"
   },
   {
     "_id": "6558fa50ca060271ac3151ed",
@@ -518,8 +501,7 @@
     "ratingsAverage": 4.5,
     "createdAt": "2023-11-18T17:54:24.743Z",
     "updatedAt": "2023-11-18T17:54:24.743Z",
-    "slug": "adiddas-thick-t-shirt-2",
-    "__v": 0
+    "slug": "adiddas-thick-t-shirt-2"
   },
   {
     "_id": "6558fa50ca060271ac3151ee",
@@ -547,8 +529,7 @@
     "ratingsAverage": 4.5,
     "createdAt": "2023-11-18T17:54:24.743Z",
     "updatedAt": "2023-11-18T17:54:24.743Z",
-    "slug": "iphone-13-2",
-    "__v": 0
+    "slug": "iphone-13-2"
   },
   {
     "_id": "6558fa50ca060271ac3151ef",
@@ -576,8 +557,7 @@
     "ratingsAverage": 4.5,
     "createdAt": "2023-11-18T17:54:24.743Z",
     "updatedAt": "2023-11-18T17:54:24.743Z",
-    "slug": "samsung-galaxy-13-2",
-    "__v": 0
+    "slug": "samsung-galaxy-13-2"
   },
   {
     "_id": "6558fa50ca060271ac3151f0",
@@ -605,8 +585,7 @@
     "ratingsAverage": 4.5,
     "createdAt": "2023-11-18T17:54:24.743Z",
     "updatedAt": "2023-11-18T17:54:24.743Z",
-    "slug": "dennim-rain-jacket-2",
-    "__v": 0
+    "slug": "dennim-rain-jacket-2"
   },
   {
     "_id": "6558fa50ca060271ac3151f1",
@@ -634,8 +613,7 @@
     "ratingsAverage": 4.5,
     "createdAt": "2023-11-18T17:54:24.744Z",
     "updatedAt": "2023-11-18T17:54:24.744Z",
-    "slug": "native-wears-2",
-    "__v": 0
+    "slug": "native-wears-2"
   },
   {
     "_id": "6558fa50ca060271ac3151f2",
@@ -663,7 +641,6 @@
     "ratingsAverage": 4.5,
     "createdAt": "2023-11-18T17:54:24.744Z",
     "updatedAt": "2023-11-18T17:54:24.744Z",
-    "slug": "nike-t-shirt-2",
-    "__v": 0
+    "slug": "nike-t-shirt-2"
   }
 ]
