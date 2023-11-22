@@ -89,12 +89,12 @@
     "numberInStock": 500,
     "inStock": true,
     "images": [
-      "/img/img-2.jpg",
-      "/img/img-3.jpg",
       "/img/img-5.jpg",
+      "/img/img-2.jpg",
       "/img/img-7.jpg",
       "/img/img-10.jpg",
-      "/img/img-12.jpg"
+      "/img/img-12.jpg",
+      "/img/img-3.jpg"
     ],
     "featured": false,
     "color": ["black", "blue", "gray"],
