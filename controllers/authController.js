@@ -63,7 +63,7 @@ const forgotPassword = asyncHandler(async (req, res, next) => {
   const user = await User.findOne({ email });
   if (!user) {
     return next(
-      new NotFoundError('There is no user user with the email address')
+      new NotFoundError('There is no user with the email address')
     );
   }
 
