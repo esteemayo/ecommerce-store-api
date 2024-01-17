@@ -22,7 +22,7 @@
     "category": "shirts",
     "tags": ["fashion", "wears"],
     "ratingsQuantity": 0,
-    "ratingsAverage": 4.5,
+    "ratingsAverage": 0,
     "createdAt": "2023-11-18T17:53:47.762Z",
     "updatedAt": "2023-11-18T17:53:47.762Z"
   },
@@ -49,7 +49,7 @@
     "category": "gadgets",
     "tags": ["phones", "gadgets", "new", "camera"],
     "ratingsQuantity": 0,
-    "ratingsAverage": 4.5,
+    "ratingsAverage": 0,
     "createdAt": "2023-11-18T17:53:47.762Z",
     "updatedAt": "2023-11-18T17:53:47.762Z"
   },
@@ -76,7 +76,7 @@
     "category": "gadgets",
     "tags": ["phones", "gadgets", "new", "camera", "digital"],
     "ratingsQuantity": 0,
-    "ratingsAverage": 4.5,
+    "ratingsAverage": 0,
     "createdAt": "2023-11-18T17:53:47.762Z",
     "updatedAt": "2023-11-18T17:53:47.762Z"
   },
@@ -103,7 +103,7 @@
     "category": "jeans",
     "tags": ["jeans", "fashion", "new"],
     "ratingsQuantity": 0,
-    "ratingsAverage": 4.5,
+    "ratingsAverage": 0,
     "createdAt": "2023-11-18T17:53:47.762Z",
     "updatedAt": "2023-11-18T17:53:47.762Z"
   },
@@ -130,7 +130,7 @@
     "category": "shirts",
     "tags": ["shirts", "agbadagang", "fashion", "new", "owambe"],
     "ratingsQuantity": 0,
-    "ratingsAverage": 4.5,
+    "ratingsAverage": 0,
     "createdAt": "2023-11-18T17:53:47.762Z",
     "updatedAt": "2023-11-18T17:53:47.762Z"
   },
@@ -157,7 +157,7 @@
     "category": "shirts",
     "tags": ["shirts", "genz", "fashion", "new"],
     "ratingsQuantity": 0,
-    "ratingsAverage": 4.5,
+    "ratingsAverage": 0,
     "createdAt": "2023-11-18T17:53:47.762Z",
     "updatedAt": "2023-11-18T17:53:47.762Z"
   },
@@ -184,7 +184,7 @@
     "category": "gadgets",
     "tags": ["phones", "gadgets", "new", "camera"],
     "ratingsQuantity": 0,
-    "ratingsAverage": 4.5,
+    "ratingsAverage": 0,
     "createdAt": "2023-11-18T17:53:47.763Z",
     "updatedAt": "2023-11-18T17:53:47.763Z"
   },
@@ -211,7 +211,7 @@
     "category": "electronics",
     "tags": ["phones", "gadgets", "new", "camera"],
     "ratingsQuantity": 0,
-    "ratingsAverage": 4.5,
+    "ratingsAverage": 0,
     "createdAt": "2023-11-18T17:53:47.763Z",
     "updatedAt": "2023-11-18T17:53:47.763Z"
   },
@@ -238,7 +238,7 @@
     "category": "jeans",
     "tags": ["jeans", "fashion", "new"],
     "ratingsQuantity": 0,
-    "ratingsAverage": 4.5,
+    "ratingsAverage": 0,
     "createdAt": "2023-11-18T17:53:47.763Z",
     "updatedAt": "2023-11-18T17:53:47.763Z"
   },
@@ -265,7 +265,7 @@
     "category": "shirts",
     "tags": ["shirts", "fashion", "new", "owambe"],
     "ratingsQuantity": 0,
-    "ratingsAverage": 4.5,
+    "ratingsAverage": 0,
     "createdAt": "2023-11-18T17:53:47.763Z",
     "updatedAt": "2023-11-18T17:53:47.763Z"
   },
@@ -292,7 +292,7 @@
     "category": "shirts",
     "tags": ["shirts", "genz", "fashion", "new"],
     "ratingsQuantity": 0,
-    "ratingsAverage": 4.5,
+    "ratingsAverage": 0,
     "createdAt": "2023-11-18T17:53:47.763Z",
     "updatedAt": "2023-11-18T17:53:47.763Z"
   },
@@ -319,7 +319,7 @@
     "category": "shirts",
     "tags": ["fashion", "wears"],
     "ratingsQuantity": 0,
-    "ratingsAverage": 4.5,
+    "ratingsAverage": 0,
     "createdAt": "2023-11-18T17:54:24.742Z",
     "updatedAt": "2023-11-18T17:54:24.742Z"
   },
@@ -346,7 +346,7 @@
     "category": "shirts",
     "tags": ["fashion", "wears"],
     "ratingsQuantity": 0,
-    "ratingsAverage": 4.5,
+    "ratingsAverage": 0,
     "createdAt": "2023-11-18T17:54:24.743Z",
     "updatedAt": "2023-11-18T17:54:24.743Z"
   },
@@ -373,7 +373,7 @@
     "category": "gadgets",
     "tags": ["phones", "gadgets", "new", "camera"],
     "ratingsQuantity": 0,
-    "ratingsAverage": 4.5,
+    "ratingsAverage": 0,
     "createdAt": "2023-11-18T17:54:24.743Z",
     "updatedAt": "2023-11-18T17:54:24.743Z"
   },
@@ -400,7 +400,7 @@
     "category": "gadgets",
     "tags": ["phones", "gadgets", "new", "camera"],
     "ratingsQuantity": 0,
-    "ratingsAverage": 4.5,
+    "ratingsAverage": 0,
     "createdAt": "2023-11-18T17:54:24.743Z",
     "updatedAt": "2023-11-18T17:54:24.743Z"
   },
@@ -427,7 +427,7 @@
     "category": "jeans",
     "tags": ["jeans", "fashion", "new"],
     "ratingsQuantity": 0,
-    "ratingsAverage": 4.5,
+    "ratingsAverage": 0,
     "createdAt": "2023-11-18T17:54:24.743Z",
     "updatedAt": "2023-11-18T17:54:24.743Z"
   },
@@ -454,7 +454,7 @@
     "category": "shirts",
     "tags": ["shirts", "agbadagang", "fashion", "new", "owambe"],
     "ratingsQuantity": 0,
-    "ratingsAverage": 4.5,
+    "ratingsAverage": 0,
     "createdAt": "2023-11-18T17:54:24.743Z",
     "updatedAt": "2023-11-18T17:54:24.743Z"
   },
@@ -481,7 +481,7 @@
     "category": "shirts",
     "tags": ["shirts", "genz", "fashion", "new"],
     "ratingsQuantity": 0,
-    "ratingsAverage": 4.5,
+    "ratingsAverage": 0,
     "createdAt": "2023-11-18T17:54:24.743Z",
     "updatedAt": "2023-11-18T17:54:24.743Z"
   },
@@ -508,7 +508,7 @@
     "category": "gadgets",
     "tags": ["phones", "gadgets", "new", "camera"],
     "ratingsQuantity": 0,
-    "ratingsAverage": 4.5,
+    "ratingsAverage": 0,
     "createdAt": "2023-11-18T17:54:24.743Z",
     "updatedAt": "2023-11-18T17:54:24.743Z"
   },
@@ -535,7 +535,7 @@
     "category": "gadgets",
     "tags": ["phones", "gadgets", "new", "camera"],
     "ratingsQuantity": 0,
-    "ratingsAverage": 4.5,
+    "ratingsAverage": 0,
     "createdAt": "2023-11-18T17:54:24.743Z",
     "updatedAt": "2023-11-18T17:54:24.743Z"
   },
@@ -562,7 +562,7 @@
     "category": "jeans",
     "tags": ["jeans", "fashion", "new"],
     "ratingsQuantity": 0,
-    "ratingsAverage": 4.5,
+    "ratingsAverage": 0,
     "createdAt": "2023-11-18T17:54:24.743Z",
     "updatedAt": "2023-11-18T17:54:24.743Z"
   },
@@ -589,7 +589,7 @@
     "category": "shirts",
     "tags": ["shirts", "fashion", "new", "owambe"],
     "ratingsQuantity": 0,
-    "ratingsAverage": 4.5,
+    "ratingsAverage": 0,
     "createdAt": "2023-11-18T17:54:24.744Z",
     "updatedAt": "2023-11-18T17:54:24.744Z"
   },
@@ -616,7 +616,7 @@
     "category": "shirts",
     "tags": ["shirts", "genz", "fashion", "new"],
     "ratingsQuantity": 0,
-    "ratingsAverage": 4.5,
+    "ratingsAverage": 0,
     "createdAt": "2023-11-18T17:54:24.744Z",
     "updatedAt": "2023-11-18T17:54:24.744Z"
   }
