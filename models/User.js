@@ -51,7 +51,6 @@ const userSchema = new Schema(
     },
     country: {
       type: String,
-      required: [true, 'Please tell us your country'],
     },
     role: {
       type: String,
