@@ -32,7 +32,7 @@ const userSchema = new Schema(
     },
     password: {
       type: String,
-      required: [true, 'Please provide your password'],
+      // required: [true, 'Please provide your password'],
       minlength: 8,
       maxlength: 1024,
       select: false,
@@ -51,6 +51,7 @@ const userSchema = new Schema(
     },
     country: {
       type: String,
+      // required: [true, 'Please tell us your country'],
     },
     role: {
       type: String,
