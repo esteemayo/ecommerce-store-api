@@ -51,7 +51,7 @@ const userSchema = new Schema(
     },
     phone: {
       type: Number,
-      required: [true, 'Please tell us your telephone number'],
+      // required: [true, 'Please tell us your telephone number'],
     },
     country: {
       type: String,
