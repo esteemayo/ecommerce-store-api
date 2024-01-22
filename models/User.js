@@ -49,6 +49,10 @@ const userSchema = new Schema(
         message: 'Passwords do not match',
       },
     },
+    phone: {
+      type: Number,
+      required: [true, 'Please tell us your telephone number'],
+    },
     country: {
       type: String,
       // required: [true, 'Please tell us your country'],
