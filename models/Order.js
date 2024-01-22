@@ -20,6 +20,18 @@ const orderSchema = new Schema(
         'Please address must have less or equal than 200 characters',
       ],
     },
+    products: [
+      {
+        productId: {
+          type: mongoose.Types.ObjectId,
+          ref: 'Product',
+        },
+        quantity: {
+          type: Number,
+          default: 1,
+        },
+      },
+    ],
     total: {
       type: Number,
       required: [true, 'An order must have a total amount'],
