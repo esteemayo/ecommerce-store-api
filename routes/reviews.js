@@ -8,12 +8,13 @@ const router = express.Router({ mergeParams: true });
 
 router.get('/top', reviewController.getTopReviews);
 
-router.use(authMiddleware.protect);
 
 router
   .route('/')
   .get(reviewController.getReviews)
-  .post(authMiddleware.restrictTo('user'), reviewController.createReview);
+  .post(authMiddleware.protect, authMiddleware.restrictTo('user'), reviewController.createReview);
+
+router.use(authMiddleware.protect);
 
 router
   .route('/:id')
