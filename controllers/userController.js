@@ -1,7 +1,7 @@
 /* eslint-disable */
+import { StatusCodes } from 'http-status-codes';
 import _ from 'lodash';
 import asyncHandler from 'express-async-handler';
-import { StatusCodes } from 'http-status-codes';
 
 import User from '../models/User.js';
 import BadRequestError from '../errors/badRequest.js';
@@ -66,8 +66,7 @@ const updateMe = asyncHandler(async (req, res, next) => {
   if (password || confirmPassword) {
     return next(
       new BadRequestError(
-        `This route is not for password updates. Please use update ${
-          req.protocol
+        `This route is not for password updates. Please use update ${req.protocol
         }://${req.get('host')}/api/v1/auth/update-my-password`
       )
     );
