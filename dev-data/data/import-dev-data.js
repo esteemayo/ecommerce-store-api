@@ -5,11 +5,12 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import 'colors';
 
-import Product from '../../models/Product.js';
-import User from '../../models/User.js';
-import Category from '../../models/Category.js';
-import Order from '../../models/Order.js';
 import Review from '../../models/Review.js';
+import User from '../../models/User.js';
+import Product from '../../models/Product.js';
+import Order from '../../models/Order.js';
+import Category from '../../models/Category.js';
+
 import connectDB from '../../config/db.js';
 
 dotenv.config({ path: './config.env' });
