@@ -1,7 +1,7 @@
 /* eslint-disable */
+import { StatusCodes } from 'http-status-codes';
 import slugify from 'slugify';
 import asyncHandler from 'express-async-handler';
-import { StatusCodes } from 'http-status-codes';
 
 import Product from '../models/Product.js';
 import NotFoundError from '../errors/notFound.js';
