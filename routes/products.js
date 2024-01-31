@@ -1,8 +1,8 @@
 /* eslint-disable */
 import express from 'express';
 
-import reviewRouter from './reviews.js';
 import authMiddleware from '../middlewares/authMiddleware.js';
+import reviewRouter from './reviews.js';
 import productController from '../controllers/productController.js';
 
 const router = express.Router();

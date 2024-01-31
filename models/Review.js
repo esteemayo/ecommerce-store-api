@@ -1,5 +1,6 @@
 /* eslint-disable  */
 import mongoose from 'mongoose';
+
 import Product from './Product.js';
 
 const { Schema, Types } = mongoose;
