@@ -1,5 +1,6 @@
 /* eslint-disable */
 import { StatusCodes } from 'http-status-codes';
+
 import AppError from './AppError.js';
 
 class BadRequestError extends AppError {
