@@ -28,8 +28,8 @@ dotenv.config({ path: './config.env' });
 
 const app = express();
 
-app.use(cors());
-app.options('*', cors());
+app.use(cors({ credentials: true }));
+app.options('*', cors({ credentials: true }));
 
 app.use(helmet());
 
