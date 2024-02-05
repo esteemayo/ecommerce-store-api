@@ -64,17 +64,16 @@ const forgotPassword = asyncHandler(async (req, res, next) => {
 
   const user = await User.findOne({ email });
   if (!user) {
-    return next(
-      new NotFoundError('There is no user with the email address')
-    );
+    return next(new NotFoundError('There is no user with the email address'));
   }
 
   const resetToken = user.createPasswordResetToken();
   await user.save({ validateBeforeSave: false });
 
-  const resetURL = `${req.protocol}://${req.get(
-    'host'
-  )}/api/v1/auth/reset-password/${resetToken}`;
+  const resetURL = `http://localhost:5173/reset/${resetToken}`;
+  // const resetURL = `${req.protocol}://${req.get(
+  //   'host'
+  // )}/api/v1/auth/reset-password/${resetToken}`;
 
   const message = `
     Hi ${user.name},
