@@ -12,16 +12,17 @@ import compression from 'compression';
 import dotenv from 'dotenv';
 import 'colors';
 
-import authRoute from './routes/auth.js';
+import authRoute from './routes/auth.route.js';
+import orderRoute from './routes/orders.route.js';
+import userRoute from './routes/users.route.js';
+import productRoute from './routes/products.route.js';
+import cartRoute from './routes/carts.route.js';
+import reviewRoute from './routes/reviews.route.js';
+import stripeRoute from './routes/stripe.route.js';
+import categoryRoute from './routes/categories.route.js';
+
 import NotFoundError from './errors/notFound.js';
-import userRoute from './routes/users.js';
-import orderRoute from './routes/orders.js';
 import errorHandlerMiddleware from './middlewares/errorHandler.js';
-import categoryRoute from './routes/categories.js';
-import reviewRoute from './routes/reviews.js';
-import productRoute from './routes/products.js';
-import cartRoute from './routes/carts.js';
-import stripeRoute from './routes/stripe.js';
 
 dotenv.config({ path: './config.env' });
 
