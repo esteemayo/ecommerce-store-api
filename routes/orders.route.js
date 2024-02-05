@@ -1,7 +1,7 @@
 /* eslint-disable */
 import express from 'express';
 
-import authMiddleware from '../middlewares/authMiddleware.js';
+import authMiddleware from '../middlewares/auth.middleware.js';
 import orderController from '../controllers/order.controller.js';
 
 const router = express.Router();
