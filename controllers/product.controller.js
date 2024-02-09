@@ -5,6 +5,7 @@ import asyncHandler from 'express-async-handler';
 
 import Product from '../models/product.model.js';
 import NotFoundError from '../errors/notFound.js';
+import mongoose, { ObjectId } from 'mongoose';
 
 const getProducts = asyncHandler(async (req, res, next) => {
   const queryObj = {};
@@ -172,6 +173,29 @@ const getProductBySlug = asyncHandler(async (req, res, next) => {
   res.status(StatusCodes.OK).json(product);
 });
 
+const getWeeklyViews = asyncHandler(async (req, res, next) => {
+  const { id: productId } = req.params;
+
+  const now = new Date();
+  const lastWeek = new Date(now.setDate(now.getDate() - 7 * 1));
+
+  const stats = await Product.aggregate([
+    {
+      $match: {
+        _id: mongoose.Types.ObjectId(productId),
+        createdAt: { $gte: lastWeek },
+      },
+    },
+    {
+      $group: {
+        _id: '$views',
+      },
+    },
+  ]);
+
+  res.status(StatusCodes.OK).json(stats);
+});
+
 const createProduct = asyncHandler(async (req, res, next) => {
   const product = await Product.create({ ...req.body });
 
@@ -283,6 +307,7 @@ const productController = {
   searchProducts,
   getProductById,
   getProductBySlug,
+  getWeeklyViews,
   createProduct,
   updateProduct,
   likeProduct,
