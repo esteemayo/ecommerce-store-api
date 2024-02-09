@@ -30,6 +30,8 @@ router.patch(
   productController.likeProduct
 );
 
+router.patch('/views/:id', productController.updateViews);
+
 router
   .route('/')
   .get(productController.getProducts)
