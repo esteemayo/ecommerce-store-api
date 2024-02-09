@@ -24,7 +24,7 @@ router.get('/search', productController.searchProducts);
 
 router.get('/details/:slug', productController.getProductBySlug);
 
-router.get('/views/weekly', productController.getWeeklyViews);
+router.get('/views/weekly/:id', productController.getWeeklyViews);
 
 router.patch(
   '/like/:id',
