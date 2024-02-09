@@ -179,6 +179,16 @@ const getWeeklyViews = asyncHandler(async (req, res, next) => {
   const now = new Date();
   const lastWeek = new Date(now.setDate(now.getDate() - 7 * 1));
 
+  const product = await Product.findById(productId);
+
+  if (!product) {
+    return next(
+      new NotFoundError(
+        `There is no product found with the given ID ↔ ${productId}`
+      )
+    );
+  }
+
   const stats = await Product.aggregate([
     {
       $match: {
