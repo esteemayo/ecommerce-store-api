@@ -237,6 +237,28 @@ const likeProduct = asyncHandler(async (req, res, next) => {
   res.status(StatusCodes.OK).json(product);
 });
 
+const updateViews = asyncHandler(async (req, res, next) => {
+  const { id: productId } = req.params;
+
+  const product = await Product.findByIdAndUpdate(
+    productId,
+    {
+      $inc: { views: 1 },
+    },
+    { new: true, runValidators: true }
+  );
+
+  if (!product) {
+    return next(
+      new NotFoundError(
+        `There is no product found with the given ID ↔ ${productId}`
+      )
+    );
+  }
+
+  res.status(StatusCodes.OK).json(product);
+});
+
 const deleteProduct = asyncHandler(async (req, res, next) => {
   const { id: productId } = req.params;
 
@@ -264,6 +286,7 @@ const productController = {
   createProduct,
   updateProduct,
   likeProduct,
+  updateViews,
   deleteProduct,
 };
 
