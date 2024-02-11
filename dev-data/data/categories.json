@@ -1,1 +1,38 @@
-[]
+[
+  {
+    "_id": "65c90302a6d3124db37407ac",
+    "name": "shirts",
+    "properties": [],
+    "createdAt": "2024-02-11T17:25:22.047Z",
+    "updatedAt": "2024-02-11T17:25:22.047Z"
+  },
+  {
+    "_id": "65c90336a6d3124db37407c7",
+    "name": "electronics",
+    "properties": [],
+    "createdAt": "2024-02-11T17:26:14.427Z",
+    "updatedAt": "2024-02-11T17:26:14.427Z"
+  },
+  {
+    "_id": "65c90344a6d3124db37407ca",
+    "name": "gadgets",
+    "parent": "65c90336a6d3124db37407c7",
+    "properties": [],
+    "createdAt": "2024-02-11T17:26:28.098Z",
+    "updatedAt": "2024-02-11T17:26:28.098Z"
+  },
+  {
+    "_id": "65c90368a6d3124db37407d4",
+    "name": "jeans",
+    "properties": [],
+    "createdAt": "2024-02-11T17:27:04.309Z",
+    "updatedAt": "2024-02-11T17:27:04.309Z"
+  },
+  {
+    "_id": "65c90378a6d3124db37407de",
+    "name": "snickers",
+    "properties": [],
+    "createdAt": "2024-02-11T17:27:20.778Z",
+    "updatedAt": "2024-02-11T17:27:20.778Z"
+  }
+]
