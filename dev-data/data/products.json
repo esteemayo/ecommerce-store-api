@@ -211,7 +211,7 @@
       "https://firebasestorage.googleapis.com/v0/b/ecommerce-store-3ac4e.appspot.com/o/products%2F0.6870481596372662-nike-air-max-90-lvb-5.png?alt=media&token=e985e536-a02d-49b2-a5b8-aac1d3d218a6",
       "https://firebasestorage.googleapis.com/v0/b/ecommerce-store-3ac4e.appspot.com/o/products%2F0.62869674112633-nike-air-max-90-lvb-6.jpg?alt=media&token=c2a8c20f-cbe6-4041-80ff-a1b685472a96"
     ],
-    "featured": false,
+    "featured": true,
     "color": ["white", "beige", "burlywood"],
     "size": ["8", "9", "10", "11", "12"],
     "likes": [],
@@ -239,7 +239,7 @@
       "https://firebasestorage.googleapis.com/v0/b/ecommerce-store-3ac4e.appspot.com/o/products%2F0.01299296487315904-nike-air-vapor-max-plus-5.png?alt=media&token=37903536-e5dd-4c0e-9c3c-5517b9b8eff4",
       "https://firebasestorage.googleapis.com/v0/b/ecommerce-store-3ac4e.appspot.com/o/products%2F0.3434117044702476-nike-air-vapor-max-plus-6.png?alt=media&token=77b7807d-20ba-4f57-944d-374890a678bb"
     ],
-    "featured": false,
+    "featured": true,
     "color": ["pink", "white", "black", "red"],
     "size": ["7", "8", "9", "10", "11", "12"],
     "likes": [],
