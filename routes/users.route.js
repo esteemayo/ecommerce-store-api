@@ -6,31 +6,53 @@ import userController from '../controllers/user.controller.js';
 
 const router = express.Router();
 
-router.use(authMiddleware.protect);
+// router.use(authMiddleware.protect);
 
-router.get('/me', userController.getMe, userController.getUser);
+router.get(
+  '/me',
+  authMiddleware.protect,
+  userController.getMe,
+  userController.getUser
+);
 
 router.get(
   '/stats',
+  authMiddleware.protect,
   authMiddleware.restrictTo('admin'),
   userController.getUserStats
 );
 
-router.patch('/update-me', userController.updateMe);
+router.patch('/update-me', authMiddleware.protect, userController.updateMe);
 
-router.patch('/update-email', userController.updateEmail);
+router.patch(
+  '/update-email',
+  authMiddleware.protect,
+  userController.updateEmail
+);
 
-router.delete('/delete-me', userController.deleteMe);
+router.delete('/delete-me', authMiddleware.protect, userController.deleteMe);
 
 router
   .route('/')
-  .get(authMiddleware.restrictTo('admin'), userController.getUsers)
-  .post(userController.createUser);
+  .get(
+    authMiddleware.protect,
+    authMiddleware.restrictTo('admin'),
+    userController.getUsers
+  )
+  .post(authMiddleware.protect, userController.createUser);
 
 router
   .route('/:id')
   .get(userController.getUser)
-  .patch(authMiddleware.restrictTo('admin'), userController.updateUser)
-  .delete(authMiddleware.restrictTo('admin'), userController.deleteUser);
+  .patch(
+    authMiddleware.protect,
+    authMiddleware.restrictTo('admin'),
+    userController.updateUser
+  )
+  .delete(
+    authMiddleware.protect,
+    authMiddleware.restrictTo('admin'),
+    userController.deleteUser
+  );
 
 export default router;
