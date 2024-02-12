@@ -2,13 +2,11 @@
 import { StatusCodes } from 'http-status-codes';
 import asyncHandler from 'express-async-handler';
 
-import User from '../models/user.model.js';
 import Review from '../models/review.model.js';
+import APIFeatures from '../utils/apiFeatures.js';
 
 import NotFoundError from '../errors/notFound.js';
 import ForbiddenError from '../errors/forbidden.js';
-
-import APIFeatures from '../utils/apiFeatures.js';
 
 const getReviews = asyncHandler(async (req, res, next) => {
   let filter = {};
@@ -27,16 +25,8 @@ const getReviews = asyncHandler(async (req, res, next) => {
 
 const getTopReviews = asyncHandler(async (req, res, next) => {
   const reviews = await Review.getTopReviews();
-  const users = await Promise.all(
-    reviews.map((review) => {
-      return User.findById(review.user);
-    })
-  );
 
-  res.status(StatusCodes.OK).json({
-    reviews,
-    users,
-  });
+  res.status(StatusCodes.OK).json(reviews);
 });
 
 const getReview = asyncHandler(async (req, res, next) => {
