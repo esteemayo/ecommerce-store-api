@@ -9,14 +9,14 @@ const productSchema = new Schema(
       type: String,
       trim: true,
       required: [true, 'A product must have a name'],
-      // maxlength: [
-      //   30,
-      //   'A product title must have less or equal than 30 characters',
-      // ],
-      // minlength: [
-      //   3,
-      //   'A product title must have more or equal than 3 characters',
-      // ],
+      maxlength: [
+        50,
+        'A product title must have less or equal than 50 characters',
+      ],
+      minlength: [
+        3,
+        'A product title must have more or equal than 3 characters',
+      ],
     },
     desc: {
       type: String,
