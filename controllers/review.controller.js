@@ -3,10 +3,12 @@ import { StatusCodes } from 'http-status-codes';
 import asyncHandler from 'express-async-handler';
 
 import Review from '../models/review.model.js';
-import APIFeatures from '../utils/apiFeatures.js';
+import Product from '../models/product.model.js';
 
 import NotFoundError from '../errors/notFound.js';
 import ForbiddenError from '../errors/forbidden.js';
+
+import APIFeatures from '../utils/apiFeatures.js';
 
 const getReviews = asyncHandler(async (req, res, next) => {
   let filter = {};
@@ -27,6 +29,33 @@ const getTopReviews = asyncHandler(async (req, res, next) => {
   const reviews = await Review.getTopReviews();
 
   res.status(StatusCodes.OK).json(reviews);
+});
+
+const getTotalReviewsOnProduct = asyncHandler(async (req, res, next) => {
+  const { id: reviewId } = req.params;
+
+  const review = await Review.findById(reviewId);
+
+  if (!review) {
+    return next(
+      new NotFoundError(
+        `There is no review found with the given ID ↔ ${reviewId}`
+      )
+    );
+  }
+
+  const productId = review.product;
+  const product = await Product.findById(productId);
+
+  if (!product) {
+    return next(
+      new NotFoundError(
+        `There is no review found with the given ID ↔ ${productId}`
+      )
+    );
+  }
+
+  res.status(StatusCodes.OK).json(product.ratingsQuantity);
 });
 
 const getReview = asyncHandler(async (req, res, next) => {
@@ -116,6 +145,7 @@ const deleteReview = asyncHandler(async (req, res, next) => {
 const reviewController = {
   getReviews,
   getTopReviews,
+  getTotalReviewsOnProduct,
   getReview,
   createReview,
   updateReview,
