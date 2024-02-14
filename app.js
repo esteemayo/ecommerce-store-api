@@ -42,7 +42,7 @@ if (app.get('env') === 'development') {
 }
 
 const limiter = rateLimit({
-  max: 100,
+  max: 1000,
   windowMs: 30 * 60 * 1000,
   message: 'Too many request from this IP, Please try again in 30 minutes',
 });
