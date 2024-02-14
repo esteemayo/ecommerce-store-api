@@ -50,7 +50,7 @@ const getTotalReviewsOnProduct = asyncHandler(async (req, res, next) => {
   if (!product) {
     return next(
       new NotFoundError(
-        `There is no review found with the given ID ↔ ${productId}`
+        `There is no product found with the given ID ↔ ${productId}`
       )
     );
   }
