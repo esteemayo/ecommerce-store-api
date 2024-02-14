@@ -6,8 +6,6 @@ import userController from '../controllers/user.controller.js';
 
 const router = express.Router();
 
-// router.use(authMiddleware.protect);
-
 router.get(
   '/me',
   authMiddleware.protect,
