@@ -28,6 +28,8 @@ dotenv.config({ path: './config.env' });
 
 const app = express();
 
+app.set('trust proxy', 1);
+
 app.use(cors());
 app.options('*', cors());
 
