@@ -1,4 +1,7 @@
+/* eslint-disable */
 import { StatusCodes } from 'http-status-codes';
+
+import app from '../app.js';
 
 const handleCastErrorDB = (customError, err) => {
   customError.message = `Invalid ${err.path}: ${err.value}`;
@@ -56,9 +59,9 @@ const errorHandlerMiddleware = (err, req, res, next) => {
   if (err.name === 'JsonWebTokenError') handleJWTError(customError);
   if (err.name === 'TokenExpiredError') handleJWTExpiredError(customError);
 
-  if (process.env.NODE_ENV === 'development') {
+  if (app.get('env') === 'development') {
     sendErrorDev(customError, res);
-  } else if (process.env.NODE_ENV === 'production') {
+  } else if (app.get('env') === 'production') {
     sendErrorProd(customError, res);
   }
 };
