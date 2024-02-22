@@ -50,7 +50,7 @@ const userSchema = new Schema(
       },
     },
     phone: {
-      type: Number,
+      type: String,
       // required: [true, 'Please tell us your telephone number'],
     },
     country: {
