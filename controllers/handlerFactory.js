@@ -81,7 +81,7 @@ const updateOne = (Model) =>
       }
     );
 
-    if (!updateddoc) {
+    if (!updatedDoc) {
       return next(
         new NotFoundError(
           `There is no document found with the given ID ↔ ${docId}`
