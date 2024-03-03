@@ -8,7 +8,7 @@ import APIFeatures from '../utils/apiFeatures.js';
 import NotFoundError from '../errors/notFound.js';
 import ForbiddenError from '../errors/forbidden.js';
 
-const getCarts = asyncHandler(async (req, res, next) => {
+export const getCarts = asyncHandler(async (req, res, next) => {
   const features = new APIFeatures(Cart.find({ user: req.user.id }), req.query)
     .filter()
     .sort()
@@ -20,7 +20,7 @@ const getCarts = asyncHandler(async (req, res, next) => {
   res.status(StatusCodes.OK).json(carts);
 });
 
-const getCart = asyncHandler(async (req, res, next) => {
+export const getCart = asyncHandler(async (req, res, next) => {
   const { id: cartId } = req.params;
 
   const cart = await Cart.findById(cartId);
@@ -34,13 +34,13 @@ const getCart = asyncHandler(async (req, res, next) => {
   res.status(StatusCodes.OK).json(cart);
 });
 
-const createCart = asyncHandler(async (req, res, next) => {
+export const createCart = asyncHandler(async (req, res, next) => {
   const cart = await Cart.create({ ...req.body });
 
   res.status(StatusCodes.CREATED).json(cart);
 });
 
-const updateCart = asyncHandler(async (req, res, next) => {
+export const updateCart = asyncHandler(async (req, res, next) => {
   const { id: cartId } = req.params;
 
   const cart = await Cart.findById(cartId);
@@ -71,7 +71,7 @@ const updateCart = asyncHandler(async (req, res, next) => {
   );
 });
 
-const deleteCart = asyncHandler(async (req, res, next) => {
+export const deleteCart = asyncHandler(async (req, res, next) => {
   const { id: cartId } = req.params;
 
   const cart = await Cart.findById(cartId);
@@ -94,13 +94,3 @@ const deleteCart = asyncHandler(async (req, res, next) => {
     )
   );
 });
-
-const cartController = {
-  getCarts,
-  getCart,
-  createCart,
-  updateCart,
-  deleteCart,
-};
-
-export default cartController;
