@@ -173,39 +173,6 @@ const getProductBySlug = asyncHandler(async (req, res, next) => {
   res.status(StatusCodes.OK).json(product);
 });
 
-const getWeeklyViews = asyncHandler(async (req, res, next) => {
-  const { id: productId } = req.params;
-
-  const now = new Date();
-  const lastWeek = new Date(now.setDate(now.getDate() - 7 * 1));
-
-  const product = await Product.findById(productId);
-
-  if (!product) {
-    return next(
-      new NotFoundError(
-        `There is no product found with the given ID ↔ ${productId}`
-      )
-    );
-  }
-
-  const stats = await Product.aggregate([
-    {
-      $match: {
-        _id: mongoose.Types.ObjectId(productId),
-        createdAt: { $gte: lastWeek },
-      },
-    },
-    {
-      $group: {
-        _id: '$views',
-      },
-    },
-  ]);
-
-  res.status(StatusCodes.OK).json(stats);
-});
-
 const createProduct = asyncHandler(async (req, res, next) => {
   const product = await Product.create({ ...req.body });
 
