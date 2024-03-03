@@ -6,7 +6,7 @@ import APIFeatures from '../utils/apiFeatures.js';
 import Category from '../models/category.model.js';
 import NotFoundError from '../errors/notFound.js';
 
-const getCategories = asyncHandler(async (req, res, next) => {
+export const getCategories = asyncHandler(async (req, res, next) => {
   const features = new APIFeatures(Category.find(), req.query)
     .filter()
     .sort()
@@ -18,7 +18,7 @@ const getCategories = asyncHandler(async (req, res, next) => {
   res.status(StatusCodes.OK).json(categories);
 });
 
-const getCategory = asyncHandler(async (req, res, next) => {
+export const getCategory = asyncHandler(async (req, res, next) => {
   const { id: categoryId } = req.params;
 
   const category = await Category.findById(categoryId);
@@ -34,13 +34,13 @@ const getCategory = asyncHandler(async (req, res, next) => {
   res.status(StatusCodes.OK).json(category);
 });
 
-const createCategory = asyncHandler(async (req, res, next) => {
+export const createCategory = asyncHandler(async (req, res, next) => {
   const category = await Category.create({ ...req.body });
 
   res.status(StatusCodes.CREATED).json(category);
 });
 
-const updateCategory = asyncHandler(async (req, res, next) => {
+export const updateCategory = asyncHandler(async (req, res, next) => {
   const { id: categoryId } = req.params;
 
   const updatedCategory = await Category.findByIdAndUpdate(
@@ -63,7 +63,7 @@ const updateCategory = asyncHandler(async (req, res, next) => {
   res.status(StatusCodes.OK).json(updatedCategory);
 });
 
-const deleteCategory = asyncHandler(async (req, res, next) => {
+export const deleteCategory = asyncHandler(async (req, res, next) => {
   const { id: categoryId } = req.params;
 
   const category = await Category.findByIdAndDelete(categoryId);
@@ -78,13 +78,3 @@ const deleteCategory = asyncHandler(async (req, res, next) => {
 
   res.status(StatusCodes.NO_CONTENT).json(null);
 });
-
-const categoryController = {
-  getCategories,
-  getCategory,
-  createCategory,
-  updateCategory,
-  deleteCategory,
-};
-
-export default categoryController;
