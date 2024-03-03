@@ -14,7 +14,7 @@ import createSendGoogleToken from '../utils/createSendGoogleToken.js';
 
 import User from '../models/user.model.js';
 
-const register = asyncHandler(async (req, res, next) => {
+export const register = asyncHandler(async (req, res, next) => {
   const user = await User.create({ ...req.body });
 
   if (user) {
@@ -22,7 +22,7 @@ const register = asyncHandler(async (req, res, next) => {
   }
 });
 
-const login = asyncHandler(async (req, res, next) => {
+export const login = asyncHandler(async (req, res, next) => {
   const { username, password } = req.body;
 
   if (!username || !password) {
@@ -38,7 +38,7 @@ const login = asyncHandler(async (req, res, next) => {
   createSendToken(user, StatusCodes.OK, req, res);
 });
 
-const googleLogin = asyncHandler(async (req, res, next) => {
+export const googleLogin = asyncHandler(async (req, res, next) => {
   const { email } = req.body;
 
   const user = await User.findOne({ email });
@@ -55,7 +55,7 @@ const googleLogin = asyncHandler(async (req, res, next) => {
   createSendGoogleToken(newUser, StatusCodes.OK, req, res);
 });
 
-const forgotPassword = asyncHandler(async (req, res, next) => {
+export const forgotPassword = asyncHandler(async (req, res, next) => {
   const { email } = req.body;
 
   if (!email) {
@@ -116,7 +116,7 @@ const forgotPassword = asyncHandler(async (req, res, next) => {
   }
 });
 
-const resetPassword = asyncHandler(async (req, res, next) => {
+export const resetPassword = asyncHandler(async (req, res, next) => {
   const { password, confirmPassword } = req.body;
 
   const hashedToken = crypto
@@ -142,7 +142,7 @@ const resetPassword = asyncHandler(async (req, res, next) => {
   createSendToken(user, StatusCodes.OK, req, res);
 });
 
-const updatePasword = asyncHandler(async (req, res, next) => {
+export const updatePasword = asyncHandler(async (req, res, next) => {
   const { password, confirmPassword, currentPassword } = req.body;
 
   const user = await User.findById(req.user.id).select('+password');
@@ -157,14 +157,3 @@ const updatePasword = asyncHandler(async (req, res, next) => {
 
   createSendToken(user, StatusCodes.OK, req, res);
 });
-
-const authController = {
-  register,
-  login,
-  googleLogin,
-  forgotPassword,
-  resetPassword,
-  updatePasword,
-};
-
-export default authController;
