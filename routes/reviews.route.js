@@ -1,8 +1,8 @@
 /* eslint-disable */
 import express from 'express';
 
-import authMiddleware from '../middlewares/auth.middleware.js';
-import reviewController from '../controllers/review.controller.js';
+import * as authMiddleware from '../middlewares/auth.middleware.js';
+import * as reviewController from '../controllers/review.controller.js';
 
 const router = express.Router({ mergeParams: true });
 

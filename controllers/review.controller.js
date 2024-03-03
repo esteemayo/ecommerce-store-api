@@ -10,7 +10,7 @@ import ForbiddenError from '../errors/forbidden.js';
 
 import APIFeatures from '../utils/apiFeatures.js';
 
-const getReviews = asyncHandler(async (req, res, next) => {
+export const getReviews = asyncHandler(async (req, res, next) => {
   let filter = {};
   if (req.params.productId) filter = { product: req.params.productId };
 
@@ -25,7 +25,7 @@ const getReviews = asyncHandler(async (req, res, next) => {
   res.status(StatusCodes.OK).json(reviews);
 });
 
-const getTopReviews = asyncHandler(async (req, res, next) => {
+export const getTopReviews = asyncHandler(async (req, res, next) => {
   const reviews = await Review.find({
     rating: { $gte: 4.5 },
   }).limit(10);
@@ -33,7 +33,7 @@ const getTopReviews = asyncHandler(async (req, res, next) => {
   res.status(StatusCodes.OK).json(reviews);
 });
 
-const getTotalReviewsOnProduct = asyncHandler(async (req, res, next) => {
+export const getTotalReviewsOnProduct = asyncHandler(async (req, res, next) => {
   const { id: reviewId } = req.params;
 
   const review = await Review.findById(reviewId);
@@ -60,7 +60,7 @@ const getTotalReviewsOnProduct = asyncHandler(async (req, res, next) => {
   res.status(StatusCodes.OK).json(product.ratingsQuantity);
 });
 
-const getReview = asyncHandler(async (req, res, next) => {
+export const getReview = asyncHandler(async (req, res, next) => {
   const { id: reviewId } = req.params;
 
   const review = await Review.findById(reviewId);
@@ -76,7 +76,7 @@ const getReview = asyncHandler(async (req, res, next) => {
   res.status(StatusCodes.OK).json(review);
 });
 
-const createReview = asyncHandler(async (req, res, next) => {
+export const createReview = asyncHandler(async (req, res, next) => {
   if (!req.body.user) req.body.user = req.user.id;
   if (!req.body.product) req.body.product = req.params.productId;
 
@@ -85,7 +85,7 @@ const createReview = asyncHandler(async (req, res, next) => {
   res.status(StatusCodes.CREATED).json(review);
 });
 
-const updateReview = asyncHandler(async (req, res, next) => {
+export const updateReview = asyncHandler(async (req, res, next) => {
   const { id: reviewId } = req.params;
 
   const review = await Review.findById(reviewId);
@@ -118,7 +118,7 @@ const updateReview = asyncHandler(async (req, res, next) => {
   );
 });
 
-const deleteReview = asyncHandler(async (req, res, next) => {
+export const deleteReview = asyncHandler(async (req, res, next) => {
   const { id: reviewId } = req.params;
 
   const review = await Review.findById(reviewId);
@@ -143,15 +143,3 @@ const deleteReview = asyncHandler(async (req, res, next) => {
     )
   );
 });
-
-const reviewController = {
-  getReviews,
-  getTopReviews,
-  getTotalReviewsOnProduct,
-  getReview,
-  createReview,
-  updateReview,
-  deleteReview,
-};
-
-export default reviewController;
