@@ -8,7 +8,7 @@ import Product from '../models/product.model.js';
 import NotFoundError from '../errors/notFound.js';
 import ForbiddenError from '../errors/forbidden.js';
 
-import APIFeatures from '../src/utils/apiFeatures.js';
+import APIFeatures from '../utils/apiFeatures.js';
 
 export const getReviews = asyncHandler(async (req, res, next) => {
   let filter = {};

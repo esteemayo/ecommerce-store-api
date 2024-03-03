@@ -3,7 +3,7 @@ import { StatusCodes } from 'http-status-codes';
 import asyncHandler from 'express-async-handler';
 
 import Cart from '../models/cart.model.js';
-import APIFeatures from '../src/utils/apiFeatures.js';
+import APIFeatures from '../utils/apiFeatures.js';
 
 import NotFoundError from '../errors/notFound.js';
 import ForbiddenError from '../errors/forbidden.js';

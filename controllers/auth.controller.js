@@ -3,14 +3,14 @@ import { StatusCodes } from 'http-status-codes';
 import crypto from 'crypto';
 import asyncHandler from 'express-async-handler';
 
-import NotFoundError from '../errors/notFound.js';
-import sendEmail from '../src/utils/email.js';
 import BadRequestError from '../errors/badRequest.js';
 import AppError from '../errors/appError.js';
 import UnauthenticatedError from '../errors/unauthenticated.js';
+import NotFoundError from '../errors/notFound.js';
 
-import createSendToken from '../src/utils/createSendToken.js';
-import createSendGoogleToken from '../src/utils/createSendGoogleToken.js';
+import createSendToken from '../utils/createSendToken.js';
+import sendEmail from '../utils/email.js';
+import createSendGoogleToken from '../utils/createSendGoogleToken.js';
 
 import User from '../models/user.model.js';
 
