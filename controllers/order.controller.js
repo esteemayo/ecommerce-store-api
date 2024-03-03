@@ -8,7 +8,7 @@ import APIFeatures from '../utils/apiFeatures.js';
 import NotFoundError from '../errors/notFound.js';
 import ForbiddenError from '../errors/forbidden.js';
 
-const getOrders = asyncHandler(async (req, res, next) => {
+export const getOrders = asyncHandler(async (req, res, next) => {
   const features = new APIFeatures(Order.find(), req.query)
     .filter()
     .sort()
@@ -20,7 +20,7 @@ const getOrders = asyncHandler(async (req, res, next) => {
   res.status(StatusCodes.OK).json(orders);
 });
 
-const getUserOrders = asyncHandler(async (req, res, next) => {
+export const getUserOrders = asyncHandler(async (req, res, next) => {
   const { id: userId } = req.user;
 
   const orders = await Order.find({ user: userId });
@@ -28,13 +28,13 @@ const getUserOrders = asyncHandler(async (req, res, next) => {
   res.status(StatusCodes.OK).json(orders);
 });
 
-const getMonthlyIncome = asyncHandler(async (req, res, next) => {
+export const getMonthlyIncome = asyncHandler(async (req, res, next) => {
   const income = await Order.getMonthlyIncome();
 
   res.status(StatusCodes.OK).json(income);
 });
 
-const getOrder = asyncHandler(async (req, res, next) => {
+export const getOrder = asyncHandler(async (req, res, next) => {
   const { id: orderId } = req.params;
 
   const order = await Order.findById(orderId);
@@ -58,7 +58,7 @@ const getOrder = asyncHandler(async (req, res, next) => {
   );
 });
 
-const createOrder = asyncHandler(async (req, res, next) => {
+export const createOrder = asyncHandler(async (req, res, next) => {
   if (!req.body.user) req.body.user = req.user.id;
 
   const order = await Order.create({ ...req.body });
@@ -66,7 +66,7 @@ const createOrder = asyncHandler(async (req, res, next) => {
   res.status(StatusCodes.CREATED).json(order);
 });
 
-const updateOrder = asyncHandler(async (req, res, next) => {
+export const updateOrder = asyncHandler(async (req, res, next) => {
   const { id: orderId } = req.params;
 
   const updatedOrder = await Order.findByIdAndUpdate(
@@ -89,7 +89,7 @@ const updateOrder = asyncHandler(async (req, res, next) => {
   res.status(StatusCodes.OK).json(updatedOrder);
 });
 
-const deleteOrder = asyncHandler(async (req, res, next) => {
+export const deleteOrder = asyncHandler(async (req, res, next) => {
   const { id: orderId } = req.params;
 
   const order = await Order.findByIdAndDelete(orderId);
@@ -104,15 +104,3 @@ const deleteOrder = asyncHandler(async (req, res, next) => {
 
   res.status(StatusCodes.NO_CONTENT).json(null);
 });
-
-const orderController = {
-  getOrders,
-  getUserOrders,
-  getMonthlyIncome,
-  getOrder,
-  createOrder,
-  updateOrder,
-  deleteOrder,
-};
-
-export default orderController;
