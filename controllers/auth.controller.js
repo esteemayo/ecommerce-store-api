@@ -6,7 +6,7 @@ import asyncHandler from 'express-async-handler';
 import NotFoundError from '../errors/notFound.js';
 import sendEmail from '../utils/email.js';
 import BadRequestError from '../errors/badRequest.js';
-import AppError from '../errors/AppError.js';
+import AppError from '../errors/appError.js';
 import UnauthenticatedError from '../errors/unauthenticated.js';
 
 import createSendToken from '../utils/createSendToken.js';
