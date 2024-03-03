@@ -6,7 +6,7 @@ import asyncHandler from 'express-async-handler';
 import Product from '../models/product.model.js';
 import NotFoundError from '../errors/notFound.js';
 
-const getProducts = asyncHandler(async (req, res, next) => {
+export const getProducts = asyncHandler(async (req, res, next) => {
   const queryObj = {};
   const { name, featured, category, sort, fields, numericFilter } = req.query;
 
@@ -89,13 +89,13 @@ const getProducts = asyncHandler(async (req, res, next) => {
   });
 });
 
-const getProductStats = asyncHandler(async (req, res, next) => {
+export const getProductStats = asyncHandler(async (req, res, next) => {
   const stats = await Product.getProductStats();
 
   res.status(StatusCodes.OK).json(stats);
 });
 
-const getProductByTags = asyncHandler(async (req, res, next) => {
+export const getProductByTags = asyncHandler(async (req, res, next) => {
   const tags = req.query.tags.split(',');
 
   const products = await Product.find({ tags: { $in: tags } }).sort('-_id');
@@ -103,7 +103,7 @@ const getProductByTags = asyncHandler(async (req, res, next) => {
   res.status(StatusCodes.OK).json(products);
 });
 
-const getCountByCategory = asyncHandler(async (req, res, next) => {
+export const getCountByCategory = asyncHandler(async (req, res, next) => {
   const shirtCountPromise = Product.countDocuments({ category: 'shirts' });
   const gadgetCountPromise = Product.countDocuments({ category: 'gadgets' });
   const electronicCountPromise = Product.countDocuments({
@@ -130,7 +130,7 @@ const getCountByCategory = asyncHandler(async (req, res, next) => {
   ]);
 });
 
-const searchProducts = asyncHandler(async (req, res, next) => {
+export const searchProducts = asyncHandler(async (req, res, next) => {
   const { query } = req.query;
 
   const products = await Product.find({
@@ -140,7 +140,7 @@ const searchProducts = asyncHandler(async (req, res, next) => {
   res.status(StatusCodes.OK).json(products);
 });
 
-const getProductById = asyncHandler(async (req, res, next) => {
+export const getProductById = asyncHandler(async (req, res, next) => {
   const { id: productId } = req.params;
 
   const product = await Product.findById(productId).populate('reviews');
@@ -156,7 +156,7 @@ const getProductById = asyncHandler(async (req, res, next) => {
   res.status(StatusCodes.OK).json(product);
 });
 
-const getProductBySlug = asyncHandler(async (req, res, next) => {
+export const getProductBySlug = asyncHandler(async (req, res, next) => {
   const { slug } = req.params;
 
   const product = await Product.findOne({ slug }).populate('reviews');
@@ -172,13 +172,13 @@ const getProductBySlug = asyncHandler(async (req, res, next) => {
   res.status(StatusCodes.OK).json(product);
 });
 
-const createProduct = asyncHandler(async (req, res, next) => {
+export const createProduct = asyncHandler(async (req, res, next) => {
   const product = await Product.create({ ...req.body });
 
   res.status(StatusCodes.CREATED).json(product);
 });
 
-const updateProduct = asyncHandler(async (req, res, next) => {
+export const updateProduct = asyncHandler(async (req, res, next) => {
   const { id: productId } = req.params;
 
   if (req.body.name) req.body.slug = slugify(req.body.name, { lower: true });
@@ -203,7 +203,7 @@ const updateProduct = asyncHandler(async (req, res, next) => {
   res.status(StatusCodes.OK).json(updatedProduct);
 });
 
-const likeProduct = asyncHandler(async (req, res, next) => {
+export const likeProduct = asyncHandler(async (req, res, next) => {
   const { id: productId } = req.params;
 
   let product = await Product.findById(productId);
@@ -237,7 +237,7 @@ const likeProduct = asyncHandler(async (req, res, next) => {
   res.status(StatusCodes.OK).json(product);
 });
 
-const updateViews = asyncHandler(async (req, res, next) => {
+export const updateViews = asyncHandler(async (req, res, next) => {
   const { id: productId } = req.params;
 
   const product = await Product.findByIdAndUpdate(
@@ -259,7 +259,7 @@ const updateViews = asyncHandler(async (req, res, next) => {
   res.status(StatusCodes.OK).json(product);
 });
 
-const deleteProduct = asyncHandler(async (req, res, next) => {
+export const deleteProduct = asyncHandler(async (req, res, next) => {
   const { id: productId } = req.params;
 
   const product = await Product.findByIdAndDelete(productId);
@@ -274,20 +274,3 @@ const deleteProduct = asyncHandler(async (req, res, next) => {
 
   res.status(StatusCodes.NO_CONTENT).json(null);
 });
-
-const productController = {
-  getProducts,
-  getProductStats,
-  getProductByTags,
-  getCountByCategory,
-  searchProducts,
-  getProductById,
-  getProductBySlug,
-  createProduct,
-  updateProduct,
-  likeProduct,
-  updateViews,
-  deleteProduct,
-};
-
-export default productController;
