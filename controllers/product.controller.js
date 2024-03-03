@@ -2,7 +2,6 @@
 import { StatusCodes } from 'http-status-codes';
 import slugify from 'slugify';
 import asyncHandler from 'express-async-handler';
-import mongoose from 'mongoose';
 
 import Product from '../models/product.model.js';
 import NotFoundError from '../errors/notFound.js';
