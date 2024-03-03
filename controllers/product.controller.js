@@ -283,7 +283,6 @@ const productController = {
   searchProducts,
   getProductById,
   getProductBySlug,
-  getWeeklyViews,
   createProduct,
   updateProduct,
   likeProduct,
