@@ -4,7 +4,7 @@ import asyncHandler from 'express-async-handler';
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
-const payment = asyncHandler(async (req, res, next) => {
+export const payment = asyncHandler(async (req, res, next) => {
   const stripeRes = await stripe.charges.create(
     {
       source: req.body.tokenId,
@@ -18,9 +18,3 @@ const payment = asyncHandler(async (req, res, next) => {
 
   res.status(StatusCodes.OK).json(stripeRes);
 });
-
-const stripeController = {
-  payment,
-};
-
-export default stripeController;
