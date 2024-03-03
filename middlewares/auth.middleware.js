@@ -8,7 +8,7 @@ import UnauthenticatedError from '../errors/unauthenticated.js';
 
 import User from '../models/user.model.js';
 
-const protect = asyncHandler(async (req, res, next) => {
+export const protect = asyncHandler(async (req, res, next) => {
   let token;
   const authHeader = req.headers.authorization;
 
@@ -49,18 +49,18 @@ const protect = asyncHandler(async (req, res, next) => {
   next();
 });
 
-const restrictTo =
+export const restrictTo =
   (...roles) =>
-    (req, res, next) => {
-      if (!roles.includes(req.user.role)) {
-        return next(
-          new ForbiddenError('You do not have permission to perform this action')
-        );
-      }
-      next();
-    };
+  (req, res, next) => {
+    if (!roles.includes(req.user.role)) {
+      return next(
+        new ForbiddenError('You do not have permission to perform this action')
+      );
+    }
+    next();
+  };
 
-const verifyUser = (req, res, next) => {
+export const verifyUser = (req, res, next) => {
   if (req.params.id === req.user.id || req.user.role === 'admin') {
     return next();
   }
@@ -68,11 +68,3 @@ const verifyUser = (req, res, next) => {
     new ForbiddenError('You are not allowed to perform this operation')
   );
 };
-
-const authMiddleware = {
-  protect,
-  restrictTo,
-  verifyUser,
-};
-
-export default authMiddleware;
