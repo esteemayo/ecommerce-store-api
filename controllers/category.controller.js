@@ -2,7 +2,7 @@
 import { StatusCodes } from 'http-status-codes';
 import asyncHandler from 'express-async-handler';
 
-import APIFeatures from '../utils/apiFeatures.js';
+import APIFeatures from '../src/utils/apiFeatures.js';
 import Category from '../models/category.model.js';
 import NotFoundError from '../errors/notFound.js';
 

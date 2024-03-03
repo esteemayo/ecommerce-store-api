@@ -8,7 +8,7 @@ import NotFoundError from '../errors/notFound.js';
 import UnauthenticatedError from '../errors/unauthenticated.js';
 
 import User from '../models/user.model.js';
-import createSendToken from '../utils/createSendToken.js';
+import createSendToken from '../src/utils/createSendToken.js';
 
 export const getUsers = asyncHandler(async (req, res, next) => {
   const query = req.query.new;
@@ -67,8 +67,7 @@ export const updateMe = asyncHandler(async (req, res, next) => {
   if (password || confirmPassword) {
     return next(
       new BadRequestError(
-        `This route is not for password updates. Please use update ${
-          req.protocol
+        `This route is not for password updates. Please use update ${req.protocol
         }://${req.get('host')}/api/v1/auth/update-my-password`
       )
     );
