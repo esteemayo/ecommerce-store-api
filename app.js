@@ -22,7 +22,7 @@ import stripeRoute from './routes/stripe.route.js';
 import categoryRoute from './routes/categories.route.js';
 
 import NotFoundError from './errors/notFound.js';
-import errorHandlerMiddleware from './middlewares/errorHandler.js';
+import errorHandlerMiddleware from './middlewares/error.handler.middleware.js';
 
 dotenv.config({ path: './config.env' });
 
