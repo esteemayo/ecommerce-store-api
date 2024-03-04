@@ -1,6 +1,6 @@
 /* eslint-disable */
 import app from './app.js';
-import connectDB from './config/db.js';
+import connectDB from './config/db.config.js';
 
 process.on('uncaughtException', (err) => {
   console.log('UNCAUGHT EXCEPTION! 🔥 Shutting down gracefully...'.red.bold);

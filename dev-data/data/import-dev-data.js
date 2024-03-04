@@ -11,7 +11,7 @@ import Product from '../../models/Product.js';
 import Order from '../../models/Order.js';
 import Category from '../../models/Category.js';
 
-import connectDB from '../../config/db.js';
+import connectDB from '../../config/db.config.js';
 
 dotenv.config({ path: './config.env' });
 
