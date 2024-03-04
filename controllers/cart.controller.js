@@ -5,8 +5,8 @@ import asyncHandler from 'express-async-handler';
 import Cart from '../models/cart.model.js';
 import APIFeatures from '../utils/apiFeatures.js';
 
-import NotFoundError from '../errors/notFound.js';
-import ForbiddenError from '../errors/forbidden.js';
+import NotFoundError from '../errors/not.found.error.js';
+import ForbiddenError from '../errors/forbidden.error.js';
 
 export const getCarts = asyncHandler(async (req, res, next) => {
   const features = new APIFeatures(Cart.find({ user: req.user.id }), req.query)

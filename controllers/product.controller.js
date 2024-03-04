@@ -4,7 +4,7 @@ import slugify from 'slugify';
 import asyncHandler from 'express-async-handler';
 
 import Product from '../models/product.model.js';
-import NotFoundError from '../errors/notFound.js';
+import NotFoundError from '../errors/not.found.error.js';
 
 export const getProducts = asyncHandler(async (req, res, next) => {
   const queryObj = {};

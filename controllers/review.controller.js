@@ -5,8 +5,8 @@ import asyncHandler from 'express-async-handler';
 import Review from '../models/review.model.js';
 import Product from '../models/product.model.js';
 
-import NotFoundError from '../errors/notFound.js';
-import ForbiddenError from '../errors/forbidden.js';
+import NotFoundError from '../errors/not.found.error.js';
+import ForbiddenError from '../errors/forbidden.error.js';
 
 import APIFeatures from '../utils/apiFeatures.js';
 

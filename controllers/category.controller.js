@@ -4,7 +4,7 @@ import asyncHandler from 'express-async-handler';
 
 import APIFeatures from '../utils/apiFeatures.js';
 import Category from '../models/category.model.js';
-import NotFoundError from '../errors/notFound.js';
+import NotFoundError from '../errors/not.found.error.js';
 
 export const getCategories = asyncHandler(async (req, res, next) => {
   const features = new APIFeatures(Category.find(), req.query)

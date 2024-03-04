@@ -21,7 +21,7 @@ import reviewRoute from './routes/reviews.route.js';
 import stripeRoute from './routes/stripe.route.js';
 import categoryRoute from './routes/categories.route.js';
 
-import NotFoundError from './errors/notFound.js';
+import NotFoundError from './errors/not.found.error.js';
 import errorHandlerMiddleware from './middlewares/error.handler.middleware.js';
 
 dotenv.config({ path: './config.env' });

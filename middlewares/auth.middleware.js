@@ -3,8 +3,8 @@ import { promisify } from 'util';
 import jwt from 'jsonwebtoken';
 import asyncHandler from 'express-async-handler';
 
-import ForbiddenError from '../errors/forbidden.js';
-import UnauthenticatedError from '../errors/unauthenticated.js';
+import ForbiddenError from '../errors/forbidden.error.js';
+import UnauthenticatedError from '../errors/unauthenticated.error.js';
 
 import User from '../models/user.model.js';
 
@@ -51,14 +51,14 @@ export const protect = asyncHandler(async (req, res, next) => {
 
 export const restrictTo =
   (...roles) =>
-  (req, res, next) => {
-    if (!roles.includes(req.user.role)) {
-      return next(
-        new ForbiddenError('You do not have permission to perform this action')
-      );
-    }
-    next();
-  };
+    (req, res, next) => {
+      if (!roles.includes(req.user.role)) {
+        return next(
+          new ForbiddenError('You do not have permission to perform this action')
+        );
+      }
+      next();
+    };
 
 export const verifyUser = (req, res, next) => {
   if (req.params.id === req.user.id || req.user.role === 'admin') {

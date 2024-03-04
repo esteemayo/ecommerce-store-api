@@ -5,8 +5,8 @@ import asyncHandler from 'express-async-handler';
 import Order from '../models/order.model.js';
 import APIFeatures from '../utils/apiFeatures.js';
 
-import NotFoundError from '../errors/notFound.js';
-import ForbiddenError from '../errors/forbidden.js';
+import NotFoundError from '../errors/not.found.error.js';
+import ForbiddenError from '../errors/forbidden.error.js';
 
 export const getOrders = asyncHandler(async (req, res, next) => {
   const features = new APIFeatures(Order.find(), req.query)

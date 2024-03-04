@@ -3,10 +3,10 @@ import { StatusCodes } from 'http-status-codes';
 import crypto from 'crypto';
 import asyncHandler from 'express-async-handler';
 
-import BadRequestError from '../errors/badRequest.js';
-import AppError from '../errors/appError.js';
-import UnauthenticatedError from '../errors/unauthenticated.js';
-import NotFoundError from '../errors/notFound.js';
+import BadRequestError from '../errors/bad.request.error.js';
+import AppError from '../errors/app.error.js';
+import UnauthenticatedError from '../errors/unauthenticated.error.js';
+import NotFoundError from '../errors/not.found.error.js';
 
 import createSendToken from '../utils/createSendToken.js';
 import sendEmail from '../utils/email.js';

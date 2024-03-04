@@ -3,9 +3,9 @@ import { StatusCodes } from 'http-status-codes';
 import _ from 'lodash';
 import asyncHandler from 'express-async-handler';
 
-import BadRequestError from '../errors/badRequest.js';
-import NotFoundError from '../errors/notFound.js';
-import UnauthenticatedError from '../errors/unauthenticated.js';
+import BadRequestError from '../errors/bad.request.error.js';
+import NotFoundError from '../errors/not.found.error.js';
+import UnauthenticatedError from '../errors/unauthenticated.error.js';
 
 import User from '../models/user.model.js';
 import createSendToken from '../utils/createSendToken.js';
