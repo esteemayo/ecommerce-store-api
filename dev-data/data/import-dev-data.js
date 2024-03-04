@@ -5,11 +5,11 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import 'colors';
 
-import Review from '../../models/Review.js';
-import User from '../../models/User.js';
-import Product from '../../models/Product.js';
-import Order from '../../models/Order.js';
-import Category from '../../models/Category.js';
+import Review from '../../models/review.model.js';
+import User from '../../models/user.model.js';
+import Product from '../../models/product.model.js';
+import Order from '../../models/order.model.js';
+import Category from '../../models/category.model.js';
 
 import connectDB from '../../config/db.config.js';
 
