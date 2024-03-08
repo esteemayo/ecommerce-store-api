@@ -55,6 +55,23 @@ export const googleLogin = asyncHandler(async (req, res, next) => {
   createSendSocialToken(newUser, StatusCodes.OK, req, res);
 });
 
+export const facebookLogin = asyncHandler(async (req, res, next) => {
+  const { email } = req.body;
+
+  const user = await User.findOne({ email });
+
+  if (user) {
+    return createSendSocialToken(user, StatusCodes.OK, req, res);
+  }
+
+  const newUser = await User.create({
+    ...req.body,
+    fromFacebook: true,
+  });
+
+  createSendSocialToken(user, StatusCodes.CREATED, req, res);
+});
+
 export const forgotPassword = asyncHandler(async (req, res, next) => {
   const { email } = req.body;
 
