@@ -69,6 +69,10 @@ const userSchema = new Schema(
       type: Boolean,
       default: true,
     },
+    fromFacebook: {
+      type: Boolean,
+      default: false,
+    },
     fromGoogle: {
       type: Boolean,
       default: false,
