@@ -10,6 +10,7 @@
     "role": "admin",
     "active": true,
     "fromGoogle": false,
+    "fromFacebook": false,
     "image": "https://firebasestorage.googleapis.com/v0/b/ecommerce-store-3ac4e.appspot.com/o/users%2F1707153802421-avatar-1.jpg?alt=media&token=8e8e52a8-0b95-42e1-9f85-7b8ab65d2193",
     "createdAt": "2024-02-05T17:25:56.145Z",
     "updatedAt": "2024-02-05T17:25:56.145Z"
@@ -25,6 +26,7 @@
     "role": "admin",
     "active": true,
     "fromGoogle": false,
+    "fromFacebook": false,
     "image": "https://firebasestorage.googleapis.com/v0/b/ecommerce-store-3ac4e.appspot.com/o/users%2F1707154204198-avatar-2.jpg?alt=media&token=29cc5f36-2e25-485c-adad-5dd610dfb24d",
     "createdAt": "2024-02-05T17:31:27.265Z",
     "updatedAt": "2024-02-05T17:31:27.265Z"
@@ -40,6 +42,7 @@
     "role": "user",
     "active": true,
     "fromGoogle": false,
+    "fromFacebook": false,
     "image": "https://firebasestorage.googleapis.com/v0/b/ecommerce-store-3ac4e.appspot.com/o/users%2F1707154757011-avatar-3.jpg?alt=media&token=377245ba-9386-4ea5-86a4-a75f21a19ead",
     "createdAt": "2024-02-05T17:39:33.267Z",
     "updatedAt": "2024-02-05T17:39:33.267Z"
@@ -55,6 +58,7 @@
     "role": "user",
     "active": true,
     "fromGoogle": false,
+    "fromFacebook": false,
     "image": "https://firebasestorage.googleapis.com/v0/b/ecommerce-store-3ac4e.appspot.com/o/users%2F1707154897937-avatar-4.jpg?alt=media&token=5b55d0df-557f-4cd3-9034-42de107182ee",
     "createdAt": "2024-02-05T17:41:44.918Z",
     "updatedAt": "2024-02-05T17:41:44.918Z"
@@ -70,6 +74,7 @@
     "role": "user",
     "active": true,
     "fromGoogle": false,
+    "fromFacebook": false,
     "image": "https://firebasestorage.googleapis.com/v0/b/ecommerce-store-3ac4e.appspot.com/o/users%2F1707154999743-avatar-5.jpg?alt=media&token=c6096c69-2846-4744-b776-ac4282e14e30",
     "createdAt": "2024-02-05T17:43:25.800Z",
     "updatedAt": "2024-02-05T17:43:25.800Z"
@@ -85,6 +90,7 @@
     "role": "user",
     "active": true,
     "fromGoogle": false,
+    "fromFacebook": false,
     "image": "https://firebasestorage.googleapis.com/v0/b/ecommerce-store-3ac4e.appspot.com/o/users%2F1707155079126-avatar-6.jpg?alt=media&token=38af63d1-cd66-4fce-94b1-1a31b8b22273",
     "createdAt": "2024-02-05T17:44:45.194Z",
     "updatedAt": "2024-02-05T17:44:45.194Z"
@@ -100,6 +106,7 @@
     "role": "user",
     "active": true,
     "fromGoogle": false,
+    "fromFacebook": false,
     "image": "https://firebasestorage.googleapis.com/v0/b/ecommerce-store-3ac4e.appspot.com/o/users%2F1707155238913-avatar-7.jpg?alt=media&token=f74ed22c-3387-4978-84e7-7100c7737337",
     "createdAt": "2024-02-05T17:47:24.277Z",
     "updatedAt": "2024-02-05T17:47:24.277Z"
@@ -115,6 +122,7 @@
     "role": "user",
     "active": true,
     "fromGoogle": false,
+    "fromFacebook": false,
     "image": "https://firebasestorage.googleapis.com/v0/b/ecommerce-store-3ac4e.appspot.com/o/users%2F1707155330567-avatar-8.jpg?alt=media&token=4a41fc20-9ad3-4683-9bf7-d667c6b9afc5",
     "createdAt": "2024-02-05T17:48:53.109Z",
     "updatedAt": "2024-02-05T17:48:53.109Z"
@@ -130,6 +138,7 @@
     "role": "user",
     "active": true,
     "fromGoogle": false,
+    "fromFacebook": false,
     "image": "https://firebasestorage.googleapis.com/v0/b/ecommerce-store-3ac4e.appspot.com/o/users%2F1707155409118-avatar-9.jpg?alt=media&token=bb13e8b7-854f-408a-8b0f-b62e708591aa",
     "createdAt": "2024-02-05T17:50:13.335Z",
     "updatedAt": "2024-02-05T17:50:13.335Z"
@@ -145,6 +154,7 @@
     "role": "user",
     "active": true,
     "fromGoogle": false,
+    "fromFacebook": false,
     "image": "https://firebasestorage.googleapis.com/v0/b/ecommerce-store-3ac4e.appspot.com/o/users%2F1707155482748-avatar-10.jpg?alt=media&token=988a1e2b-5be3-4fdb-bae2-3aea77f61d02",
     "createdAt": "2024-02-05T17:51:26.326Z",
     "updatedAt": "2024-02-05T17:51:26.326Z"
@@ -160,6 +170,7 @@
     "role": "user",
     "active": true,
     "fromGoogle": false,
+    "fromFacebook": false,
     "image": "https://firebasestorage.googleapis.com/v0/b/ecommerce-store-3ac4e.appspot.com/o/users%2F1707169778854-avatar-11.jpg?alt=media&token=799aad88-7d7f-42e3-a28a-136bec039340",
     "createdAt": "2024-02-05T21:49:43.734Z",
     "updatedAt": "2024-02-05T21:49:43.734Z"
@@ -175,6 +186,7 @@
     "role": "user",
     "active": true,
     "fromGoogle": false,
+    "fromFacebook": false,
     "image": "https://firebasestorage.googleapis.com/v0/b/ecommerce-store-3ac4e.appspot.com/o/users%2F1707169865740-avatar-12.jpg?alt=media&token=699ed74c-125d-450b-b675-8cba88b6a458",
     "createdAt": "2024-02-05T21:52:37.388Z",
     "updatedAt": "2024-02-05T21:52:37.388Z"
@@ -190,6 +202,7 @@
     "role": "user",
     "active": true,
     "fromGoogle": false,
+    "fromFacebook": false,
     "image": "https://firebasestorage.googleapis.com/v0/b/ecommerce-store-3ac4e.appspot.com/o/users%2F1707170046896-avatar-13.jpg?alt=media&token=4f948e50-3472-4c76-baeb-6b0b238873d8",
     "createdAt": "2024-02-05T21:54:11.039Z",
     "updatedAt": "2024-02-05T21:54:11.039Z"
@@ -205,6 +218,7 @@
     "role": "user",
     "active": true,
     "fromGoogle": false,
+    "fromFacebook": false,
     "image": "https://firebasestorage.googleapis.com/v0/b/ecommerce-store-3ac4e.appspot.com/o/users%2F1707170148246-avatar-14.jpg?alt=media&token=2af05833-1478-4bb3-9b61-61ae6c78e40b",
     "createdAt": "2024-02-05T21:56:53.195Z",
     "updatedAt": "2024-02-05T21:56:53.195Z"
@@ -220,6 +234,7 @@
     "role": "user",
     "active": true,
     "fromGoogle": false,
+    "fromFacebook": false,
     "image": "https://firebasestorage.googleapis.com/v0/b/ecommerce-store-3ac4e.appspot.com/o/users%2F1707170293648-avatar-15.jpg?alt=media&token=163c74e8-22f0-400e-ba6a-ebb1e56f4e62",
     "createdAt": "2024-02-05T21:58:25.394Z",
     "updatedAt": "2024-02-05T21:58:25.394Z"
@@ -235,6 +250,7 @@
     "role": "user",
     "active": true,
     "fromGoogle": false,
+    "fromFacebook": false,
     "image": "https://firebasestorage.googleapis.com/v0/b/ecommerce-store-3ac4e.appspot.com/o/users%2F1707170402951-avatar-16.jpg?alt=media&token=18fe2347-b983-4198-8faa-78b5f8de4c73",
     "createdAt": "2024-02-05T22:00:06.991Z",
     "updatedAt": "2024-02-05T22:00:06.991Z"
@@ -250,6 +266,7 @@
     "role": "user",
     "active": true,
     "fromGoogle": false,
+    "fromFacebook": false,
     "image": "https://firebasestorage.googleapis.com/v0/b/ecommerce-store-3ac4e.appspot.com/o/users%2F1707170485613-avatar-17.jpg?alt=media&token=e1ed761b-b782-47a8-b5ab-3ab3a97eb354",
     "createdAt": "2024-02-05T22:01:28.381Z",
     "updatedAt": "2024-02-05T22:01:28.381Z"
@@ -265,6 +282,7 @@
     "role": "user",
     "active": true,
     "fromGoogle": false,
+    "fromFacebook": false,
     "image": "https://firebasestorage.googleapis.com/v0/b/ecommerce-store-3ac4e.appspot.com/o/users%2F1707170577820-avatar-18.jpg?alt=media&token=78b8a476-6d17-40cc-a9af-7baf2bd4e12a",
     "createdAt": "2024-02-05T22:03:01.944Z",
     "updatedAt": "2024-02-05T22:03:01.944Z"
@@ -280,6 +298,7 @@
     "role": "user",
     "active": true,
     "fromGoogle": false,
+    "fromFacebook": false,
     "image": "https://firebasestorage.googleapis.com/v0/b/ecommerce-store-3ac4e.appspot.com/o/users%2F1707170663896-avatar-19.jpg?alt=media&token=e25a7452-b5c7-4172-8e28-3b2b43a4705c",
     "createdAt": "2024-02-05T22:04:25.987Z",
     "updatedAt": "2024-02-05T22:04:25.987Z"
@@ -295,6 +314,7 @@
     "role": "user",
     "active": true,
     "fromGoogle": false,
+    "fromFacebook": false,
     "image": "https://firebasestorage.googleapis.com/v0/b/ecommerce-store-3ac4e.appspot.com/o/users%2F1707170846438-avatar-20.jpg?alt=media&token=655ef1b5-360f-40b5-ae90-b6a8f2ccc8c2",
     "createdAt": "2024-02-05T22:07:30.230Z",
     "updatedAt": "2024-02-05T22:07:30.230Z"
