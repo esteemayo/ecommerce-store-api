@@ -52,7 +52,7 @@ export const googleLogin = asyncHandler(async (req, res, next) => {
     fromGoogle: true,
   });
 
-  createSendSocialToken(newUser, StatusCodes.OK, req, res);
+  createSendSocialToken(newUser, StatusCodes.CREATED, req, res);
 });
 
 export const facebookLogin = asyncHandler(async (req, res, next) => {
