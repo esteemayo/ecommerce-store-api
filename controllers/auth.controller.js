@@ -10,7 +10,7 @@ import NotFoundError from '../errors/not.found.error.js';
 
 import createSendToken from '../utils/createSendToken.js';
 import sendEmail from '../utils/email.js';
-import createSendGoogleToken from '../utils/createSendGoogleToken.js';
+import createSendSocialToken from '../utils/createSendSocialToken.js';
 
 import User from '../models/user.model.js';
 
@@ -44,7 +44,7 @@ export const googleLogin = asyncHandler(async (req, res, next) => {
   const user = await User.findOne({ email });
 
   if (user) {
-    return createSendGoogleToken(user, StatusCodes.OK, req, res);
+    return createSendSocialToken(user, StatusCodes.OK, req, res);
   }
 
   const newUser = await User.create({
@@ -52,7 +52,7 @@ export const googleLogin = asyncHandler(async (req, res, next) => {
     fromGoogle: true,
   });
 
-  createSendGoogleToken(newUser, StatusCodes.OK, req, res);
+  createSendSocialToken(newUser, StatusCodes.OK, req, res);
 });
 
 export const forgotPassword = asyncHandler(async (req, res, next) => {
