@@ -74,7 +74,10 @@ export const getProducts = asyncHandler(async (req, res, next) => {
   const limit = +req.query.limit || 20;
   const skip = (page - 1) * limit;
 
-  const counts = await Product.countDocuments();
+  const counts = await Product.countDocuments({
+    ...(category ? { category } : {}),
+  });
+
   const numberOfPages = Math.ceil(counts / limit);
 
   query = query.skip(skip).limit(limit);
