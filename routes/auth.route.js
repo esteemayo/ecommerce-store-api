@@ -14,6 +14,8 @@ router.post('/facebook-login', authController.facebookLogin);
 
 router.post('/google-login', authController.googleLogin);
 
+router.post('/logout', authController.logout);
+
 router.post('/forgot-password', authController.forgotPassword);
 
 router.post('/reset-password/:token', authController.resetPassword);
