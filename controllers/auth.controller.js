@@ -74,7 +74,7 @@ export const googleLogin = asyncHandler(async (req, res, next) => {
 
 export const logout = async (req, res, next) => {
   res
-    .claerCookie('access_token', {
+    .clearCookie('access_token', {
       sameSite: 'none',
       secure: true,
     })
