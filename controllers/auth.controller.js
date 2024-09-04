@@ -72,6 +72,16 @@ export const googleLogin = asyncHandler(async (req, res, next) => {
   createSendSocialToken(newUser, StatusCodes.CREATED, req, res);
 });
 
+export const logout = async (req, res, next) => {
+  res
+    .claerCookie('access_token', {
+      sameSite: 'none',
+      secure: true,
+    })
+    .status(StatusCodes.OK)
+    .json('You have been logged out');
+};
+
 export const forgotPassword = asyncHandler(async (req, res, next) => {
   const { email } = req.body;
 
