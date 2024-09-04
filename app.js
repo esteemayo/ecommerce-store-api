@@ -28,9 +28,14 @@ dotenv.config({ path: './config.env' });
 
 const app = express();
 
+const devEnv = process.env.NODE_ENV !== 'production';
+const { DEV_URL, PROD_URL } = process.env;
+
+const origin = devEnv ? DEV_URL : PROD_URL;
+
 app.set('trust proxy', 1);
 
-app.use(cors());
+app.use(cors({ origin, credentials: true }));
 app.options('*', cors());
 
 app.use(helmet());
