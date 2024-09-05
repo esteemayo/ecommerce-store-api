@@ -76,7 +76,7 @@ export const logout = async (req, res, next) => {
   res
     .clearCookie('access_token', {
       sameSite: 'none',
-      secure: true,
+      secure: req.secure || req.headers['x-forwarded-proto'] === 'https',
     })
     .status(StatusCodes.OK)
     .json('You have been logged out');
