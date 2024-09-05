@@ -141,18 +141,20 @@ export const searchProducts = asyncHandler(async (req, res, next) => {
 
   const skip = (page - 1) * limit;
 
-  const total = await Product.countDocuments({
+  const totalPromise = Product.countDocuments({
     name: { $regex: query, $options: 'i' },
   });
 
-  const numberOfPages = Math.ceil(total / limit);
-
-  const products = await Product.find({
+  const productPromise = Product.find({
     name: { $regex: query, $options: 'i' },
   })
     .skip(skip)
     .limit(limit)
     .sort('-_id');
+
+  const [total, products] = await Promise.all([totalPromise, productPromise]);
+
+  const numberOfPages = Math.ceil(total / limit);
 
   res.status(StatusCodes.OK).json({
     page,
