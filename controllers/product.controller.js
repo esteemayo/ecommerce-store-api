@@ -134,13 +134,32 @@ export const getCountByCategory = asyncHandler(async (req, res, next) => {
 });
 
 export const searchProducts = asyncHandler(async (req, res, next) => {
-  const { query } = req.query;
+  let { page, limit, query } = req.query;
+
+  page = Number(req.query.page) || 1;
+  limit = Number(req.query.limit) || 6;
+
+  const skip = (page - 1) * limit;
+
+  const total = await Product.countDocuments({
+    name: { $regex: query, $options: 'i' },
+  });
+
+  const numberOfPages = Math.ceil(total / limit);
 
   const products = await Product.find({
     name: { $regex: query, $options: 'i' },
-  }).sort('-_id');
+  })
+    .skip(skip)
+    .limit(limit)
+    .sort('-_id');
 
-  res.status(StatusCodes.OK).json(products);
+  res.status(StatusCodes.OK).json({
+    page,
+    numberOfPages,
+    products,
+    total,
+  });
 });
 
 export const getProductById = asyncHandler(async (req, res, next) => {
