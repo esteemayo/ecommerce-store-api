@@ -158,9 +158,9 @@ export const searchProducts = asyncHandler(async (req, res, next) => {
 
   res.status(StatusCodes.OK).json({
     page,
+    total,
     numberOfPages,
     products,
-    total,
   });
 });
 
