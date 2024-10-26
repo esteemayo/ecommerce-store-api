@@ -136,8 +136,8 @@ export const getCountByCategory = asyncHandler(async (req, res, next) => {
 export const searchProducts = asyncHandler(async (req, res, next) => {
   let { page, limit, query } = req.query;
 
-  page = Number(req.query.page) || 1;
-  limit = Number(req.query.limit) || 6;
+  page = Number(page) || 1;
+  limit = Number(limit) || 6;
 
   const skip = (page - 1) * limit;
 
