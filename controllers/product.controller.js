@@ -9,7 +9,8 @@ import NotFoundError from '../errors/not.found.error.js';
 
 export const getProducts = asyncHandler(async (req, res, next) => {
   const queryObj = {};
-  const { name, featured, category, sort, fields, numericFilter } = req.query;
+  let { name, featured, category, sort, fields, numericFilter, page, limit } =
+    req.query;
 
   if (name) {
     queryObj.name = { $regex: name, $options: 'i' };
@@ -71,8 +72,8 @@ export const getProducts = asyncHandler(async (req, res, next) => {
     query = query.select('-__v');
   }
 
-  const page = +req.query.page || 1;
-  const limit = +req.query.limit || 20;
+  page = +page || 1;
+  limit = +limit || 20;
   const skip = (page - 1) * limit;
 
   const counts = await Product.countDocuments({
