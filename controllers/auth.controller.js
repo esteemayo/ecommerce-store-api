@@ -8,9 +8,9 @@ import AppError from '../errors/app.error.js';
 import UnauthenticatedError from '../errors/unauthenticated.error.js';
 import NotFoundError from '../errors/not.found.error.js';
 
-import createSendToken from '../utils/createSendToken.js';
+import createSendToken from '../utils/create.send.token.js';
 import sendEmail from '../utils/email.js';
-import createSendSocialToken from '../utils/createSendSocialToken.js';
+import createSendSocialToken from '../utils/create.send.social.token.js';
 
 import User from '../models/user.model.js';
 

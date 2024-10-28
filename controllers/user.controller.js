@@ -8,7 +8,7 @@ import NotFoundError from '../errors/not.found.error.js';
 import UnauthenticatedError from '../errors/unauthenticated.error.js';
 
 import User from '../models/user.model.js';
-import createSendToken from '../utils/createSendToken.js';
+import createSendToken from '../utils/create.send.token.js';
 
 export const getUsers = asyncHandler(async (req, res, next) => {
   const query = req.query.new;
