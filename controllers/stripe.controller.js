@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import { StatusCodes } from 'http-status-codes';
 import Stripe from 'stripe';
 import asyncHandler from 'express-async-handler';
