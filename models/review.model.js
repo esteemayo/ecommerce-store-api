@@ -1,4 +1,5 @@
 /* eslint-disable  */
+
 import mongoose from 'mongoose';
 
 import Product from './product.model.js';
