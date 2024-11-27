@@ -48,7 +48,7 @@ This e-commerce application allows user to browse and purchase products, manage 
 1. Clone the repository: <mark>[git clone](https://github.com/esteemayo/ecommerce-store-api.git)</mark>
 2. Change into the project directory: <mark>cd your-repo-name</mark>
 3. Install dependencies: <mark>npm install or yarn install</mark>
-4. Create a <mark>.env</mark> file and add the following environment variables:
+4. Create a <mark>config.env</mark> file and add the following environment variables:
 
 - PORT: Application local port number
 - NODE_ENV: Application enviroment
