@@ -21,3 +21,13 @@ A robust e-commerce application built using Express, Mongoose, JSON Web Tokens (
 ## Overview
 
 This e-commerce application allows user to browse and purchase products, manage their accounts, and track their orders. The application uses Express as the backend framework, Mongoose for MongoDB interactions, JSON Web Tokens (JWT) for authentication and authorization, and Stripe for payment processing.
+
+## Features
+
+- User authentication and authorization using JSON Web Token (JWT)
+- Product browsing and purchasing
+- Order management and tracking
+- User account management
+- Payment processing using Stripe
+- Email notifications using Nodemailer
+- Password security using BcryptJS
