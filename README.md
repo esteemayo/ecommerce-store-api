@@ -82,12 +82,12 @@ This application uses JSON Web Tokens (JWT) for authentication and authorization
 
 The database schema is defined using Mongoose. The schema includes the following models:
 
-- User: Represents a user with a name, email, username, password, confirmPassword, phone, country, role, active, fromFacebook, fromGoogle, image, passwordChangedAt, resetPasswordToken, and resetPasswordExpires.
-- Product: Represents a product with a name, desc, slug, price, priceDiscount, numberInStock, inStock, images, featured, color, size, likes, category, properties, tags, ratingsQuantity, ratingsAverage, and views.
-- Order: Represents an order with a customer, address, products, total, status, paymentMethod, and user.
-- Cart: Represents a cart with a quantity, user, and product.
-- Category: Represents a category with a name, parent, and properties.
-- Review: Represents a review with a review, rating, terms, product, and a user.
+- <mark>User:</mark> Represents a user with a name, email, username, password, confirmPassword, phone, country, role, active, fromFacebook, fromGoogle, image, passwordChangedAt, resetPasswordToken, and resetPasswordExpires.
+- <mark>Product:</mark> Represents a product with a name, desc, slug, price, priceDiscount, numberInStock, inStock, images, featured, color, size, likes, category, properties, tags, ratingsQuantity, ratingsAverage, and views.
+- <mark>Order:</mark> Represents an order with a customer, address, products, total, status, paymentMethod, and user.
+- <mark>Cart:</mark> Represents a cart with a quantity, user, and product.
+- <mark>Category:</mark> Represents a category with a name, parent, and properties.
+- <mark>Review:</mark> Represents a review with a review, rating, terms, product, and a user.
 
 ## API Endpoints
 
