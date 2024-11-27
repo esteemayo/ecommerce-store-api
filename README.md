@@ -76,7 +76,7 @@ This e-commerce application allows user to browse and purchase products, manage 
 
 ## Authentication and Authorization
 
-This application uses JSON Web Tokens (JWT) for authentication and authorization. Users can login using their username and password, and return the user's data with the authentication token, and the token is also stored in the cookie after successful authentication. The JWT_SECRET environment variable is used to secure the authentication process.
+This application uses JSON Web Tokens (JWT) for authentication and authorization. Users can login using their username and password, and return the user's data with the authentication token, and the token is also stored in the cookie after successful authentication. The <mark>JWT_SECRET</mark> environment variable is used to secure the authentication process.
 
 ## Database Schema
 
