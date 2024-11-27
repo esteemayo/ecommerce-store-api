@@ -73,3 +73,7 @@ This e-commerce application allows user to browse and purchase products, manage 
 
 1. Open a web browser or postman and navigate to [http://localhost:2020](http://localhost:2020)
 2. Open [login route](http://localhost:2020/api/v1/auth/login) to authenticate using JSON Web Tokens (JWT)
+
+## Authentication and Authorization
+
+This application uses JSON Web Tokens (JWT) for authentication and authorization. Users can login using their username and password, and return the user's data with the authentication token, and the token is also stored in the cookie after successful authentication. The JWT_SECRET environment variable is used to secure the authentication process.
