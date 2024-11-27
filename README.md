@@ -42,3 +42,29 @@ This e-commerce application allows user to browse and purchase products, manage 
 - BcryptJS (2.x)
 - Nodemailer (6.x)
 - Stripe (11.x)
+
+## Setup and Installation
+
+1. Clone the repository: <mark>[git clone](https://github.com/esteemayo/ecommerce-store-api.git)</mark>
+2. Change into the project directory: <mark>cd your-repo-name</mark>
+3. Install dependencies: <mark>npm install or yarn install</mark>
+4. Create a <mark>.env</mark> file and add the following environment variables:
+
+- PORT: Application local port number
+- NODE_ENV: Application enviroment
+- DEV_URL: Client side development web address [http://localhost:5173](http://localhost:5173)
+- PROD_URL: Client side production web address [https://estoress.netlify.app](https://estoress.netlify.app)
+- DATABASE: MongoDB URI connection string
+- DATABASE_PASSWORD: MongoDB URI password string
+- DATABASE_LOCAL: MongoDB local connection string
+- JWT_SECRET: JSON Web Token secret key
+- JWT_EXPIRES_IN: JSON Web Token expires key
+- JWT_COOKIE_EXPIRES_IN: JSON Web Token cookie expires key
+- MAIL_HOST: Nodemailer smtp host key
+- MAIL_PORT: Nodemailer smtp port key
+- MAIL_USERNAME: Nodemailer smtp auth username key
+- MAIL_PASSWORD: Nodemailer smtp auth password key
+- MAIL_FROM: Nodemailer mail option key
+- STRIPE_SECRET_KEY: Stripe secret key
+
+5. Start the application: <mark>npm run dev</mark> or <mark>yarn dev</mark>
