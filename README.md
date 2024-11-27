@@ -77,3 +77,14 @@ This e-commerce application allows user to browse and purchase products, manage 
 ## Authentication and Authorization
 
 This application uses JSON Web Tokens (JWT) for authentication and authorization. Users can login using their username and password, and return the user's data with the authentication token, and the token is also stored in the cookie after successful authentication. The JWT_SECRET environment variable is used to secure the authentication process.
+
+## Database Schema
+
+The database schema is defined using Mongoose. The schema includes the following models:
+
+- User: Represents a user with a name, email, username, password, confirmPassword, phone, country, role, active, fromFacebook, fromGoogle, image, passwordChangedAt, resetPasswordToken, and resetPasswordExpires.
+- Product: Represents a product with a name, desc, slug, price, priceDiscount, numberInStock, inStock, images, featured, color, size, likes, category, properties, tags, ratingsQuantity, ratingsAverage, and views.
+- Order: Represents an order with a customer, address, products, total, status, paymentMethod, and user.
+- Cart: Represents a cart with a quantity, user, and product.
+- Category: Represents a category with a name, parent, and properties.
+- Review: Represents a review with a review, rating, terms, product, and a user.
