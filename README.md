@@ -68,3 +68,8 @@ This e-commerce application allows user to browse and purchase products, manage 
 - STRIPE_SECRET_KEY: Stripe secret key
 
 5. Start the application: <mark>npm run dev</mark> or <mark>yarn dev</mark>
+
+## Usage
+
+1. Open a web browser or postman and navigate to [http://localhost:2020](http://localhost:2020)
+2. Open [login route](https://estoress.netlify.app/api/v1/auth/login) to authenticate using JSON Web Tokens (JWT)
