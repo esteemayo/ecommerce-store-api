@@ -54,18 +54,18 @@ This e-commerce application allows user to browse and purchase products, manage 
 - NODE_ENV: Application enviroment
 - DEV_URL: Client side development web address [http://localhost:5173](http://localhost:5173)
 - PROD_URL: Client side production web address [https://estoress.netlify.app](https://estoress.netlify.app)
-- DATABASE: MongoDB URI connection string
-- DATABASE_PASSWORD: MongoDB URI password string
-- DATABASE_LOCAL: MongoDB local connection string
-- JWT_SECRET: JSON Web Token secret key
-- JWT_EXPIRES_IN: JSON Web Token expires key
-- JWT_COOKIE_EXPIRES_IN: JSON Web Token cookie expires key
-- MAIL_HOST: Nodemailer smtp host key
-- MAIL_PORT: Nodemailer smtp port key
-- MAIL_USERNAME: Nodemailer smtp auth username key
-- MAIL_PASSWORD: Nodemailer smtp auth password key
-- MAIL_FROM: Nodemailer mail option key
-- STRIPE_SECRET_KEY: Stripe secret key
+- <mark>DATABASE:</mark> MongoDB URI connection string
+- <mark>DATABASE_PASSWORD:</mark> MongoDB URI password string
+- <mark>DATABASE_LOCAL:</mark> MongoDB local connection string
+- <mark>JWT_SECRET:</mark> JSON Web Token secret key
+- <mark>JWT_EXPIRES_IN:</mark> JSON Web Token expires key
+- <mark>JWT_COOKIE_EXPIRES_IN:</mark> JSON Web Token cookie expires key
+- <mark>MAIL_HOST:</mark> Nodemailer smtp host key
+- <mark>MAIL_PORT:</mark> Nodemailer smtp port key
+- <mark>MAIL_USERNAME:</mark> Nodemailer smtp auth username key
+- <mark>MAIL_PASSWORD:</mark> Nodemailer smtp auth password key
+- <mark>MAIL_FROM:</mark> Nodemailer mail option key
+- <mark>STRIPE_SECRET_KEY:</mark> Stripe secret key
 
 5. Start the application: <mark>npm run dev</mark> or <mark>yarn dev</mark>
 
