@@ -88,3 +88,14 @@ The database schema is defined using Mongoose. The schema includes the following
 - Cart: Represents a cart with a quantity, user, and product.
 - Category: Represents a category with a name, parent, and properties.
 - Review: Represents a review with a review, rating, terms, product, and a user.
+
+## API Endpoints
+
+The following API endpoints are available:
+
+### Authentication Endpoints
+
+- POST /api/v1/auth/login: Authenticates a user and returns a JSON Web Token (JWT).
+- POST /api/v1/auth/facebook-login: Authenticates a user and returns a JSON Web Token (JWT).
+- POST /api/v1/auth/google-login: Authenticates a user and returns a JSON Web Token (JWT).
+- POST /api/v1/auth/register: Creates a new user and returns user data and JWT.
