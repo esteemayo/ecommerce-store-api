@@ -99,7 +99,7 @@ The following API endpoints are available:
 - <mark>POST /api/v1/auth/facebook-login:</mark> Authenticates a user and returns a JSON Web Token (JWT).
 - <mark>POST /api/v1/auth/google-login:</mark> Authenticates a user and returns a JSON Web Token (JWT).
 - <mark>POST /api/v1/auth/register:</mark> Creates a new user and returns user data and JWT.
-- POST /api/v1/auth/logout: Clears authenticated user's token from the cookie.
-- POST /api/v1/auth/forgot-password: Sends a request to reset a user's password through email.
-- POST /api/v1/auth/reset-password/:token: Reset a user password.
-- PATCH /api/v1/auth/update-my-password: Updates authenticated user's password.
+- <mark>POST /api/v1/auth/logout:</mark> Clears authenticated user's token from the cookie.
+- <mark>POST /api/v1/auth/forgot-password:</mark> Sends a request to reset a user's password through email.
+- <mark>POST /api/v1/auth/reset-password/:token:</mark> Reset a user password.
+- <mark>PATCH /api/v1/auth/update-my-password:</mark> Updates authenticated user's password.
