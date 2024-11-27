@@ -95,7 +95,7 @@ The following API endpoints are available:
 
 ### Authentication Endpoints
 
-- POST /api/v1/auth/login: Authenticates a user and returns a JSON Web Token (JWT).
-- POST /api/v1/auth/facebook-login: Authenticates a user and returns a JSON Web Token (JWT).
-- POST /api/v1/auth/google-login: Authenticates a user and returns a JSON Web Token (JWT).
-- POST /api/v1/auth/register: Creates a new user and returns user data and JWT.
+- <mark>POST /api/v1/auth/login:</mark> Authenticates a user and returns a JSON Web Token (JWT).
+- <mark>POST /api/v1/auth/facebook-login:</mark> Authenticates a user and returns a JSON Web Token (JWT).
+- <mark>POST /api/v1/auth/google-login:</mark> Authenticates a user and returns a JSON Web Token (JWT).
+- <mark>POST /api/v1/auth/register:</mark> Creates a new user and returns user data and JWT.
