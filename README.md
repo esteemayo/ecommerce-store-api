@@ -31,3 +31,14 @@ This e-commerce application allows user to browse and purchase products, manage 
 - Payment processing using Stripe
 - Email notifications using Nodemailer
 - Password security using BcryptJS
+
+## Technical Requirements
+
+- Node.js (20.x)
+- Express (4.x)
+- Mongoose (6.x)
+- JSON Web Tokens (9.x)
+- MongoDB (4.x)
+- BcryptJS (2.x)
+- Nodemailer (6.x)
+- Stripe (11.x)
