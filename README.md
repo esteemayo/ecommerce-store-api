@@ -28,6 +28,9 @@ This e-commerce application allows user to browse and purchase products, manage 
 - Product browsing and purchasing
 - Order management and tracking
 - User account management
+- Rate limiting to prevent abuse
+- MongoDB sanitization to prevent MongoDB injection attacks
+- Security headers to prevent common web vulnerabilities
 - Payment processing using Stripe
 - Email notifications using Nodemailer
 - Password security using BcryptJS
