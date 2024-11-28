@@ -94,6 +94,10 @@ This application uses Helmet to set security headers to prevent common web vulne
 
 This application uses Express Rate Limit to limit the number of requests that can be made to the application within a certain time frame. This helps to prevent abuse and denial-of-service (DoS) attacks.
 
+## MongoDB Sanitization
+
+This aplication uses Express Mongo Sanitize to sanitize user input data before it is stored in the MongoDB database. This helps to prevent MongoDB injection attacks.
+
 ## Authentication and Authorization
 
 This application uses JSON Web Tokens (JWT) for authentication and authorization. Users can login using their username and password, and return the user's data with the authentication token, and the token is also stored in the cookie after successful authentication. The <mark>JWT_SECRET</mark> environment variable is used to secure the authentication process.
