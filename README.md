@@ -179,3 +179,7 @@ This application uses Stripe for payment processing. The <mark>STRIPE_SECRET_KEY
 ## Email Notification
 
 This application uses Nodemailer for email notifications. The application sends emails to users when they request to reset their passwords.
+
+## Password Security
+
+This application uses BcryptJS for password security. Passwords are hashed and stored securely in the database.
