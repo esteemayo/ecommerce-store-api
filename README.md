@@ -175,3 +175,7 @@ The following API endpoints are available:
 ## Payment Gateway
 
 This application uses Stripe for payment processing. The <mark>STRIPE_SECRET_KEY</mark> environment variable is used to secure the payment process.
+
+## Email Notification
+
+This application uses Nodemailer for email notifications. The application sends emails to users when they request to reset their passwords.
