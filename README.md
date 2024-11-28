@@ -183,3 +183,7 @@ This application uses Nodemailer for email notifications. The application sends 
 ## Password Security
 
 This application uses BcryptJS for password security. Passwords are hashed and stored securely in the database.
+
+## Contributing
+
+Contributions are welcome! Please submit a pull request with your changes.
