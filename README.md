@@ -144,8 +144,8 @@ The following API endpoints are available:
 
 ### Cart Endpoints
 
-- GET /api/v1/carts: Returns a list of cart items.
-- GET /api/v1/carts/:id: Returns a single cart item by ID.
-- POST /api/v1/carts: Create a new cart item.
-- PATCH /api/v1/carts/:id: Updates a cart item by ID.
-- DELETE /api/v1/carts/:id: Deletes a cart item by ID.
+- <mark>GET /api/v1/carts:</mark> Returns a list of cart items.
+- <mark>GET /api/v1/carts/:id:</mark> Returns a single cart item by ID.
+- <mark>POST /api/v1/carts:</mark> Create a new cart item.
+- <mark>PATCH /api/v1/carts/:id:</mark> Updates a cart item by ID.
+- <mark>DELETE /api/v1/carts/:id:</mark> Deletes a cart item by ID.
