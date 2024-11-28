@@ -56,10 +56,10 @@ This e-commerce application allows user to browse and purchase products, manage 
 3. Install dependencies: <mark>npm install or yarn install</mark>
 4. Create a <mark>config.env</mark> file and add the following environment variables:
 
-- PORT: Port number for the application
-- NODE_ENV: Enviroment variable that specifies the environment in which a Node.js application is running
-- DEV_URL: Client side development web address [http://localhost:5173](http://localhost:5173)
-- PROD_URL: Client side production web address [https://estoress.netlify.app](https://estoress.netlify.app)
+- <mark>PORT:</mark> Port number for the application
+- <mark>NODE_ENV:</mark> Enviroment variable that specifies the environment in which a Node.js application is running
+- <mark>DEV_URL:</mark> Client side development web address [http://localhost:5173](http://localhost:5173)
+- <mark>PROD_URL:</mark> Client side production web address [https://estoress.netlify.app](https://estoress.netlify.app)
 - <mark>DATABASE:</mark> MongoDB URI connection string
 - <mark>DATABASE_PASSWORD:</mark> MongoDB URI password string
 - <mark>DATABASE_LOCAL:</mark> MongoDB local connection string
