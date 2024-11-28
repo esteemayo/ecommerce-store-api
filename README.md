@@ -152,8 +152,8 @@ The following API endpoints are available:
 
 ### Category Endpoints
 
-- GET /api/v1/categories: Returns a list of categories for the authenticated admin.
-- GET /api/v1/categories/:id: Returns a single category by ID for the authenticated admin.
-- POST /api/v1/categories: Create a new category for the authenticated admin.
-- PATCH /api/v1/categories/:id: Updates a category by ID for the authenticated admin.
-- DELETE /api/v1/categories/:id: Deletes a category by ID for the authenticated admin.
+- <mark>GET /api/v1/categories:</mark> Returns a list of categories for the authenticated admin.
+- <mark>GET /api/v1/categories/:id:</mark> Returns a single category by ID for the authenticated admin.
+- <mark>POST /api/v1/categories:</mark> Create a new category for the authenticated admin.
+- <mark>PATCH /api/v1/categories/:id:</mark> Updates a category by ID for the authenticated admin.
+- <mark>DELETE /api/v1/categories/:id:</mark> Deletes a category by ID for the authenticated admin.
