@@ -116,3 +116,18 @@ The following API endpoints are available:
 - <mark>PATCH /api/v1/users/update-email:</mark> Updates authenticated user's email address.
 - <mark>DELETE /api/v1/users/:id:</mark> Deletes a single user by ID, authorized by the admin only.
 - <mark>DELETE /api/v1/users/delete-me:</mark> Deletes authenticated user's data, authorized by both authenticated user and admin.
+
+### Product Endpoints
+
+- GET /api/v1/products: Returns a list of products.
+- GET /api/v1/products/stats: Returns the products statistics by the ratings average.
+- GET /api/v1/products/tags: Returns a list of products with one or more related or common tags.
+- GET /api/v1/products/:id: Returns a single product by ID.
+- GET /api/v1/products/count-by-category:
+- GET /api/v1/products/search: Returns a list of products by the product's name search query.
+- GET /api/v1/products/details/:slug: Returns a single product by SLUG.
+- POST /api/v1/products: Create a new product.
+- PATCH /api/v1/products/:id: Updates a product by ID.
+- PATCH /api/v1/products/like/:id: Handles the likes functionality of a product.
+- PATCH /api/v1/products/views/:id: Increment the number of views on a product.
+- DELETE /api/v1/products/:id: Deletes a product by ID.
