@@ -20,7 +20,7 @@ A robust e-commerce application built using BcryptJS, Express, Express Rate Limi
 
 ## Overview
 
-This e-commerce application allows user to browse and purchase products, manage their accounts, and track their orders. The application uses Express as the backend framework, Mongoose for MongoDB interactions, JSON Web Tokens (JWT) for authentication and authorization, and Stripe for payment processing.
+This e-commerce application allows user to browse and purchase products, manage their accounts, and track their orders. The application uses Express as the backend framework, Mongoose for MongoDB interactions, Express Rate Limit for rate limiting, Express Mongo Sanitize for MongoDB sanitization, Helmet for security headers, JSON Web Tokens (JWT) for authentication and authorization, and Stripe for payment processing.
 
 ## Features
 
