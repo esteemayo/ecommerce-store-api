@@ -80,6 +80,16 @@ This e-commerce application allows user to browse and purchase products, manage 
 1. Open a web browser or postman and navigate to [http://localhost:2020](http://localhost:2020)
 2. Open [login route](http://localhost:2020/api/v1/auth/login) to authenticate using JSON Web Tokens (JWT)
 
+## Security
+
+This application uses Helmet to set security headers to prevent common web vulnerabilities. The security headers include:
+
+- Content-Security-Policy: Defines which sources of content are allowed to be executed within a web page.
+- Cross-Origin-Resource-Policy: Defines the policy for cross-origin resource sharing.
+- X-Content-Type-Options: Prevents MIME-sniffing attacks.
+- X-Frame-Options: Prevents clickjacking attacks.
+- X-XXS-Protection: Enables cross-site scripting (XSS) protection.
+
 ## Authentication and Authorization
 
 This application uses JSON Web Tokens (JWT) for authentication and authorization. Users can login using their username and password, and return the user's data with the authentication token, and the token is also stored in the cookie after successful authentication. The <mark>JWT_SECRET</mark> environment variable is used to secure the authentication process.
