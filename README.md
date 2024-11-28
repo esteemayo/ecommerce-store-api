@@ -134,10 +134,10 @@ The following API endpoints are available:
 
 ### Order Endpoints
 
-- GET /api/v1/orders: Returns a list of orders for the authenticated admin.
-- GET /api/v1/orders/my-orders: Returns a list of orders for the authenticated user.
-- GET /api/v1/orders/income: Returns the monthly income generated from a list of orders.
-- GET /api/v1/orders/:id: Returns a single order by ID.
-- POST /api/v1/orders: Creates a new order for the authenticated user.
-- PATCH /api/v1/orders/:id: Updates an order by ID for the authenticated admin.
-- DELETE /api/v1/orders/:id: Deletes an order by ID for the authenticated admin
+- <mark>GET /api/v1/orders:</mark> Returns a list of orders for the authenticated admin.
+- <mark>GET /api/v1/orders/my-orders:</mark> Returns a list of orders for the authenticated user.
+- <mark>GET /api/v1/orders/income:</mark> Returns the monthly income generated from a list of orders.
+- <mark>GET /api/v1/orders/:id:</mark> Returns a single order by ID.
+- <mark>POST /api/v1/orders:</mark> Creates a new order for the authenticated user.
+- <mark>PATCH /api/v1/orders/:id:</mark> Updates an order by ID for the authenticated admin.
+- <mark>DELETE /api/v1/orders/:id:</mark> Deletes an order by ID for the authenticated admin
