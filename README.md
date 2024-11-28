@@ -149,3 +149,11 @@ The following API endpoints are available:
 - <mark>POST /api/v1/carts:</mark> Create a new cart item.
 - <mark>PATCH /api/v1/carts/:id:</mark> Updates a cart item by ID.
 - <mark>DELETE /api/v1/carts/:id:</mark> Deletes a cart item by ID.
+
+### Category Endpoints
+
+- GET /api/v1/categories: Returns a list of categories for the authenticated admin.
+- GET /api/v1/categories/:id: Returns a single category by ID for the authenticated admin.
+- POST /api/v1/categories: Create a new category for the authenticated admin.
+- PATCH /api/v1/categories/:id: Updates a category by ID for the authenticated admin.
+- DELETE /api/v1/categories/:id: Deletes a category by ID for the authenticated admin.
