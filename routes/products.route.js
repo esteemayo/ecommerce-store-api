@@ -3,8 +3,9 @@
 import express from 'express';
 
 import * as authMiddleware from '../middlewares/auth.middleware.js';
-import reviewRouter from './reviews.route.js';
 import * as productController from '../controllers/product.controller.js';
+
+import reviewRouter from './reviews.route.js';
 
 const router = express.Router();
 
