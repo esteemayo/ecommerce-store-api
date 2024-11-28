@@ -123,7 +123,7 @@ The following API endpoints are available:
 - <mark>GET /api/v1/products/stats:</mark> Returns the products statistics by the ratings average.
 - <mark>GET /api/v1/products/tags:</mark> Returns a list of products with one or more related or common tags.
 - <mark>GET /api/v1/products/:id:</mark> Returns a single product by ID.
-- <mark>GET /api/v1/products/count-by-category:</mark>
+- <mark>GET /api/v1/products/count-by-category:</mark> Returns total number of products in a category.
 - <mark>GET /api/v1/products/search:</mark> Returns a list of products by the product's name search query.
 - <mark>GET /api/v1/products/details/:slug:</mark> Returns a single product by SLUG.
 - <mark>POST /api/v1/products:</mark> Create a new product.
