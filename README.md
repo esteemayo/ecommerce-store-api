@@ -39,8 +39,11 @@ This e-commerce application allows user to browse and purchase products, manage 
 
 - Node.js (20.x)
 - Express (4.x)
+- Express Rate Limit (6.x)
+- Express Mongo Sanitize (2.x)
 - Mongoose (6.x)
 - JSON Web Tokens (9.x)
+- Helmet (6.x)
 - MongoDB (4.x)
 - BcryptJS (2.x)
 - Nodemailer (6.x)
