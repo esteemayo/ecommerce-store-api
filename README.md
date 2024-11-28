@@ -187,3 +187,7 @@ This application uses BcryptJS for password security. Passwords are hashed and s
 ## Contributing
 
 Contributions are welcome! Please submit a pull request with your changes.
+
+## License
+
+This project is licensed under the MIT License.
