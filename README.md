@@ -131,3 +131,13 @@ The following API endpoints are available:
 - <mark>PATCH /api/v1/products/like/:id:</mark> Handles the likes functionality of a product.
 - <mark>PATCH /api/v1/products/views/:id:</mark> Increment the number of views on a product.
 - <mark>DELETE /api/v1/products/:id:</mark> Deletes a product by ID.
+
+### Order Endpoints
+
+- GET /api/v1/orders: Returns a list of orders for the authenticated admin.
+- GET /api/v1/orders/my-orders: Returns a list of orders for the authenticated user.
+- GET /api/v1/orders/income: Returns the monthly income generated from a list of orders.
+- GET /api/v1/orders/:id: Returns a single order by ID.
+- POST /api/v1/orders: Creates a new order for the authenticated user.
+- PATCH /api/v1/orders/:id: Updates an order by ID for the authenticated admin.
+- DELETE /api/v1/orders/:id: Deletes an order by ID for the authenticated admin
