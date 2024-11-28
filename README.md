@@ -9,14 +9,18 @@ A robust e-commerce application built using BcryptJS, Express, Express Rate Limi
 3. #technical-requirements
 4. #setup-and-installation
 5. #usage
-6. #authentication-and-authorization
-7. #database-schema
-8. #api-endpoints
-9. #payment-gateway
-10. #email-notifications
-11. #password-security
-12. #contributing
-13. #license
+6. #security
+7. #rate-limiting
+8. #mongodb-sanitization
+9. #helmet-configuration
+10. #authentication-and-authorization
+11. #database-schema
+12. #api-endpoints
+13. #payment-gateway
+14. #email-notifications
+15. #password-security
+16. #contributing
+17. #license
 
 ## Overview
 
