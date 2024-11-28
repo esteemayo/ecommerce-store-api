@@ -103,3 +103,16 @@ The following API endpoints are available:
 - <mark>POST /api/v1/auth/forgot-password:</mark> Sends a request to reset a user's password through email.
 - <mark>POST /api/v1/auth/reset-password/:token:</mark> Reset a user password.
 - <mark>PATCH /api/v1/auth/update-my-password:</mark> Updates authenticated user's password.
+
+### User Endpoints
+
+- GET /api/v1/users: Returns the users data, authorized by only the admin.
+- GET /api/v1/users/:id: Returns a single user by ID.
+- GET /api/v1/users/me:: Returns authenticated user data.
+- GET /api/v1/users/stats: Returns number of registered users in each month of the year.
+- POST /api/v1/users: Cannot be used to create a new user.
+- PATCH /api/v1/users/:id: Updates a single user data, authorized by the admin only.
+- PATCH /api/v1/users/update-me: Updates the authenticated user's data such as name, email, username, image, etc. But cannot update authenticated user's password.
+- PATCH /api/v1/users/update-email: Updates authenticated user's email address.
+- DELETE /api/v1/users/:id: Deletes a single user by ID, authorized by the admin only.
+- DELETE /api/v1/users/delete-me: Deletes authenticated user's data, authorized by both authenticated user and admin.
