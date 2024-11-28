@@ -170,8 +170,8 @@ The following API endpoints are available:
 
 ### Checkout Endpoints
 
-- POST /api/v1/checkout: Creates a charge on a customer's payment method.
+- <mark>POST /api/v1/checkout:</mark> Creates a charge on a customer's payment method.
 
 ## Payment Gateway
 
-This application uses Stripe for payment processing. The STRIPE_SECRET_KEY environment variable is used to secure the payment process.
+This application uses Stripe for payment processing. The <mark>STRIPE_SECRET_KEY</mark> environment variable is used to secure the payment process.
