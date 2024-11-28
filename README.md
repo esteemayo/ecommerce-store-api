@@ -167,3 +167,7 @@ The following API endpoints are available:
 - <mark>POST /api/v1/reviews:</mark> Creates a new review for the authenticated user.
 - <mark>PATCH /api/v1/reviews/:id:</mark> Updates a review by ID for the authenticated user or admin.
 - <mark>DELETE /api/v1/reviews/:id:</mark> Deletes a review by ID for the authenticated user or admin.
+
+### Checkout Endpoints
+
+- POST /api/v1/checkout: Creates a charge on a customer's payment method.
