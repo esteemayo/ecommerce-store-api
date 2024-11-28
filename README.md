@@ -141,3 +141,11 @@ The following API endpoints are available:
 - <mark>POST /api/v1/orders:</mark> Creates a new order for the authenticated user.
 - <mark>PATCH /api/v1/orders/:id:</mark> Updates an order by ID for the authenticated admin.
 - <mark>DELETE /api/v1/orders/:id:</mark> Deletes an order by ID for the authenticated admin
+
+### Cart Endpoints
+
+- GET /api/v1/carts: Returns a list of cart items.
+- GET /api/v1/carts/:id: Returns a single cart item by ID.
+- POST /api/v1/carts: Create a new cart item.
+- PATCH /api/v1/carts/:id: Updates a cart item by ID.
+- DELETE /api/v1/carts/:id: Deletes a cart item by ID.
