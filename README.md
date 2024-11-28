@@ -90,6 +90,10 @@ This application uses Helmet to set security headers to prevent common web vulne
 - X-Frame-Options: Prevents clickjacking attacks.
 - X-XXS-Protection: Enables cross-site scripting (XSS) protection.
 
+## Rate Limiting
+
+This application uses Express Rate Limit to limit the number of requests that can be made to the application within a certain time frame. This helps to prevent abuse and denial-of-service (DoS) attacks.
+
 ## Authentication and Authorization
 
 This application uses JSON Web Tokens (JWT) for authentication and authorization. Users can login using their username and password, and return the user's data with the authentication token, and the token is also stored in the cookie after successful authentication. The <mark>JWT_SECRET</mark> environment variable is used to secure the authentication process.
