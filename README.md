@@ -157,3 +157,13 @@ The following API endpoints are available:
 - <mark>POST /api/v1/categories:</mark> Create a new category for the authenticated admin.
 - <mark>PATCH /api/v1/categories/:id:</mark> Updates a category by ID for the authenticated admin.
 - <mark>DELETE /api/v1/categories/:id:</mark> Deletes a category by ID for the authenticated admin.
+
+### Review Endpoints
+
+- GET /api/v1/reviews: Returns a list of reviews.
+- GET /api/v1/reviews/top: Returns a list of reviews where rating is greater or equals to <mark>4.5</mark>.
+- GET /api/v1/reviews/total-reviews/:id: Returns the total number of ratings on a product.
+- GET /api/v1/reviews/:id: Returns a single review by ID for the authenticated user.
+- POST /api/v1/reviews: Creates a new review for the authenticated user.
+- PATCH /api/v1/reviews/:id: Updates a review by ID for the authenticated user or admin.
+- DELETE /api/v1/reviews/:id: Deletes a review by ID for the authenticated user or admin.
