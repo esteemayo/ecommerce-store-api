@@ -1,6 +1,6 @@
 # E-commerce Application
 
-A robust e-commerce application built using Express, Mongoose, JSON Web Tokens (JWT), MongoDB, BcryptJS, Nodemailer, Stripe and more.
+A robust e-commerce application built using BcryptJS, Express, Express Rate Limit, Express Mongo Sanitize, JSON Web Tokens (JWT), Helmet, Mongoose, MongoDB, Nodemailer, Stripe and more.
 
 ## Table of Contents
 
