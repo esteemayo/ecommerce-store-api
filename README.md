@@ -88,11 +88,11 @@ This e-commerce application allows user to browse and purchase products, manage 
 
 This application uses Helmet to set security headers to prevent common web vulnerabilities. The security headers include:
 
-- Content-Security-Policy: Defines which sources of content are allowed to be executed within a web page.
-- Cross-Origin-Resource-Policy: Defines the policy for cross-origin resource sharing.
-- X-Content-Type-Options: Prevents MIME-sniffing attacks.
-- X-Frame-Options: Prevents clickjacking attacks.
-- X-XXS-Protection: Enables cross-site scripting (XSS) protection.
+- <mark>Content-Security-Policy:</mark> Defines which sources of content are allowed to be executed within a web page.
+- <mark>Cross-Origin-Resource-Policy:</mark> Defines the policy for cross-origin resource sharing.
+- <mark>X-Content-Type-Options:</mark> Prevents MIME-sniffing attacks.
+- <mark>X-Frame-Options:</mark> Prevents clickjacking attacks.
+- <mark>X-XXS-Protection:</mark> Enables cross-site scripting (XSS) protection.
 
 ## Rate Limiting
 
