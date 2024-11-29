@@ -102,6 +102,17 @@ This application uses Express Rate Limit to limit the number of requests that ca
 
 This aplication uses Express Mongo Sanitize to sanitize user input data before it is stored in the MongoDB database. This helps to prevent MongoDB injection attacks.
 
+## Helmet Configuration
+
+This application uses Helmet to set security headers to prevent common web vulnerabilities. The security headers include:
+
+- <mark>Content-Security-Policy:</mark> Defines which sources of content are allowed to be executed within a web page.
+- <mark>Cross-Origin-Embedder-Policy:</mark> Prevents a document from loading any cross-origin resources that don't explicitly grant permission.
+- <mark>Cross-Origin-Opener-Policy:</mark> Prevents a document from being able to access its opener's browsing context.
+- <mark>Cross-Origin-Resource-Policy:</mark> Defines the policy for cross-origin resource sharing.
+- <mark>Feature-Policy:</mark> Allows you to control which features can be used by a web page.
+- <mark>Referrer-Policy:</mark> Controls how much referrer information is sent with each request.
+
 ## Authentication and Authorization
 
 This application uses JSON Web Tokens (JWT) for authentication and authorization. Users can login using their username and password, and return the user's data with the authentication token, and the token is also stored in the cookie after successful authentication. The <mark>JWT_SECRET</mark> environment variable is used to secure the authentication process.
