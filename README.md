@@ -145,15 +145,15 @@ The following API endpoints are available:
 
 ### User Endpoints
 
-- <mark>GET /api/v1/users:</mark> Returns the users data, authorized by the admin.
+- <mark>GET /api/v1/users:</mark> Returns the users data, for the authenticated admin.
 - <mark>GET /api/v1/users/:id:</mark> Returns a single user by ID.
 - <mark>GET /api/v1/users/me:</mark> Returns authenticated user data.
 - <mark>GET /api/v1/users/stats:</mark> Returns number of registered users in each month of the year.
 - <mark>POST /api/v1/users:</mark> Cannot be used to create a new user.
-- <mark>PATCH /api/v1/users/:id:</mark> Updates a single user data, authorized by the admin.
+- <mark>PATCH /api/v1/users/:id:</mark> Updates a single user data, for the authenticated admin.
 - <mark>PATCH /api/v1/users/update-me:</mark> Updates the authenticated user's data such as name, email, username, image, etc. But cannot update authenticated user's password.
 - <mark>PATCH /api/v1/users/update-email:</mark> Updates authenticated user's email address.
-- <mark>DELETE /api/v1/users/:id:</mark> Deletes a single user by ID, authorized by the admin.
+- <mark>DELETE /api/v1/users/:id:</mark> Deletes a single user by ID, for the authenticated admin.
 - <mark>DELETE /api/v1/users/delete-me:</mark> Deletes authenticated user's data, authorized by both authenticated user and admin.
 
 ### Product Endpoints
