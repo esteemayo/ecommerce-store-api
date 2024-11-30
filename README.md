@@ -55,7 +55,7 @@ This e-commerce application allows user to browse and purchase products, manage 
 
 ## Setup and Installation
 
-1. Clone the repository: <mark>[git clone](https://github.com/esteemayo/ecommerce-store-api.git)</mark>
+1. Clone the repository: <mark>git clone [https://github.com/esteemayo/ecommerce-store-api.git](https://github.com/esteemayo/ecommerce-store-api.git)</mark>
 2. Change into the project directory: <mark>cd your-repo-name</mark>
 3. Install dependencies: <mark>npm install</mark> or <mark>yarn install</mark>
 4. Create a <mark>config.env</mark> file and add the following environment variables:
