@@ -2,14 +2,14 @@
   "name": "ecommerce-store-api",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "server.js",
   "type": "module",
   "scripts": {
     "start": "node server.js",
     "dev": "nodemon server.js",
     "debug": "ndb server.js",
-    "sample": "node ./dev-data/data/import-dev-data --load",
-    "blowitallaway": "node ./dev-data/data/import-dev-data --remove"
+    "sample": "node ./dev-data/data/import.dev.data --load",
+    "blowitallaway": "node ./dev-data/data/import.dev.data --remove"
   },
   "keywords": [],
   "author": "Emmanuel Adebayo",
